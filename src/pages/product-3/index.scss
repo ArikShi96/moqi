@@ -1,0 +1,159 @@
+.product-3 {
+  header {
+    background-color: #ffffff;
+  }
+  h1.title {
+    font-size: 51px;
+    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+    font-weight: 400;
+    color: #212121;
+    line-height: 76px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  h2.title {
+    font-size: 16px;
+    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+    font-weight: 400;
+    color: #212112;
+    line-height: 28px;
+  }
+  // 认证平台
+  .platform-section {
+    padding: 60px 0;
+    aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h1 {
+        font-size: 51px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #212121;
+        line-height: 76px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 25px;
+        font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+        font-weight: 500;
+        color: #212121;
+        line-height: 30px;
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 16px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #212121;
+        line-height: 28px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  // 核心优势
+  .advantage-section {
+    padding: 70px 0 50px;
+    background-color: #f7f9fa;
+    article {
+      .advantage-img {
+        display: block;
+        height: 115px;
+        width: auto;
+      }
+      margin-bottom: 40px;
+      h1 {
+        font-size: 16px;
+        font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+        font-weight: 500;
+        color: #212121;
+        line-height: 28px;
+        margin: 8px 0 16px;
+      }
+      p.desc {
+        font-size: 14px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #ababab;
+        line-height: 28px;
+        a {
+          color: #2365eb;
+        }
+      }
+    }
+  }
+  // 指纹身份认证在线服务
+  .service-section {
+    padding: 70px 0 50px;
+    aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h1 {
+        font-size: 53px;
+        font-family: SourceHanSansCN-Heavy, SourceHanSansCN;
+        font-weight: 800;
+        color: #212121;
+        line-height: 53px;
+        background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 16px;
+      }
+      h2 {
+        font-size: 25px;
+        font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+        font-weight: 500;
+        color: #212121;
+        line-height: 30px;
+        margin-bottom: 40px;
+      }
+      p {
+        font-size: 16px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #212121;
+        line-height: 28px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  // 应用场景
+  .application-section {
+    padding: 70px 0 50px;
+    background-color: #f7f9fa;
+    .application-wrap {
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    h1.title {
+      font-size: 32px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+    .platform-section,
+    .advantage-section,
+    .service-section {
+      aside {
+        h1 {
+          font-size: 32px;
+          line-height: 40px;
+          margin-bottom: 20px;
+        }
+        h2 {
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

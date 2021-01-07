@@ -1,0 +1,139 @@
+.product-2 {
+  header {
+    background-color: #e2e7e9;
+  }
+  h1.title {
+    font-size: 51px;
+    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+    font-weight: 400;
+    color: #212121;
+    line-height: 76px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .bg-img {
+    width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+  // 产品优势
+  .advantage-section {
+    padding: 70px 0 50px;
+    article {
+      .advantage-img {
+        display: block;
+        height: 115px;
+        width: auto;
+      }
+      margin-bottom: 40px;
+      h1 {
+        font-size: 16px;
+        font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+        font-weight: 500;
+        color: #212121;
+        line-height: 28px;
+        margin: 8px 0 16px;
+      }
+      p.desc {
+        font-size: 14px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #ababab;
+        line-height: 28px;
+        a {
+          color: #2365eb;
+        }
+      }
+    }
+  }
+  // 本地化
+  .localization-section {
+    padding: 120px 0 80px;
+    background-color: #f7f9fa;
+    width: 100%;
+    .row {
+      margin-bottom: 80px;
+    }
+    aside {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h1 {
+        font-size: 51px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #212121;
+        line-height: 76px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 16px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #212121;
+        line-height: 28px;
+        margin-bottom: 20px;
+      }
+    }
+    .article {
+      margin-bottom: 32px;
+      article {
+        position: relative;
+        background-color: #fff;
+        padding: 90px 36px 36px;
+        height: 100%;
+        img {
+          position: absolute;
+          right: 36px;
+          top: 36px;
+          width: 94px;
+          height: auto;
+        }
+        h1 {
+          font-size: 18px;
+          font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+          font-weight: bold;
+          line-height: 18px;
+          color: #212121;
+          margin-bottom: 40px;
+          &.active {
+            color: #2365eb;
+          }
+        }
+        p {
+          font-size: 14px;
+          font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+          font-weight: 500;
+          color: #ababab;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    h1.title {
+      font-size: 32px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+    .advantage-section,
+    .localization-section {
+      aside {
+        h1 {
+          font-size: 32px;
+          line-height: 40px;
+          margin-bottom: 20px;
+        }
+        h2 {
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,441 @@
+.product-1 {
+  section {
+    padding: 60px 0;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .p0 {
+    padding: 0;
+  }
+  .bg-gray {
+    background: linear-gradient(207deg, #fafbfc 0%, #d5d8dc 100%);
+  }
+  .bg-black {
+    background-color: #000000;
+  }
+  aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+      font-size: 18px;
+      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+      font-weight: 400;
+      color: #212112;
+      line-height: 32px;
+    }
+  }
+  h1.title {
+    font-size: 42px;
+    font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+    font-weight: bold;
+    color: #212112;
+    line-height: 56px;
+    margin-bottom: 40px;
+    &.white {
+      color: #ffffff;
+      .sub {
+        color: #ffffff;
+      }
+    }
+    &.blue {
+      color: linear-gradient(178deg, #3eefea 0%, #07a0f1 100%);
+    }
+    .sub {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+  }
+  h2.title {
+    font-size: 21px;
+    font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+    font-weight: 500;
+    color: #212112;
+    line-height: 28px;
+    margin-bottom: 40px;
+    &.white {
+      color: #ffffff;
+    }
+    &.blue {
+      color: linear-gradient(178deg, #3eefea 0%, #07a0f1 100%);
+    }
+  }
+  .product-header {
+    background-color: #000000;
+    border-top: 1px #252525 solid;
+    border-bottom: 1px #252525 solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    h1 {
+      font-size: 12px;
+      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 18px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      li {
+        list-style: none;
+        font-size: 12px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #ababab;
+        line-height: 18px;
+        padding-right: 16px;
+        cursor: pointer;
+        &.active {
+          color: #ffffff;
+        }
+      }
+      .contact-us {
+        background: #2365eb;
+        border-radius: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 20px;
+        img {
+          width: 18px;
+          height: 18px;
+          margin-right: 6px;
+        }
+        span {
+          font-size: 12px;
+          font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+          font-weight: 400;
+          color: #ffffff;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+  // 非接触指纹采集仪
+  .product-detail {
+    h1.title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+  }
+  // 核心优势
+  .advantage-section {
+    h1 {
+      text-align: center;
+    }
+    li {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      .img-wrap {
+        width: 80%;
+        margin-bottom: 20px;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      p {
+        font-size: 25px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #ffffff;
+        line-height: 63px;
+      }
+    }
+  }
+  // 非接触采集文字
+  .no-touch-text {
+    padding: 0;
+    position: relative;
+    .text-bg {
+      width: 100%;
+      height: auto;
+      z-index: -1;
+    }
+    .text-speed {
+      position: absolute;
+      top: calc(50% - 42px);
+      left: calc(50% - 175px);
+      height: 84px;
+      width: auto;
+    }
+  }
+  // 强大的性能加持
+  .powerful-performance {
+    position: relative;
+    padding: 0;
+    img {
+      z-index: -1;
+    }
+    .title-wrap {
+      width: 100%;
+      position: absolute;
+      top: 5%;
+      text-align: center;
+    }
+  }
+  // 高精度曲面重建算法
+  .high-precision-algorithm {
+    position: relative;
+    padding: 0;
+    img {
+      z-index: -1;
+    }
+    .row {
+      position: absolute;
+      top: 10%;
+      width: 80%;
+    }
+  }
+  // 非接触
+  .no-touch {
+    position: relative;
+    padding: 0;
+    .row {
+      position: absolute;
+      top: 15%;
+      width: 80%;
+    }
+    img {
+      z-index: -1;
+    }
+  }
+  // 图像质量高
+  .picture-high-quality {
+    position: relative;
+    .text-bg {
+      width: 100%;
+      height: auto;
+      z-index: -1;
+    }
+    .text-quality {
+      position: absolute;
+      height: auto;
+      width: 340px;
+      left: calc(50% - 171px);
+      &.up {
+        top: calc(50% - 54px);
+      }
+      &.down {
+        top: calc(50% + 32px);
+      }
+    }
+  }
+  // 干湿浅等疑难指纹采集友好
+  // 采集面积大
+  .collect-high-friendly,
+  .collect-high-area {
+    text-align: center;
+    h2 {
+      font-size: 21px;
+      font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+      font-weight: 500;
+      color: #212121;
+      line-height: 20px;
+      margin-bottom: 32px;
+      span {
+        font-size: 28px;
+      }
+    }
+    .scroll-wrap {
+      background-color: #fff;
+      padding: 40px;
+      .img-wrap {
+        display: flex;
+        img {
+          flex: 0 0 50%;
+          width: 50%;
+          height: auto;
+        }
+      }
+    }
+  }
+  // 图像面积大
+  .picture-high-area {
+    position: relative;
+    .text-bg {
+      width: 100%;
+      height: auto;
+      z-index: -1;
+    }
+    .text-area {
+      position: absolute;
+      width: auto;
+      height: 64px;
+      top: calc(50% - 32px);
+      &.left {
+        left: calc(50% - 200px);
+      }
+      &.left2 {
+        left: calc(50% - 225px);
+      }
+      &.right {
+        height: 50px;
+        left: calc(50% + 175px);
+        top: calc(50% - 16px);
+      }
+      &.right2 {
+        height: 50px;
+        left: calc(50% + 200px);
+        top: calc(50% - 16px);
+      }
+    }
+  }
+  // 采集速度快
+  .collection-speed {
+    position: relative;
+    .text-bg {
+      width: 100%;
+      height: auto;
+      z-index: -1;
+    }
+    .text-speed {
+      position: absolute;
+      top: calc(50% - 42px);
+      left: calc(50% - 175px);
+      height: 84px;
+      width: auto;
+    }
+  }
+  // 采集速度快,操作简单
+  .collection-speed-easy {
+    padding-bottom: 0;
+    .advantage-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+      li {
+        flex: 0 0 50%;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 60px;
+        img {
+          width: 36px;
+          height: auto;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 18px;
+          font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+          font-weight: 400;
+          color: #212112;
+          line-height: 21px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  // 多重防护，增强您的体验
+  .protect-section {
+    .row {
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+    }
+    .flex-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  // 重叠title
+  .no-touch-text,
+  .picture-high-area,
+  .collection-speed,
+  .picture-high-quality {
+    h1 {
+      font-size: 70px;
+      font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+      font-weight: bold;
+      color: #212121;
+      background: linear-gradient(176deg, #3eefea 0%, #07a0f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: 1;
+      position: absolute;
+      top: calc(50% - 42px);
+      left: calc(50% - 175px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    h1.title {
+      font-size: 32px;
+      line-height: 40px;
+      margin-bottom: 20px;
+      .sub {
+        font-size: 18px;
+      }
+    }
+    h2.title {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+    .no-touch-text,
+    .picture-high-area,
+    .collection-speed,
+    .picture-high-quality {
+      h1 {
+        font-size: 40px;
+        top: calc(50% - 24px);
+        left: calc(50% - 100px);
+      }
+    }
+    .collection-speed {
+      .text-speed {
+        position: absolute;
+        top: calc(50% - 24px);
+        left: calc(50% - 125px);
+        height: 48px;
+        width: auto;
+      }
+    }
+    .picture-high-area {
+      .text-area {
+        position: absolute;
+        width: auto;
+        height: 36px;
+        top: calc(50% - 18px);
+        &.left {
+          left: calc(50% - 116px);
+        }
+        &.left2 {
+          left: calc(50% - 132px);
+        }
+        &.right {
+          height: 28px;
+          left: calc(50% + 100px);
+          top: calc(50% - 10px);
+        }
+        &.right2 {
+          height: 28px;
+          left: calc(50% + 116px);
+          top: calc(50% - 10px);
+        }
+      }
+    }
+    .picture-high-quality {
+      .text-quality {
+        width: 196px;
+        left: calc(50% - 98px);
+        &.up {
+          top: calc(50% - 32px);
+        }
+        &.down {
+          top: calc(50% + 20px);
+        }
+      }
+    }
+  }
+}
