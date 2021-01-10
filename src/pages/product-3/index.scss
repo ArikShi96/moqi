@@ -1,4 +1,5 @@
 .product-3 {
+  padding-top: 60px;
   header {
     background-color: #ffffff;
   }
@@ -17,6 +18,11 @@
     font-weight: 400;
     color: #212112;
     line-height: 28px;
+  }
+  img {
+    z-index: -1;
+    width: 100%;
+    height: auto;
   }
   // 认证平台
   .platform-section {
@@ -55,6 +61,9 @@
   .advantage-section {
     padding: 70px 0 50px;
     background-color: #f7f9fa;
+    .col-md-4 {
+      padding: 0 8%;
+    }
     article {
       .advantage-img {
         display: block;
@@ -85,36 +94,78 @@
   // 指纹身份认证在线服务
   .service-section {
     padding: 70px 0 50px;
-    aside {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      h1 {
-        font-size: 53px;
-        font-family: SourceHanSansCN-Heavy, SourceHanSansCN;
-        font-weight: 800;
-        color: #212121;
-        line-height: 53px;
-        background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 16px;
+    h1.title {
+      margin-bottom: 12px;
+    }
+    h2.title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .row {
+      flex-wrap: nowrap;
+      position: relative;
+      overflow: hidden;
+      aside {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        h1 {
+          font-size: 53px;
+          font-family: SourceHanSansCN-Heavy, SourceHanSansCN;
+          font-weight: 800;
+          color: #212121;
+          line-height: 53px;
+          background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 16px;
+        }
+        h2 {
+          font-size: 25px;
+          font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+          font-weight: 500;
+          color: #212121;
+          line-height: 30px;
+          margin-bottom: 40px;
+        }
+        p {
+          font-size: 16px;
+          font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+          font-weight: 400;
+          color: #212121;
+          line-height: 28px;
+          margin-bottom: 20px;
+        }
+        .mobile-img {
+          display: none;
+        }
       }
-      h2 {
-        font-size: 25px;
-        font-family: SourceHanSansCN-Medium, SourceHanSansCN;
-        font-weight: 500;
-        color: #212121;
-        line-height: 30px;
-        margin-bottom: 40px;
-      }
-      p {
-        font-size: 16px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
-        font-weight: 400;
-        color: #212121;
-        line-height: 28px;
-        margin-bottom: 20px;
+      .service-nav {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        z-index: 99;
+        li {
+          cursor: pointer;
+          list-style: none;
+          margin-right: 14px;
+          border-bottom: 1px solid #cccccc;
+          padding: 4px;
+          p {
+            visibility: hidden;
+            font-size: 35px;
+            font-family: Oswald-Medium, Oswald;
+            font-weight: 500;
+            color: #ababab;
+            line-height: 35px;
+          }
+          &.active {
+            p {
+              visibility: visible;
+            }
+          }
+        }
       }
     }
   }
@@ -153,6 +204,14 @@
           font-size: 16px;
           line-height: 24px;
         }
+        .mobile-img {
+          display: inline-block !important;
+        }
+      }
+    }
+    .service-section {
+      img {
+        display: none;
       }
     }
   }

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --config webpack.config.js --progress",
-    "build": "cross-env NODE_ENV=prod webpack --config webpack.config.js --progress",
+    "build": "cross-env NODE_ENV=prod webpack --config webpack.config.js --progress && rm moqi.zip",
     "eslint-fix": "eslint --fix ./src/**/index.js & eslint --fix ./src/assets/js/*.js"
   },
   "author": "shifeng",

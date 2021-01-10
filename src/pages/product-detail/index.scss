@@ -1,159 +1,170 @@
-aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  p {
-    font-size: 18px;
-    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
-    font-weight: 400;
-    color: #212112;
-    line-height: 32px;
-  }
-}
-h1.title {
-  font-size: 42px;
-  font-family: SourceHanSansCN-Bold, SourceHanSansCN;
-  font-weight: bold;
-  color: #212112;
-  line-height: 56px;
-  margin-bottom: 40px;
-  &.white {
-    color: #ffffff;
-    .sub {
-      color: #ffffff;
-    }
-  }
-  &.blue {
-    color: linear-gradient(178deg, #3eefea 0%, #07a0f1 100%);
-  }
-  .sub {
-    font-size: 28px;
-    margin-bottom: 16px;
-  }
-}
-h2.title {
-  font-size: 21px;
-  font-family: SourceHanSansCN-Medium, SourceHanSansCN;
-  font-weight: 500;
-  color: #212112;
-  line-height: 28px;
-  margin-bottom: 40px;
-  &.white {
-    color: #ffffff;
-  }
-  &.blue {
-    color: linear-gradient(178deg, #3eefea 0%, #07a0f1 100%);
-  }
-}
-section {
-  .row {
-    border-bottom: 1px #cccccc solid;
-  }
-}
-.logo-img {
-  width: 120px;
-  height: auto;
-  margin-right: 8px;
-}
-.product-header {
-  background-color: #ffffff;
-  border-bottom: 1px #cccccc solid;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 28px;
-  h1 {
-    font-size: 12px;
-    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
-    font-weight: 400;
-    color: #212121;
-    line-height: 18px;
-  }
-  nav {
+.product-detail-page {
+  padding-top: 60px;
+  aside {
     display: flex;
-    align-items: center;
-    li {
-      list-style: none;
-      font-size: 12px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
-      font-weight: 400;
-      color: #ababab;
-      line-height: 18px;
-      padding-right: 16px;
-      cursor: pointer;
-      &.active {
-        color: #212121;
-      }
-    }
-    .contact-us {
-      background: #2365eb;
-      border-radius: 21px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 20px;
-      img {
-        width: 18px;
-        height: 18px;
-        margin-right: 6px;
-      }
-      span {
-        font-size: 12px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
-        font-weight: 400;
-        color: #ffffff;
-        line-height: 18px;
-      }
-    }
-  }
-}
-.product-detail {
-  padding: 60px 0 0;
-  h1.title {
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-  }
-}
-.product-parameters {
-  .row {
+    flex-direction: column;
+    justify-content: center;
     p {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
+      font-size: 18px;
       font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212112;
-      line-height: 18px;
-      padding: 20px 10px;
-      &.bold {
-        font-size: 21px;
-        font-family: SourceHanSansCN-Medium, SourceHanSansCN;
-        font-weight: 500;
-        line-height: 28px;
+      line-height: 32px;
+    }
+  }
+  h1.title {
+    font-size: 42px;
+    font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+    font-weight: bold;
+    color: #212112;
+    line-height: 56px;
+    margin-bottom: 40px;
+    &.white {
+      color: #ffffff;
+      .sub {
+        color: #ffffff;
       }
-      &.empty {
-        padding: 0;
+    }
+    &.blue {
+      color: linear-gradient(178deg, #3eefea 0%, #07a0f1 100%);
+    }
+    .sub {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+  }
+  h2.title {
+    font-size: 21px;
+    font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+    font-weight: 500;
+    color: #212112;
+    line-height: 28px;
+    margin-bottom: 40px;
+    &.white {
+      color: #ffffff;
+    }
+    &.blue {
+      color: linear-gradient(178deg, #3eefea 0%, #07a0f1 100%);
+    }
+  }
+  section {
+    .row {
+      border-bottom: 1px #cccccc solid;
+    }
+  }
+  .logo-img {
+    width: 120px;
+    height: auto;
+    margin-right: 8px;
+  }
+  .product-header {
+    background-color: #ffffff;
+    border-bottom: 1px #cccccc solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 10;
+    h1 {
+      font-size: 12px;
+      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+      font-weight: 400;
+      color: #212121;
+      line-height: 18px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      li {
+        list-style: none;
+        font-size: 12px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #ababab;
+        line-height: 18px;
+        padding-right: 16px;
+        cursor: pointer;
+        a {
+          color: inherit;
+        }
+        &.active {
+          color: #212121;
+        }
+      }
+      .contact-us {
+        background: #2365eb;
+        border-radius: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 20px;
+        img {
+          width: 18px;
+          height: 18px;
+          margin-right: 6px;
+        }
+        span {
+          font-size: 12px;
+          font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+          font-weight: 400;
+          color: #ffffff;
+          line-height: 18px;
+        }
       }
     }
   }
-  &:last-of-type {
-    margin-bottom: 80px;
+  .product-detail {
+    padding: 60px 0 0;
+    h1.title {
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+    }
   }
-}
-@media (max-width: 767px) {
-  h1.title {
-    font-size: 32px;
-    line-height: 40px;
-    margin-bottom: 20px;
+  .product-parameters {
+    .row {
+      p {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #212112;
+        line-height: 18px;
+        padding: 20px 10px;
+        &.bold {
+          font-size: 21px;
+          font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+          font-weight: 500;
+          line-height: 28px;
+        }
+        &.empty {
+          padding: 0;
+        }
+      }
+    }
+    &:last-of-type {
+      margin-bottom: 80px;
+    }
   }
-  h2.title {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 20px;
-  }
-  .logo-img {
-    width: 80px;
-    height: auto;
+  @media (max-width: 767px) {
+    h1.title {
+      font-size: 32px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+    h2.title {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+    .logo-img {
+      width: 80px;
+      height: auto;
+    }
   }
 }

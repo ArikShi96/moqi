@@ -7,7 +7,8 @@
   <body>
     <div class="product-3">
       #include("../../assets/html/header.html")
-      <section class="platform-section">
+      #include("../../assets/html/scroll.html")
+      <section class="section platform-section" data-section="身份认证平台">
         <div class="container">
           <div class="row">
             <aside class="col-12 col-md-5">
@@ -23,11 +24,12 @@
               class="col-12 col-md-7"
               src="../../assets/img/product-3/product-3-bg.png"
               alt=""
+              style="z-index: 0"
             />
           </div>
         </div>
       </section>
-      <section class="advantage-section">
+      <section class="section advantage-section" data-section="核心优势">
         <h1 class="title">核心优势</h1>
         <div class="container">
           <div class="row">
@@ -73,23 +75,79 @@
           </div>
         </div>
       </section>
-      <section class="service-section">
+      <section
+        class="section service-section"
+        data-section="指纹身份认证在线服务"
+      >
+        <h1 class="title">指纹身份认证在线服务</h1>
+        <h2 class="title">
+          快速接入墨奇科技亿级极致指纹搜索的能力，进行唯一的身份认证
+        </h2>
         <div class="container">
           <div class="row">
+            <nav class="service-nav">
+              <li class="active"><p>01</p></li>
+              <li><p>02</p></li>
+              <li><p>03</p></li>
+            </nav>
+            <!-- 1:N -->
             <aside class="col-12 col-md-5">
               <h1>1:N</h1>
               <h2>比对认证OPENAPI</h2>
               <p>快速地在指纹底库中搜索匹配人员，实现精准身份认证</p>
+              <img
+                class="col-12 col-md-7 mobile-img"
+                src="../../assets/img/product-3/service-1.png"
+                alt=""
+              />
             </aside>
             <img
               class="col-12 col-md-7"
-              src="../../assets/img/product-3/product-3-bg.png"
+              src="../../assets/img/product-3/service-1.png"
+              alt=""
+            />
+            <!-- 1:1 -->
+            <aside class="col-12 col-md-5">
+              <h1>1:1</h1>
+              <h2>比对认证OPENAPI</h2>
+              <p>
+                比对两份指纹，即可判定是否匹配相似，实现“已知
+                身份信息”的身份认证
+              </p>
+              <img
+                class="col-12 col-md-7 mobile-img"
+                src="../../assets/img/product-3/service-2.png"
+                alt=""
+              />
+            </aside>
+            <img
+              class="col-12 col-md-7"
+              src="../../assets/img/product-3/service-2.png"
+              alt=""
+            />
+            <!-- SDK -->
+            <aside class="col-12 col-md-5">
+              <h1>SDK</h1>
+              <h2>手机四指采集比对</h2>
+              <p>
+                通过简单集成，即可在手机上实现快速便捷的指纹采集
+                和比对，实现身份认证
+              </p>
+              <img
+                class="col-12 col-md-7 mobile-img"
+                src="../../assets/img/product-3/service-3.png"
+                alt=""
+              />
+            </aside>
+            <img
+              class="col-12 col-md-7"
+              src="../../assets/img/product-3/service-3.png"
               alt=""
             />
           </div>
         </div>
       </section>
-      <section class="application-section">
+      <section class="section application-section" data-section="应用场景">
         <h1 class="title">应用场景</h1>
         <div class="container">
           <div class="row">
