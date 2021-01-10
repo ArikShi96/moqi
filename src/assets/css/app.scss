@@ -222,7 +222,8 @@ p {
   }
   .tip-nav {
     display: none;
-    background-color: rgba(247, 249, 250, 0.3);
+    // background-color: rgba(247, 249, 250, 0.3);
+    background-color: #e9ecee;
     border-radius: 2px;
     li {
       display: flex;
@@ -231,6 +232,7 @@ p {
       list-style: none;
       height: 48px;
       width: 48px;
+      cursor: pointer;
       img {
         width: 32px;
         height: auto;

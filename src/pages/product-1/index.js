@@ -15,6 +15,15 @@ $(document).ready(() => {
       }
     });
   });
+  $("#advantage-section-carousel").on("slide.bs.carousel", (event) => {
+    $(".carousel-wrap li").removeClass("active");
+    $(".carousel-wrap li").eq(event.to).addClass("active");
+  });
+  // 采集面积大
+  $("#collect-high-area-carousel").on("slide.bs.carousel", (event) => {
+    $(".collect-high-area h2").eq(0).toggle();
+    $(".collect-high-area h2").eq(1).toggle();
+  });
   // 多重防护，增强您的体验
   $(".protect-section .arrow-wrap .arrow-icon").click((el) => {
     const $el = $(el.target);
