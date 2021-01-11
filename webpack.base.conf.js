@@ -83,11 +83,19 @@ module.exports = {
         ],
       },
       {
+        test: /\.(avi|mp4)$/,
+        use: [
+          "file-loader?&name=[name]" +
+            (isProd ? ".[hash:8]" : "") +
+            ".[ext]&outputPath=file/",
+        ],
+      },
+      {
         test: /\.(webp)$/,
         use: [
           "file-loader?&name=[name]" +
             (isProd ? ".[hash:8]" : "") +
-            ".[ext]&outputPath=img/",
+            ".[ext]&outputPath=file/",
         ],
       },
       {

@@ -12,6 +12,16 @@ import "./js/libs/Scroll";
 import "./js/libs/Polyfill";
 require("./js/libs/animatescroll.min");
 
+function debounce(func, time) {
+  let timer = null;
+  return function () {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, arguments);
+    }, time);
+  };
+}
+
 // 绑定全局事件
 $(document).ready(() => {
   $(".tip-nav-wrap .tip-finger").click(() => {
@@ -37,9 +47,19 @@ $(document).ready(() => {
         }
       });
     });
-    $(window).scroll(() => {
-      // if ($(window).scrollTop() >= 200) {
-      // }
-    });
+    $(window).scroll(
+      debounce(() => {
+        let hashIndex = 0;
+        let result = 9999;
+        Array.from(sections).forEach((section, index) => {
+          if (Math.abs(section.getBoundingClientRect().top) < result) {
+            hashIndex = index;
+            result = Math.abs(section.getBoundingClientRect().top);
+          }
+        });
+        $(".scroll-nav-wrap li").removeClass("active");
+        $(".scroll-nav-wrap li").eq(hashIndex).addClass("active");
+      }, 100)
+    );
   }
 });

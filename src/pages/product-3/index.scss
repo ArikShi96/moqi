@@ -1,5 +1,5 @@
 .product-3 {
-  padding-top: 60px;
+  padding-top: 68px;
   header {
     background-color: #ffffff;
   }
@@ -20,9 +20,8 @@
     line-height: 28px;
   }
   img {
-    z-index: -1;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
   // 认证平台
   .platform-section {
@@ -102,9 +101,8 @@
       margin-bottom: 20px;
     }
     .row {
-      flex-wrap: nowrap;
       position: relative;
-      overflow: hidden;
+      padding: 60px 0;
       aside {
         display: flex;
         flex-direction: column;
@@ -136,16 +134,13 @@
           line-height: 28px;
           margin-bottom: 20px;
         }
-        .mobile-img {
-          display: none;
-        }
       }
       .service-nav {
         display: flex;
         position: absolute;
-        bottom: 0;
+        bottom: 30px;
         left: 15px;
-        z-index: 99;
+        z-index: 9;
         li {
           cursor: pointer;
           list-style: none;
@@ -171,12 +166,20 @@
   }
   // 应用场景
   .application-section {
-    padding: 70px 0 50px;
+    padding: 70px 0 100px;
     background-color: #f7f9fa;
     .application-wrap {
       margin-bottom: 20px;
       img {
         width: 100%;
+      }
+      p {
+        margin-top: 30px;
+        font-size: 20px;
+        font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+        font-weight: bold;
+        color: #212121;
+        line-height: 20px;
       }
     }
   }
@@ -204,14 +207,6 @@
           font-size: 16px;
           line-height: 24px;
         }
-        .mobile-img {
-          display: inline-block !important;
-        }
-      }
-    }
-    .service-section {
-      img {
-        display: none;
       }
     }
   }

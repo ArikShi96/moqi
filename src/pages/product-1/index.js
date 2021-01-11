@@ -5,6 +5,24 @@ import "./index.html";
 // 绑定事件
 $(document).ready(() => {
   $(".header").addClass("black");
+  // 视频
+  $(".video-section video")[0].addEventListener("ended", () => {
+    // $("section.video-section").fadeOut(0);
+    // $("section.product-detail").fadeIn(0);
+    $(".video-section video")[0].currentTime = 3;
+  });
+  $(".video-section video")[0].play();
+  $(".advantage-section .view-video").click(() => {
+    window.open(
+      "./file/video.mp4",
+      "_blank",
+      `width=${window.innerWidth / 2},height=${
+        (window.innerWidth / 2) * 0.56
+      },top=200,left=${
+        window.innerWidth / 4
+      },menubar=no,toolbar=no, status=no,scrollbars=yes`
+    );
+  });
   // 轮播图
   Array.from($(".carousel-wrap li")).forEach((li, index) => {
     $(li).click(() => {
