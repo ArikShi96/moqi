@@ -158,6 +158,60 @@
           line-height: 24px;
         }
       }
+      .article {
+        article {
+          padding: 36px;
+          img {
+            top: 20px;
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    h1.title {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 10px;
+      .sub {
+        font-size: 14px;
+      }
+    }
+    h2.title {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+    aside {
+      p {
+        font-size: 16px;
+      }
+    }
+    .advantage-section,
+    .localization-section {
+      padding: 20px 0;
+      aside {
+        h1 {
+          font-size: 24px;
+          line-height: 32px;
+          margin-bottom: 20px;
+        }
+        h2 {
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+    .localization-section {
+      .row {
+        margin-bottom: 20px;
+      }
     }
   }
 }

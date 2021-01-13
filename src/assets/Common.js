@@ -31,6 +31,10 @@ $(document).ready(() => {
     $(".tip-nav-wrap .tip-nav").slideToggle();
     $("#zc__sdk__sys__btn").click();
   });
+  // 弹出框
+  $(".tip-nav .trigger-popover").click(() => {
+    $(".popover-wrap").fadeToggle();
+  });
   // 界面滚动初始化
   const sections = $("section.section");
   if (sections.length) {
@@ -46,7 +50,11 @@ $(document).ready(() => {
       $(li).click(() => {
         if (!$(li).hasClass("active")) {
           $(".scroll-nav-wrap li").removeClass("active");
-          $("section.section").eq(index).animatescroll();
+          $("section.section")
+            .eq(index)
+            .animatescroll({
+              padding: window.innerWidth < 500 ? 60 : 0,
+            });
           $(li).addClass("active");
         }
       });
@@ -63,7 +71,7 @@ $(document).ready(() => {
         });
         $(".scroll-nav-wrap li").removeClass("active");
         $(".scroll-nav-wrap li").eq(hashIndex).addClass("active");
-      }, 100)
+      }, 50)
     );
   }
 });

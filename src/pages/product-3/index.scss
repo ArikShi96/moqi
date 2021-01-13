@@ -37,6 +37,7 @@
         color: #212121;
         line-height: 76px;
         margin-bottom: 20px;
+        z-index: 1;
       }
       h2 {
         font-size: 25px;
@@ -104,6 +105,7 @@
     h2.title {
       text-align: center;
       margin-bottom: 20px;
+      padding: 0 20px;
     }
     .row {
       position: relative;
@@ -222,6 +224,53 @@
     .application-section {
       .application-wrap {
         padding-bottom: 60px;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    h1.title {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 10px;
+      .sub {
+        font-size: 14px;
+      }
+    }
+    h2.title {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+    aside {
+      p {
+        font-size: 16px;
+      }
+    }
+    .platform-section,
+    .advantage-section,
+    .service-section,
+    .application-section {
+      padding: 20px 0;
+      aside {
+        h1 {
+          font-size: 24px;
+          line-height: 32px;
+          margin-bottom: 20px;
+        }
+        h2 {
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+    .service-section {
+      .row {
+        padding: 20px 0;
       }
     }
   }

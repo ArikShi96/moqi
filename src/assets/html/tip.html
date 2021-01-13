@@ -1,14 +1,51 @@
 <div class="tip-nav-wrap">
   <img class="tip-finger" src="../img/common/tip-figner.png" alt="" />
   <nav class="tip-nav">
-    <li>
-      <a href=""><img src="../img/common/tip-phone.png" alt="" /></a>
+    <li class="trigger-popover">
+      <a role="button"><img src="../img/common/tip-phone.png" alt="" /></a>
     </li>
     <li class="contact">
-      <img src="../img/common/tip-setting.png" alt="" />
+      <a role="button"><img src="../img/common/tip-setting.png" alt="" /></a>
     </li>
     <li>
-      <a href="../job.html"><img src="../img/common/tip-user.png" alt="" /></a>
+      <a href="../job.html" role="button"
+        ><img src="../img/common/tip-user.png" alt=""
+      /></a>
     </li>
   </nav>
+</div>
+<div class="popover-wrap" style="display: none">
+  <div class="arrow"></div>
+  <h1>需求与合作</h1>
+  <form>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="您的姓名"
+      name="name"
+      value=""
+    />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="邮箱"
+      name="email"
+      value=""
+    />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="电话"
+      name="phone"
+      value=""
+    />
+    <textarea
+      type="text"
+      class="form-control"
+      placeholder="您的需求"
+      name="requirement"
+      value=""
+    ></textarea>
+  </form>
+  <button class="btn btn-primary" type="submit">发送</button>
 </div>

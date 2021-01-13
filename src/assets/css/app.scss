@@ -22,6 +22,18 @@ p {
   padding: 0;
 }
 
+.alert-wrap {
+  z-index: 10000;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  padding: 0 40%;
+  width: 100%;
+  .alert {
+    margin-bottom: 0;
+  }
+}
+
 .header {
   width: 100vw;
   box-shadow: 0px 2px 4px 0px rgba(37, 37, 37, 0.1);
@@ -126,7 +138,7 @@ p {
       height: 44px;
       display: flex;
       align-items: center;
-      font-size: 11px;
+      font-size: 12px;
       font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #ababab;
@@ -188,7 +200,7 @@ p {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 11px;
+    font-size: 12px;
     font-family: SourceHanSansCN-Regular, SourceHanSansCN;
     font-weight: 400;
     color: #ababab;
@@ -241,7 +253,50 @@ p {
         width: 32px;
         height: auto;
       }
+      a {
+        outline: none;
+      }
     }
+  }
+}
+
+.popover-wrap {
+  position: fixed;
+  bottom: 20px;
+  right: 100px;
+  z-index: 10000;
+  box-shadow: 4px 5px 7px 0px rgba(33, 51, 77, 0.12);
+  background-color: #f7f9fa;
+  padding: 24px 35px;
+  .arrow {
+    position: absolute;
+    right: -5px;
+    top: 200px;
+    width: 10px;
+    height: 10px;
+    border-width: 1px 1px 0 0;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(45deg);
+    margin-bottom: 10px;
+    background-color: #f7f9fa;
+  }
+  h1 {
+    font-size: 21px;
+    font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+    font-weight: 500;
+    color: #212121;
+    line-height: 28px;
+    text-shadow: 4px 5px 7px rgba(33, 51, 77, 0.12);
+    margin-bottom: 20px;
+  }
+  .form-control {
+    border: none;
+    width: 245px;
+    margin-bottom: 8px;
+  }
+  .btn.btn-primary {
+    margin-top: 20px;
+    width: 100%;
   }
 }
 
@@ -255,6 +310,7 @@ p {
   flex-direction: column;
   // justify-content: center;
   z-index: 10000;
+  pointer-events: none;
   & * {
     z-index: 10000;
   }
@@ -264,6 +320,7 @@ p {
     align-items: center;
     margin-bottom: 14px;
     cursor: pointer;
+    pointer-events: auto;
     .line {
       width: 1px;
       height: 35px;
@@ -295,6 +352,9 @@ p {
 }
 
 @media (max-width: 767px) {
+  .alert-wrap {
+    padding: 0 30%;
+  }
   .header {
     .logo-wrap {
       position: static;
@@ -306,6 +366,32 @@ p {
   }
   .scroll-nav-wrap {
     padding: 20px 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    .navbar-wrap {
+      li {
+        margin-right: 20px;
+      }
+    }
+  }
+  .footer {
+    padding: 40px;
+    padding-bottom: 60px;
+    .company-info .address {
+      flex-shrink: 1;
+    }
+  }
+  .tip-nav-wrap {
+    right: 20px;
+  }
+  .popover-wrap {
+    right: 80px;
+    .form-control {
+      width: 180px;
+    }
   }
 }
 

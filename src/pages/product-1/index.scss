@@ -30,7 +30,8 @@
       font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212112;
-      line-height: 32px;
+      line-height: 24px;
+      margin-bottom: 20px;
     }
   }
   h1.title {
@@ -156,13 +157,12 @@
           width: 80%;
           margin-bottom: 20px;
         }
-
         p {
-          font-size: 25px;
+          font-size: 24px;
           font-family: SourceHanSansCN-Regular, SourceHanSansCN;
           font-weight: 400;
           color: #ffffff;
-          line-height: 63px;
+          line-height: 40px;
         }
       }
     }
@@ -311,12 +311,7 @@
   .collect-high-friendly,
   .collect-high-area {
     text-align: center;
-    h2 {
-      font-size: 21px;
-      font-family: SourceHanSansCN-Medium, SourceHanSansCN;
-      font-weight: 500;
-      color: #212121;
-      line-height: 20px;
+    h2.title {
       margin-bottom: 72px;
       span {
         font-size: 28px;
@@ -476,6 +471,9 @@
         bottom: 20px;
         left: 40px;
         margin-bottom: 24px;
+        &.up {
+          bottom: 40px;
+        }
       }
       p {
         font-size: 16px;
@@ -583,6 +581,12 @@
           font-size: 18px;
         }
       }
+      .logo-wrap img {
+        left: 20px;
+      }
+      .scroll-wrap .img-wrap img {
+        top: 16px;
+      }
     }
     .lighting-design {
       h1 img {
@@ -641,6 +645,57 @@
         }
         &.down {
           top: calc(50% + 20px);
+        }
+      }
+    }
+    .protect-section {
+      .image-wrap {
+        h2.title {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          margin-bottom: 0;
+          &.up {
+            bottom: 100px;
+          }
+        }
+        p {
+          left: 10px;
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    section {
+      padding: 20px 0;
+    }
+    h1.title {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 10px;
+      .sub {
+        font-size: 14px;
+      }
+    }
+    h2.title {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+    aside {
+      p {
+        font-size: 16px;
+      }
+    }
+    .no-touch-text {
+      h1 {
+        left: calc(50% - 120px);
+      }
+    }
+    .protect-section {
+      .image-wrap {
+        p {
+          font-size: 14px;
         }
       }
     }

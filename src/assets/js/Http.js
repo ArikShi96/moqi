@@ -52,44 +52,6 @@ JqueryAjax.prototype = {
       },
       error: function (xhr, status, error) {
         that.error && that.error(xhr, status, error);
-        let state = xhr.status;
-        if (state === 404) {
-          swal("找不到页面", "", "error");
-        } else if (state === 500) {
-          swal("服务器处理失败", "", "error");
-        } else if (state === 400) {
-          // 业务异常
-          let result = xhr.responseJSON;
-          if (result && result.msg) {
-            // 发票已存在
-            if (result.code === 601) {
-              let data = JSON.parse(result.msg);
-              swal({
-                title: "该发票已经存在",
-                text:
-                  "发票号码：" +
-                  data.invoiceNumber +
-                  "，添加时间：" +
-                  Utils.dateFormat(data.createTime, "yyyy-MM-dd HH:mm:ss"),
-                type: "warning",
-              });
-            } else if (result.code === 401) {
-              swal({
-                title: "认证失败，请重新登录",
-                type: "warning",
-              }).then(function () {
-                window.location.href = document.location.origin;
-              });
-            } else {
-              swal(result.msg, "", "warning");
-            }
-          } else {
-            swal("请求发生异常，请联系管理员", "", "error");
-          }
-        } else {
-          swal("请求发生异常", "", "error");
-          console.warn(xhr);
-        }
       },
       success: function (result, status, xhr) {
         that.success &&

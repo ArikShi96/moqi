@@ -6,15 +6,18 @@ import "./index.html";
 $(document).ready(() => {
   $(".header").addClass("black");
   // 视频
-  // $(".video-section video")[0].addEventListener("ended", () => {
-  //   // $("section.video-section").fadeOut(0);
-  //   // $("section.product-detail").fadeIn(0);
-  //   $(".video-section video")[0].currentTime = 3;
-  // });
-  $(".video-section video")[0].play();
-  window.setTimeout(() => {
-    $(".video-section video")[0].pause();
-  }, 3500);
+  const videoIntervalEvent = window.setInterval(() => {
+    if (
+      $(".video-section video")[0] &&
+      $(".video-section video")[0].readyState === 4
+    ) {
+      window.clearInterval(videoIntervalEvent);
+      $(".video-section video")[0].play();
+      window.setTimeout(() => {
+        $(".video-section video")[0].pause();
+      }, 3500);
+    }
+  }, 500);
   $(".advantage-section .view-video").click(() => {
     window.open(
       "./file/video.mp4",
