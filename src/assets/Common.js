@@ -27,6 +27,10 @@ $(document).ready(() => {
   $(".tip-nav-wrap .tip-finger").click(() => {
     $(".tip-nav-wrap .tip-nav").slideToggle();
   });
+  $(".tip-nav-wrap li.contact").click(() => {
+    $(".tip-nav-wrap .tip-nav").slideToggle();
+    $("#zc__sdk__sys__btn").click();
+  });
   // 界面滚动初始化
   const sections = $("section.section");
   if (sections.length) {

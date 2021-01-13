@@ -210,10 +210,13 @@ p {
 }
 
 .tip-nav-wrap {
-  z-index: 100;
+  z-index: 10000;
+  & * {
+    z-index: 10000;
+  }
   position: fixed;
-  bottom: 40px;
-  right: 10px;
+  bottom: 20px;
+  right: 40px;
   display: flex;
   flex-direction: column-reverse;
   .tip-finger {
@@ -240,9 +243,6 @@ p {
       }
     }
   }
-  & * {
-    z-index: 100;
-  }
 }
 
 .scroll-nav-wrap {
@@ -254,6 +254,10 @@ p {
   display: flex;
   flex-direction: column;
   // justify-content: center;
+  z-index: 10000;
+  & * {
+    z-index: 10000;
+  }
   li {
     list-style: none;
     display: flex;
@@ -284,6 +288,10 @@ p {
       }
     }
   }
+}
+
+#zc__sdk__sys__btn {
+  display: none !important;
 }
 
 @media (max-width: 767px) {

@@ -55,6 +55,11 @@
         margin-bottom: 20px;
       }
     }
+    .row {
+      .col-md-6 {
+        padding-right: 0;
+      }
+    }
   }
   // 核心优势
   .advantage-section {
@@ -138,8 +143,8 @@
       .service-nav {
         display: flex;
         position: absolute;
-        bottom: 30px;
-        left: 15px;
+        bottom: 40px;
+        left: 18%;
         z-index: 9;
         li {
           cursor: pointer;
@@ -160,6 +165,11 @@
               visibility: visible;
             }
           }
+        }
+      }
+      .row {
+        .col-md-6 {
+          padding-right: 0;
         }
       }
     }
@@ -207,6 +217,11 @@
           font-size: 16px;
           line-height: 24px;
         }
+      }
+    }
+    .application-section {
+      .application-wrap {
+        padding-bottom: 60px;
       }
     }
   }
