@@ -1,0 +1,138 @@
+.home-page {
+  @mixin h1-large {
+    font-size: 51px;
+    line-height: 76px;
+  }
+  @mixin h2-large {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  @mixin p-large {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  section {
+    padding: 80px 0;
+    &.bg-gray {
+      background-color: #f7f9fa;
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  h1.title {
+    @include h1-large;
+    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+    font-weight: 400;
+    color: #212121;
+    &.white {
+      color: #ffffff;
+    }
+    &.blue {
+      background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .blue {
+      background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  h2.title {
+    @include h2-large;
+    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+    font-weight: 400;
+    color: #212112;
+    &.blue {
+      background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .blue {
+      background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  // 背景图
+  .bg-section {
+    text-align: center;
+    position: relative;
+    padding: 0;
+    h1 {
+      width: 100%;
+      position: absolute;
+      top: 180px;
+    }
+    p {
+      width: 100%;
+      position: absolute;
+      top: 270px;
+      @include p-large;
+      font-family: SourceHanSansCN-Normal, SourceHanSansCN;
+      font-weight: 400;
+      color: #ffffff;
+    }
+  }
+  // 创造性
+  .creativity-section {
+    h1,
+    h2 {
+      text-align: center;
+    }
+    .container {
+      margin-top: 40px;
+    }
+    .advantage-wrap {
+      padding: 70px 50px 50px;
+      background-color: #ffffff;
+      margin-bottom: 20px;
+      h2 {
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        img.point-right {
+          width: 50px;
+          height: auto;
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+  // AI
+  .ai-section {
+    h1 {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    .row {
+      margin-bottom: 30px;
+    }
+  }
+  // 墨奇课堂
+  .class-section {
+    h1 {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    p.description {
+      text-align: center;
+      font-size: 16px;
+      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+      font-weight: 400;
+      color: #000000;
+      line-height: 28px;
+      margin: 20px 0 10px;
+    }
+    p.description-tip {
+      text-align: center;
+      font-size: 12px;
+      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+      font-weight: 400;
+      color: #ababab;
+      line-height: 19px;
+    }
+  }
+}

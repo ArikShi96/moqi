@@ -1,0 +1,173 @@
+.technology-page {
+  @mixin h1-large {
+    font-size: 51px;
+    line-height: 76px;
+  }
+  @mixin h2-large {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  @mixin p-large {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  section {
+    padding: 40px 0;
+    &.bg-gray {
+      background-color: #f7f9fa;
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  h1.title {
+    @include h1-large;
+    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+    font-weight: 400;
+    color: #212121;
+    text-align: center;
+    &.white {
+      color: #ffffff;
+    }
+    &.blue {
+      background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .blue {
+      background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  h2.title {
+    @include h2-large;
+    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+    font-weight: 400;
+    color: #212112;
+    &.blue {
+      background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .blue {
+      background: linear-gradient(141deg, #3eefea 0%, #07a0f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  // 背景图
+  .bg-section {
+    text-align: center;
+    position: relative;
+    padding: 0;
+    h1 {
+      width: 100%;
+      position: absolute;
+      top: 180px;
+    }
+    p {
+      width: 100%;
+      position: absolute;
+      top: 270px;
+      @include p-large;
+      font-family: SourceHanSansCN-Normal, SourceHanSansCN;
+      font-weight: 400;
+      color: #ffffff;
+    }
+  }
+  .search-section,
+  .study-section,
+  .no-touch-section,
+  .security-section {
+    h1 {
+      margin-bottom: 80px;
+    }
+    .color-title {
+      width: 100%;
+      text-align: center;
+      font-size: 119px;
+      font-family: SourceHanSansCN-Heavy, SourceHanSansCN;
+      font-weight: 800;
+      color: #212121;
+      line-height: 156px;
+      z-index: 0;
+    }
+    .row.flex-center {
+      justify-content: center;
+      position: relative;
+      top: -150px;
+    }
+    img {
+      z-index: 1;
+    }
+    .advantage-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -100px;
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        img {
+          height: 60px;
+          width: auto;
+          margin-bottom: 20px;
+        }
+        p {
+          width: 100%;
+          text-align: center;
+          font-size: 16px;
+          font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+          font-weight: 400;
+          color: #212121;
+          line-height: 23px;
+        }
+      }
+    }
+  }
+  // 向量和图搜索引擎
+  .search-section {
+    p.description {
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+      font-weight: 400;
+      color: #212112;
+      line-height: 33px;
+      margin-bottom: 40px;
+    }
+    .color-title {
+      background: linear-gradient(357deg, #208fe7 0%, #17d9d9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  // 小样本的无监督学习
+  .study-section {
+    .color-title {
+      background: linear-gradient(358deg, #a159bd 0%, #00cae1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  // 非接触指掌纹采集
+  .no-touch-section {
+    .color-title {
+      background: linear-gradient(357deg, #208fe7 0%, #17d9d9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  // 隐私和安全计算
+  .security-section {
+    .color-title {
+      background: linear-gradient(347deg, #a159bd 0%, #00cae1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}

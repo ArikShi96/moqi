@@ -22,6 +22,13 @@ p {
   padding: 0;
 }
 
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .alert-wrap {
   z-index: 10000;
   position: fixed;
@@ -74,7 +81,7 @@ p {
       display: none;
     }
   }
-  .navbar-wrap {
+  .navbar-wrap ul {
     flex-shrink: 0;
     font-size: 12px;
     font-family: SourceHanSansCN-Regular, SourceHanSansCN;
@@ -83,7 +90,6 @@ p {
     line-height: 18px;
     display: inline-flex;
     li {
-      list-style: none;
       margin-right: 40px;
       cursor: pointer;
       a {
@@ -99,7 +105,19 @@ p {
         display: block;
       }
     }
-    .navbar-wrap {
+    .navbar-wrap ul {
+      color: #ffffff;
+    }
+  }
+  &.brown {
+    background-color: #40424f;
+    .logo-wrap {
+      display: none;
+      &.brown {
+        display: block;
+      }
+    }
+    .navbar-wrap ul {
       color: #ffffff;
     }
   }
@@ -117,7 +135,6 @@ p {
     margin-bottom: 40px;
   }
   nav li {
-    list-style: none;
     font-size: 12px;
     font-family: SourceHanSansCN-Regular, SourceHanSansCN;
     font-weight: 400;
@@ -223,9 +240,6 @@ p {
 
 .tip-nav-wrap {
   z-index: 10000;
-  & * {
-    z-index: 10000;
-  }
   position: fixed;
   bottom: 20px;
   right: 40px;
@@ -245,7 +259,6 @@ p {
       display: flex;
       align-items: center;
       justify-content: center;
-      list-style: none;
       height: 48px;
       width: 48px;
       cursor: pointer;
@@ -306,42 +319,40 @@ p {
   top: 68px;
   min-height: calc(100vh - 68px);
   padding: 80px 36px;
-  display: flex;
-  flex-direction: column;
   // justify-content: center;
   z-index: 10000;
   pointer-events: none;
-  & * {
-    z-index: 10000;
-  }
-  li {
-    list-style: none;
+  ul {
     display: flex;
-    align-items: center;
-    margin-bottom: 14px;
-    cursor: pointer;
-    pointer-events: auto;
-    .line {
-      width: 1px;
-      height: 35px;
-      margin-right: 20px;
-      background-color: rgba(33, 33, 33, 0.15);
-    }
-    p {
-      display: none;
-      font-size: 14px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
-      font-weight: 400;
-      color: #212121;
-      line-height: 16px;
-    }
-    &.active {
+    flex-direction: column;
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+      cursor: pointer;
+      pointer-events: auto;
       .line {
-        background: #212121;
-        width: 2px;
+        width: 1px;
+        height: 35px;
+        margin-right: 20px;
+        background-color: rgba(33, 33, 33, 0.15);
       }
       p {
-        display: block;
+        display: none;
+        font-size: 14px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #212121;
+        line-height: 16px;
+      }
+      &.active {
+        .line {
+          background: #212121;
+          width: 2px;
+        }
+        p {
+          display: block;
+        }
       }
     }
   }
@@ -371,7 +382,7 @@ p {
 
 @media (max-width: 500px) {
   .header {
-    .navbar-wrap {
+    .navbar-wrap ul {
       li {
         margin-right: 20px;
       }

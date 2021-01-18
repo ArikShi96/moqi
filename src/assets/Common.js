@@ -45,7 +45,7 @@ $(document).ready(() => {
       <p>${$(section).data("section")}</p>
     </li>`;
     });
-    $(".scroll-nav-wrap").append(html);
+    $(".scroll-nav-wrap ul").append(html);
     Array.from($(".scroll-nav-wrap li")).forEach((li, index) => {
       $(li).click(() => {
         if (!$(li).hasClass("active")) {

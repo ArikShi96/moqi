@@ -6,16 +6,19 @@ import "./index.html";
 $(document).ready(() => {
   $(".header").addClass("black");
   // 视频
-  const videoIntervalEvent = window.setInterval(() => {
+  let videoIntervalEvent = window.setInterval(() => {
     if (
       $(".video-section video")[0] &&
       $(".video-section video")[0].readyState === 4
     ) {
       window.clearInterval(videoIntervalEvent);
       $(".video-section video")[0].play();
-      window.setTimeout(() => {
-        $(".video-section video")[0].pause();
-      }, 3500);
+      videoIntervalEvent = window.setInterval(() => {
+        if ($(".video-section video")[0].currentTime > 3.5) {
+          $(".video-section video")[0].pause();
+          window.clearInterval(videoIntervalEvent);
+        }
+      }, 100);
     }
   }, 500);
   $(".advantage-section .view-video").click(() => {
