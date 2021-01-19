@@ -3,9 +3,25 @@
     font-size: 51px;
     line-height: 76px;
   }
+  @mixin h1-mid {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  @mixin h1-small {
+    font-size: 24px;
+    line-height: 32px;
+  }
   @mixin h2-large {
     font-size: 32px;
     line-height: 48px;
+  }
+  @mixin h2-mid {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @mixin h2-small {
+    font-size: 18px;
+    line-height: 24px;
   }
   @mixin p-large {
     font-size: 28px;
@@ -306,6 +322,121 @@
       img {
         width: 30px;
         height: auto;
+      }
+    }
+  }
+  @media (max-width: 1200px) {
+    .creativity-section {
+      .advantage-wrap {
+        h2 span {
+          font-size: 24px;
+        }
+        .img-wrap {
+          height: 320px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    h1.title {
+      @include h1-mid;
+      margin-bottom: 20px;
+    }
+    h2.title {
+      @include h2-mid;
+      margin-bottom: 10px;
+    }
+    .bg-section {
+      h1 {
+        top: 100px;
+      }
+      p {
+        top: 140px;
+        font-size: 16px;
+      }
+    }
+    .creativity-section {
+      .advantage-wrap {
+        padding: 20px 20px 5px;
+        .img-wrap {
+          height: auto;
+        }
+      }
+    }
+    .class-section {
+      .col-12 .class-wraps {
+        padding: 0 15px;
+        .class-wrap {
+          img {
+            width: 20px;
+            margin-bottom: 8px;
+          }
+        }
+      }
+      p.title {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+    .ai-section {
+      h2 {
+        font-weight: bold;
+      }
+      .find-wrap {
+        bottom: 20px;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    h1.title {
+      @include h1-small;
+      margin-bottom: 10px;
+    }
+    h2.title {
+      @include h2-small;
+      margin-bottom: 10px;
+    }
+    .bg-section {
+      h1 {
+        top: 70px;
+      }
+      p {
+        top: 100px;
+      }
+      .video-wrap {
+        bottom: 10px;
+        padding: 6px 12px;
+      }
+      .carousel-wrap {
+        bottom: 10px;
+      }
+    }
+    .class-section {
+      .col-12 .class-wraps {
+        padding: 0 15px;
+        .class-wrap {
+          img {
+            width: 16px;
+            margin-bottom: 8px;
+          }
+        }
+      }
+      p.title {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+    .ai-section {
+      h2 {
+        top: 20px;
+      }
+      p {
+        top: 45px;
+        font-size: 14px;
       }
     }
   }

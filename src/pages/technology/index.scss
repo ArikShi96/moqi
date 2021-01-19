@@ -3,9 +3,37 @@
     font-size: 51px;
     line-height: 76px;
   }
+  @mixin h1-mid {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  @mixin h1-small {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @mixin color-text-large {
+    font-size: 120px;
+    line-height: 150px;
+  }
+  @mixin color-text-mid {
+    font-size: 80px;
+    line-height: 100px;
+  }
+  @mixin color-text-small {
+    font-size: 40px;
+    line-height: 60px;
+  }
   @mixin h2-large {
     font-size: 32px;
     line-height: 48px;
+  }
+  @mixin h2-mid {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @mixin h2-small {
+    font-size: 18px;
+    line-height: 24px;
   }
   @mixin p-large {
     font-size: 28px;
@@ -85,13 +113,12 @@
       margin-bottom: 80px;
     }
     .color-title {
+      @include color-text-large;
       width: 100%;
       text-align: center;
-      font-size: 119px;
       font-family: SourceHanSansCN-Heavy, SourceHanSansCN;
       font-weight: 800;
       color: #212121;
-      line-height: 156px;
       z-index: 0;
     }
     .row.flex-center {
@@ -168,6 +195,73 @@
       background: linear-gradient(347deg, #a159bd 0%, #00cae1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+  }
+  @media (max-width: 767px) {
+    section {
+      padding: 20px 0;
+    }
+    h1.title {
+      @include h1-mid;
+      margin-bottom: 20px;
+    }
+    h2.title {
+      @include h2-mid;
+      margin-bottom: 10px;
+    }
+    .bg-section {
+      h1 {
+        top: 130px;
+      }
+    }
+    .search-section,
+    .study-section,
+    .no-touch-section,
+    .security-section {
+      .color-title {
+        @include color-text-mid;
+      }
+      .row.flex-center {
+        top: -120px;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    h1.title {
+      @include h1-small;
+      margin-bottom: 10px;
+    }
+    h2.title {
+      @include h2-small;
+      margin-bottom: 10px;
+    }
+    .bg-section {
+      h1 {
+        top: 100px;
+      }
+    }
+    .search-section {
+      p.description {
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+    }
+    .search-section,
+    .study-section,
+    .no-touch-section,
+    .security-section {
+      .color-title {
+        @include color-text-small;
+      }
+      .row.flex-center {
+        top: -60px;
+      }
+      .advantage-list {
+        margin-top: -40px;
+        li p {
+          font-size: 14px;
+        }
+      }
     }
   }
 }

@@ -1,14 +1,25 @@
 .product-2 {
+  @mixin h1-large {
+    font-size: 51px;
+    line-height: 76px;
+  }
+  @mixin h1-mid {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  @mixin h1-small {
+    font-size: 24px;
+    line-height: 32px;
+  }
   padding-top: 68px;
-  header {
+  .header {
     background-color: #e2e7e9;
   }
   h1.title {
-    font-size: 51px;
+    @include h1-large;
     font-family: SourceHanSansCN-Regular, SourceHanSansCN;
     font-weight: 400;
     color: #212121;
-    line-height: 76px;
     text-align: center;
     margin-bottom: 40px;
   }
@@ -55,6 +66,7 @@
     }
   }
   // 本地化
+  .background-section,
   .localization-section {
     padding: 120px 0 80px;
     background-color: #f7f9fa;
@@ -67,11 +79,10 @@
       flex-direction: column;
       justify-content: center;
       h1 {
-        font-size: 51px;
+        @include h1-large;
         font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #212121;
-        line-height: 76px;
         margin-bottom: 20px;
         white-space: nowrap;
       }
@@ -134,23 +145,32 @@
       }
     }
   }
-  @media (max-width: 767px) {
-    h1.title {
-      font-size: 32px;
-      line-height: 40px;
-      margin-bottom: 20px;
-    }
+  // 公司介绍
+  .background-section {
+    background-color: #e2e7e9;
+  }
+  @media (max-width: 1200px) {
+    .background-section,
     .advantage-section,
     .localization-section {
       aside {
         h1 {
           font-size: 32px;
-          line-height: 40px;
-          margin-bottom: 20px;
         }
-        h2 {
-          font-size: 18px;
-          line-height: 24px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    h1.title {
+      @include h1-mid;
+      margin-bottom: 20px;
+    }
+    .background-section,
+    .advantage-section,
+    .localization-section {
+      aside {
+        h1 {
+          @include h1-mid;
           margin-bottom: 20px;
         }
         p {
@@ -171,35 +191,24 @@
   }
   @media (max-width: 500px) {
     h1.title {
-      font-size: 24px;
-      line-height: 32px;
+      @include h1-small;
       margin-bottom: 10px;
       .sub {
         font-size: 14px;
       }
-    }
-    h2.title {
-      font-size: 18px;
-      line-height: 24px;
-      margin-bottom: 10px;
     }
     aside {
       p {
         font-size: 16px;
       }
     }
+    .background-section,
     .advantage-section,
     .localization-section {
       padding: 20px 0;
       aside {
         h1 {
-          font-size: 24px;
-          line-height: 32px;
-          margin-bottom: 20px;
-        }
-        h2 {
-          font-size: 18px;
-          line-height: 24px;
+          @include h1-small;
           margin-bottom: 20px;
         }
         p {
@@ -208,6 +217,7 @@
         }
       }
     }
+    .background-section,
     .localization-section {
       .row {
         margin-bottom: 20px;

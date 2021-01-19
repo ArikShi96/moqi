@@ -1,15 +1,38 @@
 .product-detail-page {
-  padding-top: 60px;
+  @mixin h1-large {
+    font-size: 42px;
+    line-height: 56px;
+  }
+  @mixin h1-mid {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  @mixin h1-small {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @mixin h2-large {
+    font-size: 21px;
+    line-height: 28px;
+  }
+  @mixin h2-small {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @mixin p-large {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  // padding-top: 60px;
   aside {
     display: flex;
     flex-direction: column;
     justify-content: center;
     p {
-      font-size: 18px;
+      @include p-large;
       font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212112;
-      line-height: 32px;
     }
   }
   img {
@@ -17,32 +40,23 @@
     width: 100%;
   }
   h1.title {
-    font-size: 42px;
+    @include h1-large;
     font-family: SourceHanSansCN-Bold, SourceHanSansCN;
     font-weight: bold;
     color: #212112;
-    line-height: 56px;
     margin-bottom: 40px;
     &.white {
       color: #ffffff;
-      .sub {
-        color: #ffffff;
-      }
     }
     &.blue {
       color: linear-gradient(178deg, #3eefea 0%, #07a0f1 100%);
     }
-    .sub {
-      font-size: 28px;
-      margin-bottom: 16px;
-    }
   }
   h2.title {
-    font-size: 21px;
+    @include h2-large;
     font-family: SourceHanSansCN-Medium, SourceHanSansCN;
     font-weight: 500;
     color: #212112;
-    line-height: 28px;
     margin-bottom: 40px;
     &.white {
       color: #ffffff;
@@ -68,11 +82,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 16px 28px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 10;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // width: 100vw;
+    // z-index: 10;
     h1 {
       font-size: 12px;
       font-family: SourceHanSansCN-Regular, SourceHanSansCN;
@@ -156,13 +170,11 @@
   }
   @media (max-width: 767px) {
     h1.title {
-      font-size: 32px;
-      line-height: 40px;
+      @include h1-mid;
       margin-bottom: 20px;
     }
     h2.title {
-      font-size: 18px;
-      line-height: 24px;
+      @include h2-small;
       margin-bottom: 20px;
     }
     .logo-img {
@@ -175,16 +187,11 @@
       padding: 20px 0;
     }
     h1.title {
-      font-size: 24px;
-      line-height: 32px;
+      @include h1-small;
       margin-bottom: 10px;
-      .sub {
-        font-size: 14px;
-      }
     }
     h2.title {
-      font-size: 18px;
-      line-height: 24px;
+      @include h2-small;
       margin-bottom: 10px;
     }
     aside {

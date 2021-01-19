@@ -31,6 +31,17 @@ $(document).ready(() => {
     $(".tip-nav-wrap .tip-nav").slideToggle();
     $("#zc__sdk__sys__btn").click();
   });
+  // product 导航
+  $("header.header .toggle-product").click(() => {
+    if (window.innerWidth <= 767) {
+      if ($("header.header .product-nav-header").is(":visible")) {
+        $("header.header").addClass("transparent");
+      } else {
+        $("header.header").removeClass("transparent");
+      }
+    }
+    $("header.header .product-nav-header").slideToggle();
+  });
   // 弹出框
   $(".tip-nav .trigger-popover").click((event) => {
     event.stopPropagation();

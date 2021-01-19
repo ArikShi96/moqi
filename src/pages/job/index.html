@@ -5,7 +5,68 @@
     <title>墨奇招聘</title>
   </head>
   <body>
-    #include("../../assets/html/header.html")
+    <main class="job-page">
+      #include("../../assets/html/header.html")
+      <!-- 背景图 -->
+      <section class="bg-section">
+        <h1 class="title">识别未来 有你就行</h1>
+        <img src="../../assets/img/job/job-bg.png" alt="" />
+      </section>
+      <!-- 招聘列表 -->
+      <section class="job-section">
+        <div class="container">
+          <div class="search-wrap">
+            <form class="search-form">
+              <img
+                class="search-icon"
+                src="../../assets/img/job/job-search-icon.png"
+                alt=""
+              />
+              <input type="text" placeholder="职位名称、工作地点、职位类型" />
+              <div class="search-tab active">社会招聘</div>
+              <div class="search-tab">校园招聘</div>
+            </form>
+          </div>
+          <div class="table-wrap">
+            <div class="row tale-header">
+              <p class="col-3">职位名称</p>
+              <p class="col-3">工作地点</p>
+              <p class="col-3">职位类型</p>
+              <p class="col-3">查看并申请</p>
+            </div>
+            <div class="row tale-content">
+              <div class="col-3"><p>JAVA开发</p></div>
+              <div class="col-3"><p>北京</p></div>
+              <div class="col-3"><p>技术类</p></div>
+              <div class="col-3"><a href="../job-detail.html">查看详情</a></div>
+              <div class="col-3"><p>JAVA开发</p></div>
+              <div class="col-3"><p>北京</p></div>
+              <div class="col-3"><p>技术类</p></div>
+              <div class="col-3"><a href="../job-detail.html">查看详情</a></div>
+              <div class="col-3"><p>JAVA开发</p></div>
+              <div class="col-3"><p>北京</p></div>
+              <div class="col-3"><p>技术类</p></div>
+              <div class="col-3"><a href="../job-detail.html">查看详情</a></div>
+            </div>
+            <div class="table-pagination">
+              <div class="last-page">
+                <img
+                  src="../../assets/img/job/job-next-disabled-icon.png"
+                  alt=""
+                />
+              </div>
+              <div class="active">1</div>
+              <div>2</div>
+              <div>3</div>
+              <div class="next-page">
+                <img src="../../assets/img/job/job-next-icon.png" alt="" />
+              </div>
+              <p class="total">共10条数据</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     #include("../../assets/html/tip.html")
     #include("../../assets/html/footer.html")
   </body>

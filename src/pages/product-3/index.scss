@@ -1,23 +1,37 @@
 .product-3 {
+  @mixin h1-large {
+    font-size: 51px;
+    line-height: 76px;
+  }
+  @mixin h1-mid {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  @mixin h1-small {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @mixin h2-large {
+    font-size: 16px;
+    line-height: 28px;
+  }
   padding-top: 68px;
-  header {
+  .header {
     background-color: #ffffff;
   }
   h1.title {
-    font-size: 51px;
+    @include h1-large;
     font-family: SourceHanSansCN-Regular, SourceHanSansCN;
     font-weight: 400;
     color: #212121;
-    line-height: 76px;
     text-align: center;
     margin-bottom: 40px;
   }
   h2.title {
-    font-size: 16px;
+    @include h2-large;
     font-family: SourceHanSansCN-Regular, SourceHanSansCN;
     font-weight: 400;
     color: #212112;
-    line-height: 28px;
   }
   img {
     width: 100%;
@@ -31,11 +45,10 @@
       flex-direction: column;
       justify-content: center;
       h1 {
-        font-size: 51px;
+        @include h1-large;
         font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #212121;
-        line-height: 76px;
         margin-bottom: 20px;
         z-index: 1;
       }
@@ -109,7 +122,7 @@
     }
     .row {
       position: relative;
-      padding: 60px 0;
+      padding: 120px 0;
       aside {
         display: flex;
         flex-direction: column;
@@ -196,8 +209,7 @@
   }
   @media (max-width: 767px) {
     h1.title {
-      font-size: 32px;
-      line-height: 40px;
+      @include h1-mid;
       margin-bottom: 20px;
     }
     .platform-section,
@@ -205,8 +217,7 @@
     .service-section {
       aside {
         h1 {
-          font-size: 32px;
-          line-height: 40px;
+          @include h1-mid;
           margin-bottom: 20px;
         }
         h2 {
@@ -228,8 +239,7 @@
   }
   @media (max-width: 500px) {
     h1.title {
-      font-size: 24px;
-      line-height: 32px;
+      @include h1-small;
       margin-bottom: 10px;
       .sub {
         font-size: 14px;
@@ -252,8 +262,7 @@
       padding: 20px 0;
       aside {
         h1 {
-          font-size: 24px;
-          line-height: 32px;
+          @include h1-small;
           margin-bottom: 20px;
         }
         h2 {
