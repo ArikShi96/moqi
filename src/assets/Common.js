@@ -32,8 +32,16 @@ $(document).ready(() => {
     $("#zc__sdk__sys__btn").click();
   });
   // 弹出框
-  $(".tip-nav .trigger-popover").click(() => {
+  $(".tip-nav .trigger-popover").click((event) => {
+    event.stopPropagation();
     $(".popover-wrap").fadeToggle();
+  });
+  $(document).on("click", ":not(.popover-wrap)", () => {
+    $(".popover-wrap").fadeOut();
+    return;
+  });
+  $(".popover-wrap").click((event) => {
+    event.stopPropagation();
   });
   // 界面滚动初始化
   const sections = $("section.section");

@@ -80,6 +80,9 @@ li {
     &.black {
       display: none;
     }
+    &.brown {
+      display: none;
+    }
   }
   .navbar-wrap ul {
     flex-shrink: 0;
@@ -120,6 +123,9 @@ li {
     .navbar-wrap ul {
       color: #ffffff;
     }
+  }
+  &.transparent {
+    background-color: transparent;
   }
 }
 
