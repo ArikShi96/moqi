@@ -124,7 +124,7 @@
     .row.flex-center {
       justify-content: center;
       position: relative;
-      top: -150px;
+      top: -120px;
     }
     img {
       z-index: 1;
@@ -254,7 +254,7 @@
         @include color-text-small;
       }
       .row.flex-center {
-        top: -60px;
+        top: -40px;
       }
       .advantage-list {
         margin-top: -40px;

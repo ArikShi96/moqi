@@ -71,7 +71,7 @@
         position: absolute;
         width: 24px;
         height: auto;
-        left: 40%;
+        right: 365px;
         top: 34px;
       }
       input {
@@ -93,15 +93,17 @@
         line-height: 32px;
         padding: 28px 0;
         cursor: pointer;
+        border-left: 1px solid #cccccc;
         &.active {
           color: #ffffff;
           background: #2365eb;
+          border: none;
         }
       }
     }
     .table-wrap {
       padding-top: 40px;
-      .tale-header {
+      .table-header {
         font-size: 21px;
         font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
@@ -113,7 +115,7 @@
           padding-left: 5%;
         }
       }
-      .tale-content {
+      .table-content {
         .col-3 {
           padding: 20px 0;
           padding-left: 5%;
@@ -123,7 +125,7 @@
             font-family: SourceHanSansCN-Regular, SourceHanSansCN;
             font-weight: 400;
             color: #212121;
-            line-height: 14px;
+            line-height: 18px;
           }
           a {
             color: #2365eb;
@@ -156,9 +158,21 @@
             height: 16px;
             width: auto;
           }
-          &.last-page {
-            img {
-              // transform: rotate(180deg);
+          &.last-page,
+          &.next-page {
+            .disabled-img {
+              display: none;
+            }
+            .enabled-img {
+              display: inline-block;
+            }
+            &.disabled {
+              .disabled-img {
+                display: inline-block;
+              }
+              .enabled-img {
+                display: none;
+              }
             }
           }
         }
@@ -182,6 +196,24 @@
       @include h2-mid;
       margin-bottom: 10px;
     }
+    p {
+      font-size: 18px;
+    }
+    .job-section .search-form {
+      .search-icon {
+        right: 200px;
+        top: 14px;
+      }
+      input {
+        font-size: 16px;
+        padding-left: 7%;
+      }
+      .search-tab {
+        padding: 8px 0;
+        font-size: 16px;
+        width: 100px;
+      }
+    }
   }
   @media (max-width: 500px) {
     h1.title {
@@ -191,6 +223,25 @@
     h2.title {
       @include h2-small;
       margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+    }
+    .bg-section h1 {
+      top: 80px;
+    }
+    .job-section .search-form {
+      .search-icon {
+        top: 14px;
+      }
+      input {
+        font-size: 14px;
+        padding-left: 5%;
+      }
+      .search-tab {
+        padding: 8px 0;
+        font-size: 14px;
+      }
     }
   }
 }

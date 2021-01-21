@@ -7,14 +7,15 @@
   <body>
     <main class="about-page">
       #include("../../assets/html/header.html")
+      #include("../../assets/html/scroll.html")
       <!-- 背景图 -->
-      <section class="bg-section">
+      <section class="section bg-section" data-section="墨奇使命">
         <p>墨奇使命</p>
         <h1 class="title white">探寻智能本身的机理<br />并以创新改变世界</h1>
         <img src="../../assets/img/about/about-bg-1.png" alt="" />
       </section>
       <!-- 公司简介 -->
-      <section class="info-section">
+      <section class="section info-section" data-section="公司简介">
         <img src="../../assets/img/about/about-bg-2.png" alt="" />
         <div class="text-wrap">
           <div class="container">
@@ -40,7 +41,7 @@
         </div>
       </section>
       <!-- 创始团队 -->
-      <section class="bg-gray team-section">
+      <section class="section bg-gray team-section" data-section="创始团队">
         <div class="container">
           <h1 class="title">创始团队</h1>
           <div class="row">
@@ -83,75 +84,83 @@
         </div>
       </section>
       <!-- 发展历程 -->
-      <section class="development-section">
+      <section class="section development-section" data-section="发展历程">
         <div class="container-fluid">
           <img src="../../assets/img/about/about-bg-4.png" alt="" />
+          <div class="text-wrap">
+            <div class="row">
+              <div class="col-3">
+                <h1 class="title">2015</h1>
+                <h2 class="title">发展历程</h2>
+                <div class="color-text">2015</div>
+                <p>
+                  将无监督机器学习技术应用于生物特征识别领域，推出全球领先的海量高速高精度指纹比对系统
+                </p>
+              </div>
+              <div class="col-3">
+                <h1 class="title">2016</h1>
+                <h2 class="title">发展历程</h2>
+                <div class="color-text">2016</div>
+                <p>
+                  将无监督机器学习技术应用于生物特征识别领域，推出全球领先的海量高速高精度指纹比对系统
+                </p>
+              </div>
+              <div class="col-3">
+                <h1 class="title">2017</h1>
+                <h2 class="title">发展历程</h2>
+                <div class="color-text">2017</div>
+                <p>
+                  将无监督机器学习技术应用于生物特征识别领域，推出全球领先的海量高速高精度指纹比对系统
+                </p>
+              </div>
+              <div class="col-3">
+                <h1 class="title">2018</h1>
+                <h2 class="title">发展历程</h2>
+                <div class="color-text">2018</div>
+                <p>
+                  将无监督机器学习技术应用于生物特征识别领域，推出全球领先的海量高速高精度指纹比对系统
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <!-- 墨奇新闻 -->
-      <section class="bg-purple news-section">
+      <section class="section bg-purple news-section" data-section="墨奇新闻">
         <div class="container">
           <h1 class="title">墨奇新闻</h1>
           <div class="row">
             <div class="col-12 col-md-6">
               <article class="news">
-                <img
-                  class="news-img"
-                  src="../../assets/img/about/about-bg-1.png"
-                  alt=""
-                />
-                <div class="news-content">
-                  <h1 class="title">
-                    汤林鹏：秒级20亿，海量高速高精度海量图像比对
-                  </h1>
-                  <p class="content">
-                    利用多尺度的图像表示、高速异构的比对框架和分布式的并行处理，实现了20
-                    亿指纹秒级精准搜索的现实需求
-                  </p>
-                  <div class="enter-wrap">
-                    <img
-                      class="finger"
-                      src="../../assets/img/home/home-service-finger.png"
-                      alt=""
-                    />
-                    <p>进入</p>
-                    <img
-                      class="arrow"
-                      src="../../assets/img/about/about-point-right.png"
-                      alt=""
-                    />
-                  </div>
+                <div class="enter-wrap">
+                  <img
+                    class="finger"
+                    src="../../assets/img/home/home-service-finger.png"
+                    alt=""
+                  />
+                  <p>进入</p>
+                  <img
+                    class="arrow"
+                    src="../../assets/img/about/about-point-right.png"
+                    alt=""
+                  />
                 </div>
               </article>
             </div>
             <div class="col-12 col-md-6">
               <article class="news">
-                <img
-                  class="news-img"
-                  src="../../assets/img/about/about-bg-1.png"
-                  alt=""
-                />
-                <div class="news-content">
-                  <h1 class="title">
-                    汤林鹏：秒级20亿，海量高速高精度海量图像比对
-                  </h1>
-                  <p class="content">
-                    利用多尺度的图像表示、高速异构的比对框架和分布式的并行处理，实现了20
-                    亿指纹秒级精准搜索的现实需求
-                  </p>
-                  <div class="enter-wrap">
-                    <img
-                      class="finger"
-                      src="../../assets/img/home/home-service-finger.png"
-                      alt=""
-                    />
-                    <p>进入</p>
-                    <img
-                      class="arrow"
-                      src="../../assets/img/about/about-point-right.png"
-                      alt=""
-                    />
-                  </div>
+                <div class="enter-wrap">
+                  <img
+                    class="finger"
+                    src="../../assets/img/home/home-service-finger.png"
+                    alt=""
+                  />
+                  <p>进入</p>
+                  <img
+                    class="arrow"
+                    src="../../assets/img/about/about-point-right.png"
+                    alt=""
+                  />
                 </div>
               </article>
             </div>
@@ -159,94 +168,52 @@
           <div class="row">
             <div class="col-12 col-md-4">
               <article class="news">
-                <img
-                  class="news-img"
-                  src="../../assets/img/about/about-bg-1.png"
-                  alt=""
-                />
-                <div class="news-content">
-                  <h1 class="title">
-                    汤林鹏：秒级20亿，海量高速高精度海量图像比对
-                  </h1>
-                  <p class="content">
-                    利用多尺度的图像表示、高速异构的比对框架和分布式的并行处理，实现了20
-                    亿指纹秒级精准搜索的现实需求
-                  </p>
-                  <div class="enter-wrap">
-                    <img
-                      class="finger"
-                      src="../../assets/img/home/home-service-finger.png"
-                      alt=""
-                    />
-                    <p>进入</p>
-                    <img
-                      class="arrow"
-                      src="../../assets/img/about/about-point-right.png"
-                      alt=""
-                    />
-                  </div>
+                <div class="enter-wrap">
+                  <img
+                    class="finger"
+                    src="../../assets/img/home/home-service-finger.png"
+                    alt=""
+                  />
+                  <p>进入</p>
+                  <img
+                    class="arrow"
+                    src="../../assets/img/about/about-point-right.png"
+                    alt=""
+                  />
                 </div>
               </article>
             </div>
             <div class="col-12 col-md-4">
               <article class="news">
-                <img
-                  class="news-img"
-                  src="../../assets/img/about/about-bg-1.png"
-                  alt=""
-                />
-                <div class="news-content">
-                  <h1 class="title">
-                    汤林鹏：秒级20亿，海量高速高精度海量图像比对
-                  </h1>
-                  <p class="content">
-                    利用多尺度的图像表示、高速异构的比对框架和分布式的并行处理，实现了20
-                    亿指纹秒级精准搜索的现实需求
-                  </p>
-                  <div class="enter-wrap">
-                    <img
-                      class="finger"
-                      src="../../assets/img/home/home-service-finger.png"
-                      alt=""
-                    />
-                    <p>进入</p>
-                    <img
-                      class="arrow"
-                      src="../../assets/img/about/about-point-right.png"
-                      alt=""
-                    />
-                  </div>
+                <div class="enter-wrap">
+                  <img
+                    class="finger"
+                    src="../../assets/img/home/home-service-finger.png"
+                    alt=""
+                  />
+                  <p>进入</p>
+                  <img
+                    class="arrow"
+                    src="../../assets/img/about/about-point-right.png"
+                    alt=""
+                  />
                 </div>
               </article>
             </div>
             <div class="col-12 col-md-4">
               <article class="news">
-                <img
-                  class="news-img"
-                  src="../../assets/img/about/about-bg-1.png"
-                  alt=""
-                />
-                <div class="news-content">
-                  <h1 class="title">
-                    汤林鹏：秒级20亿，海量高速高精度海量图像比对
-                  </h1>
-                  <p class="content">
-                    利用多尺度的图像表示、高速异构的比对框架和分布式的并行处理，实现了20
-                    亿指纹秒级精准搜索的现实需求
-                  </p>
-                  <div class="enter-wrap">
-                    <img
-                      class="finger"
-                      src="../../assets/img/home/home-service-finger.png"
-                      alt=""
-                    />
-                    <p>进入</p>
-                    <img
-                      class="arrow"
-                      src="../../assets/img/about/about-point-right.png"
-                      alt=""
-                    />
-                  </div>
+                <div class="enter-wrap">
+                  <img
+                    class="finger"
+                    src="../../assets/img/home/home-service-finger.png"
+                    alt=""
+                  />
+                  <p>进入</p>
+                  <img
+                    class="arrow"
+                    src="../../assets/img/about/about-point-right.png"
+                    alt=""
+                  />
                 </div>
               </article>
             </div>
@@ -254,7 +221,7 @@
         </div>
       </section>
       <!-- 联系我们 -->
-      <section class="contact-section">
+      <section class="section contact-section" data-section="联系我们">
         <div class="container">
           <h1 class="title">联系我们</h1>
           <div class="row">

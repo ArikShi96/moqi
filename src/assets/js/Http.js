@@ -12,8 +12,9 @@
     }
  }).post();
  */
+// 如果不new一个新对象，第一次请求未完成紧接着第二次请求的话参数会污染
 window.Http = function (opts) {
-  return new JqueryAjax(opts); // 如果不new一个新对象，第一次请求未完成紧接着第二次请求的话参数会污染
+  return new JqueryAjax(opts);
 };
 
 function JqueryAjax(opts) {
@@ -94,3 +95,14 @@ JqueryAjax.prototype = {
     --this.requestCount === 0 && Helper.hideLoading();
   },
 };
+
+// 新闻
+// https://moqi.com.cn/api/news/actived/?limit=5&offset=0
+
+// 商务合作
+// https://moqi.com.cn/api/send_business_email/
+// { fullName: 姓名 email: 邮箱 phone: 联系电话 content: 内容 }
+
+// 招聘
+// https://api.mokahr.com/api-platform/v1/jobs/moqi?mode=social/campus
+// https://app.mokahr.com/apply/moqi/24494#/job/a444ef3a-660b-40d6-b0c8-cca7e539657f

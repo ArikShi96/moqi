@@ -125,3 +125,15 @@ window.Helper = {
     });
   },
 };
+
+window.openVideo = (url) => {
+  window.open(
+    url,
+    "Video",
+    `width=${window.innerWidth / 2},height=${
+      (window.innerWidth / 2) * 0.56
+    },top=200,left=${
+      window.innerWidth / 4
+    },menubar=no,toolbar=no, status=no,scrollbars=yes`
+  );
+};

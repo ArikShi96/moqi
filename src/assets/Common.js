@@ -33,12 +33,10 @@ $(document).ready(() => {
   });
   // product 导航
   $("header.header .toggle-product").click(() => {
-    if (window.innerWidth <= 767) {
-      if ($("header.header .product-nav-header").is(":visible")) {
-        $("header.header").addClass("transparent");
-      } else {
-        $("header.header").removeClass("transparent");
-      }
+    if ($("header.header .product-nav-header").is(":visible")) {
+      // $("header.header").addClass("transparent");
+    } else {
+      $("header.header").removeClass("transparent");
     }
     $("header.header .product-nav-header").slideToggle();
   });
@@ -72,7 +70,7 @@ $(document).ready(() => {
           $("section.section")
             .eq(index)
             .animatescroll({
-              padding: window.innerWidth < 500 ? 60 : 0,
+              padding: window.innerWidth < 500 ? 65 : 60,
             });
           $(li).addClass("active");
         }
@@ -90,7 +88,7 @@ $(document).ready(() => {
         });
         $(".scroll-nav-wrap li").removeClass("active");
         $(".scroll-nav-wrap li").eq(hashIndex).addClass("active");
-      }, 50)
+      }, 20)
     );
   }
 });

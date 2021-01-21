@@ -22,15 +22,7 @@ $(document).ready(() => {
     }
   }, 500);
   $(".advantage-section .view-video").click(() => {
-    window.open(
-      "./file/video.mp4",
-      "Video",
-      `width=${window.innerWidth / 2},height=${
-        (window.innerWidth / 2) * 0.56
-      },top=200,left=${
-        window.innerWidth / 4
-      },menubar=no,toolbar=no, status=no,scrollbars=yes`
-    );
+    window.openVideo("./file/video.mp4");
   });
   // 轮播图
   Array.from($(".carousel-wrap li")).forEach((li, index) => {

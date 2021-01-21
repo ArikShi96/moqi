@@ -61,6 +61,18 @@ if (process.env.NODE_ENV === "prod") {
         warnings: false,
         errors: true,
       },
+      proxy: {
+        "/api-platform": {
+          target: "https://api.mokahr.com",
+          changeOrigin: true,
+          secure: false,
+        },
+        "/api": {
+          target: "https://moqi.com.cn",
+          changeOrigin: true,
+          secure: false,
+        },
+      },
     },
   });
 }
