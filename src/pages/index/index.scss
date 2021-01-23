@@ -169,6 +169,7 @@
         font-weight: 400;
         color: #000000;
         line-height: 21px;
+        flex-shrink: 0;
       }
     }
   }
@@ -178,7 +179,7 @@
     h2 {
       text-align: center;
     }
-    .container {
+    .row {
       margin-top: 40px;
     }
     .advantage-wrap {

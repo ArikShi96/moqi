@@ -39,7 +39,9 @@ $(document).ready(() => {
     total = 0;
     window
       .Http({
-        url: `/api-platform/v1/jobs/moqi?mode=${mode}`,
+        url: `${
+          window.isDev ? "" : "https://api.mokahr.com"
+        }/api-platform/v1/jobs/moqi?mode=${mode}`,
         type: "GET",
         data: {},
         isDefaultApiRequest: false,

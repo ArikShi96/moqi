@@ -4,6 +4,7 @@ import "bootstrap/scss/bootstrap.scss";
 import "font-awesome/scss/font-awesome.scss";
 
 import "./css/app.scss";
+import "./css/bootstrap-msg.css";
 import "./js/Constants";
 import "./js/Utils";
 import "./js/Helper";
@@ -11,6 +12,7 @@ import "./js/Http";
 import "./js/libs/Scroll";
 import "./js/libs/Polyfill";
 require("./js/libs/animatescroll.min");
+import Msg from "./js/libs/bootstrap-msg";
 
 function debounce(func, time) {
   let timer = null;
@@ -51,6 +53,56 @@ $(document).ready(() => {
   });
   $(".popover-wrap").click((event) => {
     event.stopPropagation();
+  });
+  $(".popover-wrap .btn-primary").click((event) => {
+    const data = $(".popover-wrap form")
+      .serializeArray()
+      .reduce((prev, current) => {
+        prev[current.name] = current.value;
+        return prev;
+      }, {});
+    if (!data.fullName) {
+      Msg.error("请输入您的姓名", 1000);
+      return;
+    }
+    if (!data.email) {
+      Msg.error("请输入您的邮箱", 1000);
+      return;
+    }
+    const emailReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    if (!emailReg.text(data.email)) {
+      Msg.error("邮箱输入有误", 1000);
+      return;
+    }
+    if (!data.phone) {
+      Msg.error("请输入您的电话", 1000);
+      return;
+    }
+    if (!/^1[3456789]d{9}$/.test(data.phone)) {
+      Msg.error("手机号输入有误", 1000);
+      return;
+    }
+    if (!data.content) {
+      Msg.error("请输入您的需求", 1000);
+      return;
+    }
+    window
+      .Http({
+        url: `${
+          window.isDev ? "" : "https://moqi.com.cn"
+        }/api/send_business_email/`,
+        type: "POST",
+        data,
+        isDefaultApiRequest: false,
+        success: (data) => {
+          Msg.success("提交成功", 1000);
+          $(".popover-wrap").fadeOut();
+        },
+        error: () => {
+          Msg.error("提交失败", 1000);
+        },
+      })
+      .post();
   });
   // 界面滚动初始化
   const sections = $("section.section");
