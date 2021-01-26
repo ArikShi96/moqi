@@ -5,6 +5,18 @@ import "./index.html";
 // 绑定事件
 $(document).ready(() => {
   $(".header").addClass("black");
+  // 滚动事件
+  $(window).scroll(() => {
+    // header 是否透明
+    // if ($(".product-header")[0].getBoundingClientRect().top < 0) {
+    //   $(".product-header").addClass("fixed");
+    // } else {
+    //   $(".product-header").removeClass("fixed");
+    // }
+    // 侧边滚动条颜色
+  });
+  // 导航条选中
+  $(".navbar-wrap li a").eq(2).addClass("active");
   // 视频
   let videoIntervalEvent = window.setInterval(() => {
     if (

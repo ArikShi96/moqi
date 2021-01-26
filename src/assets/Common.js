@@ -5,6 +5,7 @@ import "font-awesome/scss/font-awesome.scss";
 
 import "./css/app.scss";
 import "./css/bootstrap-msg.css";
+import "./css/video-js.min.css";
 import "./js/Constants";
 import "./js/Utils";
 import "./js/Helper";
@@ -13,6 +14,9 @@ import "./js/libs/Scroll";
 import "./js/libs/Polyfill";
 require("./js/libs/animatescroll.min");
 import Msg from "./js/libs/bootstrap-msg";
+import VideoJs from "./js/libs/video.min";
+
+window.VideoJs = VideoJs;
 
 function debounce(func, time) {
   let timer = null;
@@ -34,18 +38,40 @@ $(document).ready(() => {
     $("#zc__sdk__sys__btn").click();
   });
   // product 导航
-  $("header.header .toggle-product").click(() => {
+  $("header.header .toggle-product").hover(() => {
     if ($("header.header .product-nav-header").is(":visible")) {
-      // $("header.header").addClass("transparent");
-    } else {
-      $("header.header").removeClass("transparent");
+      return;
     }
-    $("header.header .product-nav-header").slideToggle();
+    $("header.header .product-nav-header").slideDown();
+    const breakSection = $("section[data-break='black']");
+    let color = "white";
+    if (
+      breakSection &&
+      breakSection.length &&
+      breakSection[0].getBoundingClientRect().top < 188
+    ) {
+      color = "black";
+    }
+    if (breakSection && !breakSection.length) {
+      color = "black";
+    }
+    const initClassName = $("header.header").attr("class");
+    $("header.header")
+      .removeClass("white")
+      .removeClass("black")
+      .addClass(color);
+    $("header.header").mouseleave(() => {
+      if (!$("header.header .product-nav-header").is(":visible")) {
+        return;
+      }
+      $("header.header .product-nav-header").slideUp();
+      $("header.header").attr("class", initClassName);
+    });
   });
   // 弹出框
-  $(".tip-nav .trigger-popover").click((event) => {
+  $(".tip-nav .trigger-popover").hover((event) => {
     event.stopPropagation();
-    $(".popover-wrap").fadeToggle();
+    $(".popover-wrap").fadeIn();
   });
   $(document).on("click", ":not(.popover-wrap)", () => {
     $(".popover-wrap").fadeOut();

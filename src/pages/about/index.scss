@@ -208,8 +208,12 @@
     padding: 0;
     .container-fluid {
       padding: 0;
+      overflow: hidden;
       img {
         z-index: 0;
+        width: 120vw;
+        height: auto;
+        transition: all 1s ease;
       }
       .text-wrap {
         position: absolute;
@@ -222,14 +226,16 @@
         .row {
           height: 100%;
           margin: 0;
-          .col-3 {
+          .col-3,
+          .col-2,
+          .col-4 {
             height: 100%;
             display: flex;
             flex-direction: column;
             padding: 40px 32px;
             border-right: 1px solid rgba(255, 255, 255, 0.3);
             justify-content: flex-end;
-            &:hover {
+            &.active {
               justify-content: space-between;
               h1.title {
                 display: none;
@@ -247,6 +253,7 @@
             color: rgba(255, 255, 255, 0.3);
             line-height: 140px;
             letter-spacing: 2px;
+            cursor: pointer;
           }
           h2.title {
             display: none;
@@ -462,7 +469,9 @@
     }
     .development-section {
       .container-fluid .text-wrap .row {
-        .col-3 {
+        .col-3,
+        .col-2,
+        .col-4 {
           padding: 20px 16px;
         }
         h1.title {
@@ -525,7 +534,9 @@
     }
     .development-section {
       .container-fluid .text-wrap .row {
-        .col-3 {
+        .col-3,
+        .col-2,
+        .col-4 {
           padding: 20px 16px;
         }
         h1.title {
@@ -604,7 +615,9 @@
     }
     .development-section {
       .container-fluid .text-wrap .row {
-        .col-3 {
+        .col-3,
+        .col-2,
+        .col-4 {
           padding: 10px 8px;
         }
         h1.title {

@@ -11,7 +11,15 @@ body {
     box-sizing: border-box;
   }
 }
-
+#global-video {
+  position: fixed;
+  top: 160px;
+  left: 25vw;
+  height: 30vw;
+  width: 50vw;
+  z-index: 99999;
+  opacity: 1 !important;
+}
 h1,
 h2,
 h3,
@@ -57,7 +65,6 @@ li {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  min-height: 68px;
   position: relative;
   background-color: transparent;
   position: fixed;
@@ -95,23 +102,29 @@ li {
       display: none;
     }
   }
-  .navbar-wrap ul {
-    flex-shrink: 0;
-    font-size: 12px;
-    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
-    font-weight: 400;
-    color: #212121;
-    line-height: 18px;
-    display: inline-flex;
-    li {
-      margin-right: 40px;
-      cursor: pointer;
-      a {
-        color: inherit;
+  .navbar-wrap {
+    ul {
+      flex-shrink: 0;
+      font-size: 12px;
+      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+      font-weight: 400;
+      color: #212121;
+      line-height: 18px;
+      display: inline-flex;
+      li {
+        margin-right: 40px;
+        cursor: pointer;
+        a {
+          color: inherit;
+          padding: 10px 0;
+          &.active {
+            border-bottom: 2px solid #212121;
+          }
+        }
       }
     }
   }
-  &.black {
+  &.black:not(.white) {
     background-color: #000000;
     .logo-wrap {
       display: none;
@@ -121,10 +134,12 @@ li {
     }
     .navbar-wrap ul {
       color: #ffffff;
+      a.active {
+        border-bottom: 2px solid #ffffff;
+      }
     }
   }
-  &.brown {
-    background-color: #40424f;
+  &.brown:not(.white):not(.black) {
     .logo-wrap {
       display: none;
       &.brown {
@@ -133,13 +148,16 @@ li {
     }
     .navbar-wrap ul {
       color: #ffffff;
+      a.active {
+        border-bottom: 2px solid #ffffff;
+      }
     }
   }
-  &.job {
-    background-color: #b2c3ce;
-  }
-  &.transparent {
+  &.transparent:not(.white) {
     background-color: transparent;
+  }
+  &.white {
+    background-color: #ffffff;
   }
   .product-nav-header {
     display: flex;
@@ -167,7 +185,7 @@ li {
 }
 
 .footer {
-  padding: 80px 180px;
+  padding: 80px 0;
   background: linear-gradient(180deg, #e6e9ec 0%, #ffffff 100%);
   h1 {
     font-size: 12px;
@@ -193,6 +211,7 @@ li {
     flex-wrap: wrap;
     border-bottom: 1px #cccccc solid;
     padding: 10px 0;
+    margin: 0;
     margin-bottom: 18px;
     .logo-wrap {
       height: 44px;
@@ -272,6 +291,7 @@ li {
     font-weight: 400;
     color: #ababab;
     line-height: 16px;
+    padding: 0 15px;
     & > * {
       margin: 0 36px 10px 0;
       flex-shrink: 0;
@@ -301,7 +321,6 @@ li {
     cursor: pointer;
   }
   .tip-nav {
-    display: none;
     // background-color: rgba(247, 249, 250, 0.3);
     background-color: #e9ecee;
     border-radius: 2px;
@@ -435,6 +454,7 @@ li {
   }
   .header {
     padding: 0;
+    padding-bottom: 22px;
     .logo-wrap {
       position: static;
       width: 100%;

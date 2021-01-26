@@ -12,6 +12,13 @@
     height: auto;
     outline: none;
   }
+  .header.black {
+    position: absolute;
+    width: 100%;
+    &.relative {
+      position: relative;
+    }
+  }
   .p0 {
     padding: 0;
   }
@@ -77,11 +84,12 @@
     align-items: center;
     justify-content: space-between;
     padding: 16px 28px;
-    // position: fixed;
-    // top: 68px;
-    // left: 0;
-    // width: 100vw;
-    // z-index: 10;
+    // TODO
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
     h1 {
       font-size: 12px;
       font-family: SourceHanSansCN-Regular, SourceHanSansCN;
@@ -178,7 +186,7 @@
       padding: 10% 35% 0;
       .img-wrap img {
         position: relative;
-        top: 30px;
+        top: 10vw;
       }
       .carousel-indicators {
         visibility: hidden;
@@ -448,9 +456,18 @@
       overflow-x: scroll;
       overflow-y: hidden;
       padding-bottom: 20px;
+      margin: 0;
       // & > div {
       //   padding-left: 0;
       // }
+      .col-6 {
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
     }
     .flex-col {
       display: flex;
@@ -462,6 +479,7 @@
     }
     .image-wrap {
       position: relative;
+      overflow: hidden;
       h2.title {
         position: absolute;
         bottom: 20px;
@@ -481,9 +499,11 @@
         bottom: 20px;
         left: 40px;
       }
-      &:hover {
-        transform: scale(1.1);
-        transition: all 500ms;
+      img {
+        &:hover {
+          transform: scale(1.1);
+          transition: all 500ms;
+        }
       }
     }
     h1 {
@@ -580,9 +600,9 @@
       .logo-wrap img {
         left: 20px;
       }
-      .scroll-wrap .img-wrap img {
-        top: 16px;
-      }
+      // .scroll-wrap .img-wrap img {
+      //   top: 16px;
+      // }
     }
     .lighting-design {
       h1 img {

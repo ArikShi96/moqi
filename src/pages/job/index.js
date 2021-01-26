@@ -4,6 +4,8 @@ import "./index.html";
 
 // 绑定事件
 $(document).ready(() => {
+  // 导航条选中
+  $(".navbar-wrap li a").eq(4).addClass("active");
   // 搜索内容
   let mode = "social";
   let currentPage = 1;
@@ -16,10 +18,11 @@ $(document).ready(() => {
   $("header.header").addClass("job").addClass("transparent");
   // 滚动事件
   $(window).scroll(() => {
-    if ($(".bg-section h1.title")[0].getBoundingClientRect().top > 68) {
-      $("header.header").addClass("transparent");
+    // header 是否透明
+    if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
+      $("header.header").addClass("transparent").removeClass("white");
     } else {
-      $("header.header").removeClass("transparent");
+      $("header.header").removeClass("transparent").addClass("white");
     }
   });
   //

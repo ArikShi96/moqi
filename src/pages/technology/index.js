@@ -6,13 +6,15 @@ import "./index.html";
 $(document).ready(() => {
   $("header.header").addClass("black").addClass("transparent");
   $(".scroll-nav-wrap").addClass("white");
+  // 导航条选中
+  $(".navbar-wrap li a").eq(1).addClass("active");
   // 滚动事件
   $(window).scroll(() => {
     // header 是否透明
-    if ($(".bg-section h1.title")[0].getBoundingClientRect().top > 68) {
-      $("header.header").addClass("transparent");
+    if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
+      $("header.header").addClass("transparent").removeClass("white");
     } else {
-      $("header.header").removeClass("transparent");
+      $("header.header").removeClass("transparent").addClass("white");
     }
     // 侧边滚动条颜色
     if (
