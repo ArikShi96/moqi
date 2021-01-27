@@ -35,6 +35,6 @@ $(document).ready(() => {
         .animatescroll({
           padding: window.innerWidth < 500 ? 65 : 60,
         });
-    }, 1000);
+    }, 0);
   }
 });

@@ -1,3 +1,4 @@
+@import "../../assets/css/animation.scss";
 .technology-page {
   @mixin h1-large {
     font-size: 51px;
@@ -125,6 +126,9 @@
       justify-content: center;
       position: relative;
       top: -120px;
+      .hidden-img {
+        visibility: hidden;
+      }
     }
     img {
       z-index: 1;
@@ -132,7 +136,7 @@
     .advantage-list {
       display: flex;
       flex-wrap: wrap;
-      margin-top: -40px;
+      margin-top: -20px;
       li {
         display: flex;
         flex-direction: column;
@@ -257,7 +261,7 @@
         top: -40px;
       }
       .advantage-list {
-        margin-top: -40px;
+        margin-top: 40px;
         li p {
           font-size: 14px;
         }

@@ -1,2 +1,1 @@
-window.API = "/";
-window.TEST = false;
+window.isDev = window.location.hostname === "localhost";

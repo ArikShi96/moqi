@@ -14,9 +14,9 @@ import "./js/libs/Scroll";
 import "./js/libs/Polyfill";
 require("./js/libs/animatescroll.min");
 import Msg from "./js/libs/bootstrap-msg";
-// import VideoJs from "./js/libs/video.min";
+import VideoJs from "./js/libs/video.min";
 
-// window.VideoJs = VideoJs;
+window.VideoJs = VideoJs;
 
 function debounce(func, time) {
   let timer = null;

@@ -2,10 +2,10 @@
 import "../../assets/Common";
 import "./index.scss";
 import "./index.html";
+import "jscroll"; // jquery.jscroll.js
 
 // 绑定事件
 $(document).ready(() => {
-  let currentPage = 1;
   $("header.header").addClass("black").addClass("transparent");
   $(".scroll-nav-wrap").addClass("white");
   // 导航条选中
@@ -27,129 +27,71 @@ $(document).ready(() => {
   //   }
   // }, 500);
   // 创始人左右滚动
-  (() => {
-    let totalWidth = 0;
-    Array.from($(".team-section .row .col-12")).forEach((el) => {
-      totalWidth += el.offsetWidth;
-    });
-    const totalPage = Math.ceil(
-      totalWidth / $(".team-section .row")[0].offsetWidth
-    );
-    $(".team-section .scroll-wrap .scroll-bar.full").width(
-      (1 / totalPage) * 100
-    );
-  })();
-  $(".team-section .left-icon").click(() => {
-    if (currentPage === 1) {
-      return;
-    }
-    currentPage -= 1;
-    $(".team-section .row").animate(
-      {
-        scrollLeft: (currentPage - 1) * $(".team-section .row")[0].offsetWidth,
-      },
-      500
-    );
-    if (currentPage === 1) {
-      $(".team-section .left-icon").addClass("disabled");
-    } else {
-      $(".team-section .left-icon").removeClass("disabled");
-    }
-    $(".team-section .right-icon").removeClass("disabled");
-    // 滚动条位置
-    let totalWidth = 0;
-    Array.from($(".team-section .row .col-12")).forEach((el) => {
-      totalWidth += el.offsetWidth;
-    });
-    const totalPage = Math.ceil(
-      totalWidth / $(".team-section .row")[0].offsetWidth
-    );
+  function calculateScrollBar(position) {
     $(".team-section .scroll-wrap .scroll-bar.full")
-      .width((1 / totalPage) * 100)
-      .css("left", `${(currentPage - 1) * (1 / totalPage) * 100}px`);
-  });
-
-  // 创业团队向右点击
-  let teamPostion = 0;
-  $(".team-section .right-icon").click(() => {
-    const targetPostion = (teamPostion + 1) % 6;
+      .width((1 / 6) * 100)
+      .css("left", `${(position / 6) * 100}px`);
+  }
+  // 创业团队向左点击
+  let teamPosition = 0;
+  calculateScrollBar(0);
+  $(".team-section .left-icon").click(() => {
+    let targetPosition = (teamPosition - 1) % 6;
+    while (targetPosition < 0) {
+      targetPosition += 6;
+    }
+    teamPosition = targetPosition - 1;
     Array.from($(".team-section .row .col-12")).forEach((el, i) => {
-      let lastLeft = (i - teamPostion) * 25;
-      let targetLeft = (i - targetPostion) * 25;
+      let lastLeft = (i - teamPosition) * 25; // 0
+      let targetLeft = (i - targetPosition) * 25; // 1
 
       if (lastLeft === -25 || lastLeft === 125) {
-        el.style.transition = '0ms';
-        el.style.left = '100%';
+        el.style.transition = "500ms";
+        el.style.left = "100%";
       } else if (lastLeft === 0) {
-        el.style.transition = '500ms';
-        el.style.left = '-25%';
+        el.style.transition = "0ms";
+        el.style.left = "-25%";
+      } else if (targetLeft === 125) {
+        el.style.transition = "0ms";
+        el.style.left = "-25%";
       } else if (targetLeft >= -25) {
-        el.style.transition = '500ms';
+        el.style.transition = "500ms";
         el.style.left = `${targetLeft}%`;
       } else {
-        el.style.transition = '500ms';
+        el.style.transition = "500ms";
         el.style.left = `${lastLeft + 125}%`;
       }
     });
-    teamPostion = targetPostion;
-
-    // const totalPage = Math.ceil(
-    //   totalWidth / $(".team-section .row")[0].offsetWidth
-    // );
-    // if (currentPage === totalPage) {
-    //   return;
-    // }
-    // currentPage += 1;
-    // $(".team-section .row").animate(
-    //   {
-    //     scrollLeft:
-    //       currentPage === totalPage && totalPage === 2
-    //         ? ((currentPage - 1) * $(".team-section .row")[0].offsetWidth * 2) /
-    //           3
-    //         : (currentPage - 1) * $(".team-section .row")[0].offsetWidth,
-    //   },
-    //   500
-    // );
-    // if (currentPage === totalPage) {
-    //   $(".team-section .right-icon").addClass("disabled");
-    // } else {
-    //   $(".team-section .right-icon").removeClass("disabled");
-    // }
-    // $(".team-section .left-icon").removeClass("disabled");
-    // // 滚动条位置
-    // $(".team-section .scroll-wrap .scroll-bar.full")
-    //   .width((1 / totalPage) * 100)
-    //   .css("left", `${(currentPage - 1) * (1 / totalPage) * 100}px`);
+    teamPosition = targetPosition;
+    calculateScrollBar(teamPosition);
   });
-  // window.setInterval(() => {
-  //   $(".team-section .right-icon").click();
-  // }, 3000);
-  window.addEventListener(
-    "resize",
-    () => {
-      $(".team-section .row").animate(
-        {
-          scrollLeft: 0,
-        },
-        0
-      );
-      currentPage = 1;
-      $(".team-section .left-icon").addClass("disabled");
-      $(".team-section .right-icon").removeClass("disabled");
-      // 滚动条位置
-      let totalWidth = 0;
-      Array.from($(".team-section .row .col-12")).forEach((el) => {
-        totalWidth += el.offsetWidth;
-      });
-      const totalPage = Math.ceil(
-        totalWidth / $(".team-section .row")[0].offsetWidth
-      );
-      $(".team-section .scroll-wrap .scroll-bar.full")
-        .width((1 / totalPage) * 100)
-        .css("left", "0");
-    },
-    false
-  );
+  // 创业团队向右点击
+  $(".team-section .right-icon").click(() => {
+    const targetPosition = (teamPosition + 1) % 6;
+    Array.from($(".team-section .row .col-12")).forEach((el, i) => {
+      let lastLeft = (i - teamPosition) * 25;
+      let targetLeft = (i - targetPosition) * 25;
+
+      if (lastLeft === -25 || lastLeft === 125) {
+        el.style.transition = "0ms";
+        el.style.left = "100%";
+      } else if (lastLeft === 0) {
+        el.style.transition = "500ms";
+        el.style.left = "-25%";
+      } else if (targetLeft >= -25) {
+        el.style.transition = "500ms";
+        el.style.left = `${targetLeft}%`;
+      } else {
+        el.style.transition = "500ms";
+        el.style.left = `${lastLeft + 125}%`;
+      }
+    });
+    teamPosition = targetPosition;
+    calculateScrollBar(teamPosition);
+  });
+  window.setInterval(() => {
+    $(".team-section .right-icon").click();
+  }, 4000);
   // 滚动事件
   $(window).scroll(() => {
     // header 是否透明
@@ -169,7 +111,6 @@ $(document).ready(() => {
     }
   });
   // 获取news
-  window.isDev = true;
   window
     .Http({
       url: `https://139.198.15.135:8443/api/news/actived/?limit=5&offset=0`,
