@@ -68,38 +68,58 @@ $(document).ready(() => {
       .width((1 / totalPage) * 100)
       .css("left", `${(currentPage - 1) * (1 / totalPage) * 100}px`);
   });
+
+  // 创业团队向右点击
+  let teamPostion = 0;
   $(".team-section .right-icon").click(() => {
-    let totalWidth = 0;
-    Array.from($(".team-section .row .col-12")).forEach((el) => {
-      totalWidth += el.offsetWidth;
+    const targetPostion = (teamPostion + 1) % 6;
+    Array.from($(".team-section .row .col-12")).forEach((el, i) => {
+      let lastLeft = (i - teamPostion) * 25;
+      let targetLeft = (i - targetPostion) * 25;
+
+      if (lastLeft === -25 || lastLeft === 125) {
+        el.style.transition = '0ms';
+        el.style.left = '100%';
+      } else if (lastLeft === 0) {
+        el.style.transition = '500ms';
+        el.style.left = '-25%';
+      } else if (targetLeft >= -25) {
+        el.style.transition = '500ms';
+        el.style.left = `${targetLeft}%`;
+      } else {
+        el.style.transition = '500ms';
+        el.style.left = `${lastLeft + 125}%`;
+      }
     });
-    const totalPage = Math.ceil(
-      totalWidth / $(".team-section .row")[0].offsetWidth
-    );
-    if (currentPage === totalPage) {
-      return;
-    }
-    currentPage += 1;
-    $(".team-section .row").animate(
-      {
-        scrollLeft:
-          currentPage === totalPage && totalPage === 2
-            ? ((currentPage - 1) * $(".team-section .row")[0].offsetWidth * 2) /
-              3
-            : (currentPage - 1) * $(".team-section .row")[0].offsetWidth,
-      },
-      500
-    );
-    if (currentPage === totalPage) {
-      $(".team-section .right-icon").addClass("disabled");
-    } else {
-      $(".team-section .right-icon").removeClass("disabled");
-    }
-    $(".team-section .left-icon").removeClass("disabled");
-    // 滚动条位置
-    $(".team-section .scroll-wrap .scroll-bar.full")
-      .width((1 / totalPage) * 100)
-      .css("left", `${(currentPage - 1) * (1 / totalPage) * 100}px`);
+    teamPostion = targetPostion;
+
+    // const totalPage = Math.ceil(
+    //   totalWidth / $(".team-section .row")[0].offsetWidth
+    // );
+    // if (currentPage === totalPage) {
+    //   return;
+    // }
+    // currentPage += 1;
+    // $(".team-section .row").animate(
+    //   {
+    //     scrollLeft:
+    //       currentPage === totalPage && totalPage === 2
+    //         ? ((currentPage - 1) * $(".team-section .row")[0].offsetWidth * 2) /
+    //           3
+    //         : (currentPage - 1) * $(".team-section .row")[0].offsetWidth,
+    //   },
+    //   500
+    // );
+    // if (currentPage === totalPage) {
+    //   $(".team-section .right-icon").addClass("disabled");
+    // } else {
+    //   $(".team-section .right-icon").removeClass("disabled");
+    // }
+    // $(".team-section .left-icon").removeClass("disabled");
+    // // 滚动条位置
+    // $(".team-section .scroll-wrap .scroll-bar.full")
+    //   .width((1 / totalPage) * 100)
+    //   .css("left", `${(currentPage - 1) * (1 / totalPage) * 100}px`);
   });
   // window.setInterval(() => {
   //   $(".team-section .right-icon").click();
