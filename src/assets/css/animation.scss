@@ -97,6 +97,14 @@ $scaleKeyframe: (
   .animation-wrap-1 {
     width: 100%;
     position: relative;
+    & * {
+      animation-play-state: paused !important;
+    }
+    &:hover {
+      & * {
+        animation-play-state: running !important;
+      }
+    }
     .animation-1,
     .animation-2,
     .animation-3 {
@@ -153,6 +161,14 @@ $scaleKeyframe: (
   .animation-wrap-2 {
     width: 100%;
     position: relative;
+    & * {
+      animation-play-state: paused !important;
+    }
+    &:hover {
+      & * {
+        animation-play-state: running !important;
+      }
+    }
     .animation {
       position: absolute;
     }
@@ -255,6 +271,14 @@ $scaleKeyframe: (
     width: 100%;
     position: relative;
     background-color: #d9dee0;
+    & * {
+      animation-play-state: paused !important;
+    }
+    &:hover {
+      & * {
+        animation-play-state: running !important;
+      }
+    }
     .animation-1,
     .animation-2 {
       position: absolute;
@@ -291,12 +315,21 @@ $scaleKeyframe: (
   .animation-wrap-1 {
     width: 100%;
     position: relative;
+    & * {
+      animation-play-state: paused !important;
+    }
+    &:hover {
+      & * {
+        animation-play-state: running !important;
+      }
+    }
     .animation {
       position: absolute;
     }
     .animation-1 {
       width: 100%;
       height: auto;
+      bottom: -8%;
     }
     .animation-2 {
       width: 33.6%;
@@ -359,12 +392,21 @@ $scaleKeyframe: (
   .animation-wrap-2 {
     width: 100%;
     position: relative;
+    & * {
+      animation-play-state: paused !important;
+    }
+    &:hover {
+      & * {
+        animation-play-state: running !important;
+      }
+    }
     .animation {
       position: absolute;
     }
     .animation-1 {
       width: 100%;
       height: auto;
+      bottom: -8%;
     }
     .animation-2 {
       width: 2%;
@@ -464,12 +506,21 @@ $scaleKeyframe: (
   .animation-wrap-3 {
     width: 100%;
     position: relative;
+    & * {
+      animation-play-state: paused !important;
+    }
+    &:hover {
+      & * {
+        animation-play-state: running !important;
+      }
+    }
     .animation {
       position: absolute;
     }
     .animation-1 {
       width: 100%;
       height: auto;
+      bottom: -8%;
     }
     .animation-2 {
       width: 3.5%;
@@ -589,12 +640,21 @@ $scaleKeyframe: (
   .animation-wrap-4 {
     width: 100%;
     position: relative;
+    & * {
+      animation-play-state: paused !important;
+    }
+    &:hover {
+      & * {
+        animation-play-state: running !important;
+      }
+    }
     .animation {
       position: absolute;
     }
     .animation-1 {
       width: 100%;
       height: auto;
+      bottom: -8%;
     }
     .animation-2 {
       width: 28.8%;

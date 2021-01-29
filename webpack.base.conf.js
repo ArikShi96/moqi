@@ -76,10 +76,10 @@ module.exports = {
       {
         test: /\.(png|jpg|jpe?g|gif)$/,
         use: [
+          "image-webpack-loader",
           "url-loader?limit=4&name=[name]" +
             (isProd ? ".[hash:8]" : "") +
             ".[ext]&outputPath=img/",
-          "image-webpack-loader",
         ],
       },
       {

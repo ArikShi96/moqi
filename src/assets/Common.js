@@ -64,12 +64,17 @@ $(document).ready(() => {
       if (!$("header.header .product-nav-header").is(":visible")) {
         return;
       }
-      $("header.header .product-nav-header").slideUp();
+      $("header.header .product-nav-header").slideUp(0);
       $("header.header").attr("class", initClassName);
     });
   });
   // 弹出框
   $(".tip-nav .trigger-popover").hover((event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    $(".popover-wrap").fadeIn();
+  });
+  $(".tip-nav .trigger-popover").click((event) => {
     event.stopPropagation();
     event.preventDefault();
     $(".popover-wrap").fadeIn();
@@ -117,7 +122,7 @@ $(document).ready(() => {
     window
       .Http({
         url: `${
-          window.isDev ? "" : "https://moqi.com.cn"
+          window.isDev ? "" : "https://139.198.15.135:8443"
         }/api/send_business_email/`,
         type: "POST",
         data,
@@ -125,6 +130,7 @@ $(document).ready(() => {
         success: (data) => {
           Msg.success("提交成功", 3000);
           $(".popover-wrap").fadeOut();
+          $(".popover-wrap form")[0].reset();
         },
         error: () => {
           Msg.error("提交失败", 3000);
@@ -171,4 +177,15 @@ $(document).ready(() => {
       }, 20)
     );
   }
+  // 底部操作
+  $(".contact-wrapper .contact-icon-wrap")
+    .eq(0)
+    .on("mouseenter", () => {
+      $(".contact-wrapper .contact-icon-wrap .wechat-code").fadeIn();
+    });
+  $(".contact-wrapper .contact-icon-wrap")
+    .eq(0)
+    .on("mouseleave", () => {
+      $(".contact-wrapper .contact-icon-wrap .wechat-code").fadeOut();
+    });
 });

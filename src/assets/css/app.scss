@@ -277,13 +277,20 @@ li {
         justify-content: center;
         width: 44px;
         height: 44px;
-        opacity: 0.4;
-        border: 1px solid #979797;
+        border: 1px solid #eeeeee;
         border-radius: 100%;
         margin-left: 18px;
+        position: relative;
         .contact-icon {
           width: 24px;
           height: auto;
+          opacity: 0.4;
+        }
+        .wechat-code {
+          position: absolute;
+          width: 104px;
+          height: auto;
+          top: -110px;
         }
       }
     }

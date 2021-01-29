@@ -35,7 +35,7 @@ $(document).ready(() => {
   // 创业团队向左点击
   let teamPosition = 0;
   calculateScrollBar(0);
-  $(".team-section .left-icon").click(() => {
+  function handleLeftClick() {
     let targetPosition = (teamPosition - 1) % 6;
     while (targetPosition < 0) {
       targetPosition += 6;
@@ -64,9 +64,8 @@ $(document).ready(() => {
     });
     teamPosition = targetPosition;
     calculateScrollBar(teamPosition);
-  });
-  // 创业团队向右点击
-  $(".team-section .right-icon").click(() => {
+  }
+  function handleRightClick() {
     const targetPosition = (teamPosition + 1) % 6;
     Array.from($(".team-section .row .col-12")).forEach((el, i) => {
       let lastLeft = (i - teamPosition) * 25;
@@ -88,9 +87,16 @@ $(document).ready(() => {
     });
     teamPosition = targetPosition;
     calculateScrollBar(teamPosition);
+  }
+  $(".team-section .left-icon").click(() => {
+    handleLeftClick();
+  });
+  // 创业团队向右点击
+  $(".team-section .right-icon").click(() => {
+    handleRightClick();
   });
   window.setInterval(() => {
-    $(".team-section .right-icon").click();
+    handleRightClick();
   }, 4000);
   // 滚动事件
   $(window).scroll(() => {
