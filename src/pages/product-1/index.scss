@@ -23,6 +23,9 @@
     padding: 0;
   }
   .bg-gray {
+    background: linear-gradient(135deg, #fafbfc 0%, #d5d8dc 100%);
+  }
+  .bg-linear {
     background: linear-gradient(207deg, #fafbfc 0%, #d5d8dc 100%);
   }
   .bg-black {

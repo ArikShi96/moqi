@@ -71,14 +71,16 @@ $(document).ready(() => {
   // 弹出框
   $(".tip-nav .trigger-popover").hover((event) => {
     event.stopPropagation();
+    event.preventDefault();
     $(".popover-wrap").fadeIn();
   });
-  $(document).on("click", ":not(.popover-wrap)", () => {
+  $(document).on("click", ":not(.popover-wrap)", (event) => {
     $(".popover-wrap").fadeOut();
     return;
   });
   $(".popover-wrap").click((event) => {
     event.stopPropagation();
+    event.preventDefault();
   });
   $(".popover-wrap .btn-primary").click((event) => {
     const data = $(".popover-wrap form")
@@ -88,28 +90,28 @@ $(document).ready(() => {
         return prev;
       }, {});
     if (!data.fullName) {
-      Msg.error("请输入您的姓名", 1000);
+      Msg.error("请输入您的姓名", 3000);
       return;
     }
     if (!data.email) {
-      Msg.error("请输入您的邮箱", 1000);
+      Msg.error("请输入您的邮箱", 3000);
       return;
     }
     const emailReg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-    if (!emailReg.text(data.email)) {
-      Msg.error("邮箱输入有误", 1000);
+    if (!emailReg.test(data.email)) {
+      Msg.error("邮箱输入有误", 3000);
       return;
     }
     if (!data.phone) {
-      Msg.error("请输入您的电话", 1000);
+      Msg.error("请输入您的电话", 3000);
       return;
     }
-    if (!/^1[3456789]d{9}$/.test(data.phone)) {
-      Msg.error("手机号输入有误", 1000);
+    if (!/^1[3456789]\d{9}$/.test(data.phone)) {
+      Msg.error("手机号输入有误", 3000);
       return;
     }
     if (!data.content) {
-      Msg.error("请输入您的需求", 1000);
+      Msg.error("请输入您的需求", 3000);
       return;
     }
     window
@@ -121,11 +123,11 @@ $(document).ready(() => {
         data,
         isDefaultApiRequest: false,
         success: (data) => {
-          Msg.success("提交成功", 1000);
+          Msg.success("提交成功", 3000);
           $(".popover-wrap").fadeOut();
         },
         error: () => {
-          Msg.error("提交失败", 1000);
+          Msg.error("提交失败", 3000);
         },
       })
       .post();

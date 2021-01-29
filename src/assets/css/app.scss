@@ -203,6 +203,12 @@ li {
     line-height: 18px;
     margin-bottom: 16px;
     cursor: pointer;
+    a {
+      color: inherit;
+      &:hover {
+        color: inherit;
+      }
+    }
   }
   .company-info {
     display: flex;

@@ -71,7 +71,7 @@
         position: absolute;
         width: 24px;
         height: auto;
-        right: 365px;
+        left: calc(5% + 240px);
         top: 34px;
       }
       input {
@@ -79,7 +79,7 @@
         border: none;
         outline: none;
         background: #f7f9fa;
-        padding-left: 10%;
+        padding-left: 5%;
         font-size: 16px;
       }
       .search-tab {
@@ -93,7 +93,7 @@
         line-height: 32px;
         padding: 28px 0;
         cursor: pointer;
-        border-left: 1px solid #cccccc;
+        border-left: 1px solid #eeeeee;
         &.active {
           color: #ffffff;
           background: #2365eb;
@@ -113,7 +113,15 @@
         margin: 0;
         border-bottom: 1px #cccccc solid;
         .col-3 {
-          padding-left: 5%;
+          padding: 0 3% 0 5%;
+          &:last-child {
+            padding-right: 0;
+          }
+          span {
+            display: inline-block;
+            width: 100%;
+            border-right: 1px solid #eeeeee;
+          }
         }
       }
       .table-content {
@@ -203,7 +211,6 @@
     }
     .job-section .search-form {
       .search-icon {
-        right: 200px;
         top: 14px;
       }
       input {

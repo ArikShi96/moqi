@@ -187,7 +187,7 @@ window.openVideo = (url) => {
       ],
     },
     function () {
-      console.log("视频可以播放了", this);
+      // console.log("视频可以播放了", this);
     }
   );
   const CloseButton = window.VideoJs.getComponent("CloseButton");

@@ -7,7 +7,7 @@ $(document).ready(() => {
   // 导航条选中
   $(".navbar-wrap li a").eq(4).addClass("active");
   // 搜索内容
-  let mode = "social";
+  let mode = window.location.search.split("=")[1] || "social";
   let currentPage = 1;
   let totalPage = 1;
   let allOriginalList = [];
@@ -16,6 +16,11 @@ $(document).ready(() => {
   // 初始化
   fetchAllList();
   $("header.header").addClass("job").addClass("transparent");
+  if (mode === "campus") {
+    $(".search-form .search-tab").eq(1).addClass("active");
+  } else {
+    $(".search-form .search-tab").eq(0).addClass("active");
+  }
   // 滚动事件
   $(window).scroll(() => {
     // header 是否透明
@@ -108,8 +113,7 @@ $(document).ready(() => {
         </div>
         <div class="col-3"><p>${allList[i].department.name || ""}</p></div>
         <div class="col-3"><a
-          href="https://app.mokahr.com/apply/moqi/24494#/job/${allList[i].id}"
-          target="_blank">查看详情</a>
+          href="https://app.mokahr.com/apply/moqi/24494#/job/${allList[i].id}">查看详情</a>
         </div>
       `;
       }

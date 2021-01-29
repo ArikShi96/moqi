@@ -139,6 +139,16 @@ $(document).ready(() => {
           `;
           $(".news-section .col-12 .enter-wrap").eq(index).before(html);
         });
+        const hash = window.location.hash.split("#")[1];
+        if (hash === "5") {
+          window.setTimeout(() => {
+            $("section.section")
+              .eq(parseInt(hash, 10) || 0)
+              .animatescroll({
+                padding: window.innerWidth < 500 ? 65 : 60,
+              });
+          }, 0);
+        }
       },
       error: function () {
         $(".news-section .row").empty();
@@ -184,8 +194,8 @@ $(document).ready(() => {
       translateX: -20,
     },
   };
-  $(".development-section h1.title").click((event) => {
-    const currentYear = event.target.innerText;
+  $(".development-section .text-wrap-item").click((event) => {
+    const currentYear = $(event.target).children("h1.title").text();
     const textMap = textMaps[currentYear];
     if (!textMap) {
       return;
@@ -200,4 +210,15 @@ $(document).ready(() => {
       `translateX(${textMap.translateX}vw)`
     );
   });
+  // 根据hash值滚动到某个section
+  const hash = window.location.hash.split("#")[1];
+  if (hash) {
+    window.setTimeout(() => {
+      $("section.section")
+        .eq(parseInt(hash, 10) || 0)
+        .animatescroll({
+          padding: window.innerWidth < 500 ? 65 : 60,
+        });
+    }, 0);
+  }
 });
