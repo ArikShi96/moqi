@@ -234,22 +234,40 @@
       margin-bottom: 10px;
     }
     p {
-      font-size: 16px;
+      font-size: 12px;
     }
     .bg-section h1 {
       top: 80px;
     }
-    .job-section .search-form {
-      .search-icon {
-        top: 14px;
+    .job-section {
+      .table-wrap {
+        .table-header {
+          padding: 10px 0;
+        }
+        .table-content .col-3 p {
+          font-size: 12px;
+        }
+        .table-pagination {
+          font-size: 14px;
+          .total {
+            font-size: 14px;
+          }
+        }
       }
-      input {
-        font-size: 14px;
-        padding-left: 5%;
-      }
-      .search-tab {
-        padding: 8px 0;
-        font-size: 14px;
+      .search-form {
+        .search-icon {
+          top: 14px;
+          left: calc(5% + 172px);
+        }
+        input {
+          font-size: 12px;
+          padding-left: 5%;
+        }
+        .search-tab {
+          padding: 8px 0;
+          font-size: 12px;
+          width: 64px;
+        }
       }
     }
   }

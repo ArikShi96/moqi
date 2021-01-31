@@ -244,7 +244,7 @@
     }
     h2 {
       top: 40px;
-      width: 100%;
+      width: 80%;
     }
     p {
       top: 90px;
@@ -367,12 +367,6 @@
   @media (max-width: 991px) {
     .creativity-section {
       .advantage-wrap {
-      }
-    }
-  }
-  @media (max-width: 992px) {
-    .creativity-section {
-      .advantage-wrap {
         padding: 45px 30px 9%;
       }
     }
@@ -434,6 +428,9 @@
       @include h2-small;
       margin-bottom: 10px;
     }
+    .container-fluid {
+      padding: 0 15px;
+    }
     .bg-section {
       h1 {
         top: 70px;
@@ -469,9 +466,13 @@
       h2 {
         top: 20px;
       }
-      p {
-        top: 45px;
+      p.sub {
+        top: 50px;
+        line-height: 16px;
         font-size: 14px;
+      }
+      .find-wrap {
+        bottom: 10px;
       }
     }
   }

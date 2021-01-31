@@ -477,7 +477,14 @@ li {
     padding: 80px;
   }
   .scroll-nav-wrap {
-    padding: 20px 8px;
+    display: none;
+  }
+  #global-video {
+    left: 0;
+    height: 60vw;
+    width: 100vw;
+    z-index: 99999;
+    opacity: 1 !important;
   }
 }
 

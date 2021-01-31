@@ -143,7 +143,10 @@ $(document).ready(() => {
               </p>
             </div>
           `;
-          $(".news-section .col-12 .enter-wrap").eq(index).before(html);
+          $(".news-section .col-12 .enter-wrap")
+            .eq(index)
+            .fadeIn()
+            .before(html);
         });
         const hash = window.location.hash.split("#")[1];
         if (hash === "5") {

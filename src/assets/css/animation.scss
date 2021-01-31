@@ -615,7 +615,19 @@ $scaleKeyframe: (
       height: auto;
       top: 3%;
       left: 35%;
-      @include animation(keyframe7 4s linear infinite);
+      $an10-1: (
+        transform: translateY(0),
+      );
+      $an10-2: (
+        transform: translateY(-30%),
+      );
+      $keyframe10: (
+        0%: $an10-1,
+        50%: $an10-2,
+        100%: $an10-1,
+      );
+      @include keyframes(keyframe10, $keyframe10);
+      @include animation(keyframe10 4s linear infinite);
     }
     .animation-16 {
       width: 15.2%;

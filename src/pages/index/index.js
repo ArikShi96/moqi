@@ -45,7 +45,11 @@ $(document).ready(() => {
     window.openVideo("./file/video.mp4");
   });
   $(".class-section .class-wrap").click((event) => {
-    if (!$(event.target).data("index") && $(event.target).data("index") !== 0) {
+    let $el = $(event.target);
+    if (!$el.hasClass("class-wrap")) {
+      $el = $el.parent(".class-wrap");
+    }
+    if (!$el.data("index") && $el.data("index") !== 0) {
       return;
     }
     window.openVideo(
@@ -54,7 +58,7 @@ $(document).ready(() => {
         "./file/异构并行计算和性能优化.mp4",
         "./file/持久内存在图像搜索系统中的应用.mp4",
         "./file/3D-AI.mp4",
-      ][$(event.target).data("index")]
+      ][$el.data("index")]
     );
   });
 });

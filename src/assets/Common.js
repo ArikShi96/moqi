@@ -59,6 +59,7 @@ $(document).ready(() => {
     $("header.header")
       .removeClass("white")
       .removeClass("black")
+      .removeClass("transparent")
       .addClass(color);
     $("header.header").mouseleave(() => {
       if (!$("header.header .product-nav-header").is(":visible")) {
@@ -73,20 +74,23 @@ $(document).ready(() => {
     event.stopPropagation();
     event.preventDefault();
     $(".popover-wrap").fadeIn();
+    $(".popover-wrap").mouseleave(() => {
+      $(".popover-wrap").fadeOut();
+    });
   });
   $(".tip-nav .trigger-popover").click((event) => {
     event.stopPropagation();
     event.preventDefault();
     $(".popover-wrap").fadeIn();
   });
-  $(document).on("click", ":not(.popover-wrap)", (event) => {
-    $(".popover-wrap").fadeOut();
-    return;
-  });
-  $(".popover-wrap").click((event) => {
-    event.stopPropagation();
-    event.preventDefault();
-  });
+  // $(document).on("click", ":not(.popover-wrap)", (event) => {
+  //   $(".popover-wrap").fadeOut();
+  //   return;
+  // });
+  // $(".popover-wrap").click((event) => {
+  //   event.stopPropagation();
+  //   event.preventDefault();
+  // });
   $(".popover-wrap .btn-primary").click((event) => {
     const data = $(".popover-wrap form")
       .serializeArray()
