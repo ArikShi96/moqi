@@ -119,7 +119,7 @@ $(document).ready(() => {
   // 获取news
   window
     .Http({
-      url: `https://139.198.15.135:8443/api/news/actived/?limit=5&offset=0`,
+      url: `${window.apiHost}/api/news/actived/?limit=5&offset=0`,
       type: "GET",
       data: {},
       isDefaultApiRequest: false,

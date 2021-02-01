@@ -123,11 +123,10 @@ $(document).ready(() => {
       Msg.error("请输入您的需求", 3000);
       return;
     }
+    $(".popover-wrap .btn-primary").attr("disabled", true);
     window
       .Http({
-        url: `${
-          window.isDev ? "" : "https://139.198.15.135:8443"
-        }/api/send_business_email/`,
+        url: `${window.apiHost}/api/send_business_email/`,
         type: "POST",
         data,
         isDefaultApiRequest: false,
@@ -135,9 +134,11 @@ $(document).ready(() => {
           Msg.success("提交成功", 3000);
           $(".popover-wrap").fadeOut();
           $(".popover-wrap form")[0].reset();
+          $(".popover-wrap .btn-primary").attr("disabled", false);
         },
         error: () => {
           Msg.error("提交失败", 3000);
+          $(".popover-wrap .btn-primary").attr("disabled", false);
         },
       })
       .post();
