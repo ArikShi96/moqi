@@ -147,6 +147,12 @@ $(document).ready(() => {
             .eq(index)
             .fadeIn()
             .before(html);
+          if (item.source_link) {
+            $(".news-section .col-12 .enter-wrap")
+              .eq(index)
+              .css("pointer-events", "auto")
+              .attr("href", item.source_link);
+          }
         });
         const hash = window.location.hash.split("#")[1];
         if (hash === "5") {
