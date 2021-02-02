@@ -52,8 +52,8 @@ $(document).ready(() => {
   });
   // 采集面积大
   $("#collect-high-area-carousel").on("slide.bs.carousel", (event) => {
-    $(".collect-high-area h2").eq(0).toggle();
-    $(".collect-high-area h2").eq(1).toggle();
+    $(".collect-high-area h3").eq(0).toggle();
+    $(".collect-high-area h3").eq(1).toggle();
   });
   // 多重防护，增强您的体验
   $(".protect-section .arrow-wrap .arrow-icon").click((el) => {

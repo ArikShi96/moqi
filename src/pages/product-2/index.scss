@@ -1,13 +1,13 @@
 .product-2 {
-  @mixin h1-large {
+  @mixin h2-large {
     font-size: 51px;
     line-height: 76px;
   }
-  @mixin h1-mid {
+  @mixin h2-mid {
     font-size: 32px;
     line-height: 40px;
   }
-  @mixin h1-small {
+  @mixin h2-small {
     font-size: 24px;
     line-height: 32px;
   }
@@ -15,8 +15,8 @@
   .header {
     background-color: #e2e7e9;
   }
-  h1.title {
-    @include h1-large;
+  h2.title {
+    @include h2-large;
     font-family: SourceHanSansCN-Regular, SourceHanSansCN;
     font-weight: 400;
     color: #212121;
@@ -44,7 +44,7 @@
         width: auto;
       }
       margin-bottom: 40px;
-      h1 {
+      h2 {
         font-size: 16px;
         font-family: SourceHanSansCN-Medium, SourceHanSansCN;
         font-weight: 500;
@@ -78,8 +78,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      h1 {
-        @include h1-large;
+      h2 {
+        @include h2-large;
         font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #212121;
@@ -109,7 +109,7 @@
           width: 94px;
           height: auto;
         }
-        h1 {
+        h2 {
           font-size: 18px;
           font-family: SourceHanSansCN-Bold, SourceHanSansCN;
           font-weight: bold;
@@ -136,7 +136,7 @@
         }
       }
       &:hover {
-        h1 {
+        h2 {
           color: #2365eb;
         }
         .divider {
@@ -154,23 +154,23 @@
     .advantage-section,
     .localization-section {
       aside {
-        h1 {
+        h2 {
           font-size: 32px;
         }
       }
     }
   }
   @media (max-width: 767px) {
-    h1.title {
-      @include h1-mid;
+    h2.title {
+      @include h2-mid;
       margin-bottom: 20px;
     }
     .background-section,
     .advantage-section,
     .localization-section {
       aside {
-        h1 {
-          @include h1-mid;
+        h2 {
+          @include h2-mid;
           margin-bottom: 20px;
         }
         p {
@@ -190,8 +190,8 @@
     }
   }
   @media (max-width: 500px) {
-    h1.title {
-      @include h1-small;
+    h2.title {
+      @include h2-small;
       margin-bottom: 10px;
       .sub {
         font-size: 14px;
@@ -207,8 +207,8 @@
     .localization-section {
       padding: 20px 0;
       aside {
-        h1 {
-          @include h1-small;
+        h2 {
+          @include h2-small;
           margin-bottom: 20px;
         }
         p {

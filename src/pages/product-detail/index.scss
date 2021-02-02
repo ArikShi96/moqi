@@ -1,21 +1,21 @@
 .product-detail-page {
-  @mixin h1-large {
+  @mixin h2-large {
     font-size: 42px;
     line-height: 56px;
   }
-  @mixin h1-mid {
+  @mixin h2-mid {
     font-size: 32px;
     line-height: 40px;
   }
-  @mixin h1-small {
+  @mixin h2-small {
     font-size: 24px;
     line-height: 32px;
   }
-  @mixin h2-large {
+  @mixin h3-large {
     font-size: 21px;
     line-height: 28px;
   }
-  @mixin h2-small {
+  @mixin h3-small {
     font-size: 18px;
     line-height: 24px;
   }
@@ -39,8 +39,8 @@
     height: 100%;
     width: 100%;
   }
-  h1.title {
-    @include h1-large;
+  h2.title {
+    @include h2-large;
     font-family: SourceHanSansCN-Bold, SourceHanSansCN;
     font-weight: bold;
     color: #212112;
@@ -52,8 +52,8 @@
       color: linear-gradient(178deg, #3eefea 0%, #07a0f1 100%);
     }
   }
-  h2.title {
-    @include h2-large;
+  h3.title {
+    @include h3-large;
     font-family: SourceHanSansCN-Medium, SourceHanSansCN;
     font-weight: 500;
     color: #212112;
@@ -87,7 +87,7 @@
     // left: 0;
     // width: 100vw;
     // z-index: 10;
-    h1 {
+    h2 {
       font-size: 12px;
       font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
@@ -136,7 +136,7 @@
   }
   .product-detail {
     padding: 60px 0 0;
-    h1.title {
+    h2.title {
       margin-bottom: 16px;
       display: flex;
       align-items: center;
@@ -169,12 +169,12 @@
     }
   }
   @media (max-width: 767px) {
-    h1.title {
-      @include h1-mid;
+    h2.title {
+      @include h2-mid;
       margin-bottom: 20px;
     }
-    h2.title {
-      @include h2-small;
+    h3.title {
+      @include h3-small;
       margin-bottom: 20px;
     }
     .logo-img {
@@ -186,12 +186,12 @@
     section {
       padding: 20px 0;
     }
-    h1.title {
-      @include h1-small;
-      margin-bottom: 10px;
-    }
     h2.title {
       @include h2-small;
+      margin-bottom: 10px;
+    }
+    h3.title {
+      @include h3-small;
       margin-bottom: 10px;
     }
     aside {

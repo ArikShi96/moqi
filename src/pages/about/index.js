@@ -135,9 +135,9 @@ $(document).ready(() => {
               <div class="time-tag">${new Date(
                 item.create_time
               ).toLocaleDateString()}</div>
-              <h1 class="title">
+              <h2 class="title">
                 ${item.title}
-              </h1>
+              </h2>
               <p class="content">
                 ${item.abstract}
               </p>
@@ -168,7 +168,7 @@ $(document).ready(() => {
       error: function () {
         $(".news-section .row").empty();
         $(".news-section").append(
-          "<h2 class='title empty-message'>暂无数据</h2>"
+          "<h3 class='title empty-message'>暂无数据</h3>"
         );
       },
     })
@@ -210,13 +210,13 @@ $(document).ready(() => {
     },
   };
   $(".development-section .text-wrap-item").click((event) => {
-    const currentYear = $(event.target).children("h1.title").text();
+    const currentYear = $(event.target).children("h2.title").text();
     const textMap = textMaps[currentYear];
     if (!textMap) {
       return;
     }
     textMap.text.forEach((text, index) => {
-      $(".development-section h1").eq(index).text(text);
+      $(".development-section h2").eq(index).text(text);
     });
     $(".development-section .col-4 .color-text").text(currentYear);
     $(".development-section .col-4 p").html(textMap.desc);
