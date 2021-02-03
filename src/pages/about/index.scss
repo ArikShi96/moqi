@@ -20,7 +20,7 @@
     line-height: 24px;
   }
   @mixin h3-small {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 24px;
   }
   @mixin p-large {
@@ -285,6 +285,7 @@
             color: rgba(255, 255, 255, 0.3);
             line-height: 140px;
             letter-spacing: 2px;
+            pointer-events: none;
           }
           h3.title {
             display: none;
@@ -307,8 +308,11 @@
             font-size: 21px;
             font-family: SourceHanSansCN-Regular, SourceHanSansCN;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.6);
+            color: #ffffff;
             line-height: 32px;
+            li {
+              list-style: disc;
+            }
           }
         }
       }
@@ -539,12 +543,18 @@
       margin-bottom: 10px;
     }
     .bg-section {
+      overflow-x: hidden;
       h2 {
         top: 140px;
       }
       p {
         top: 100px;
         font-size: 16px;
+      }
+      img {
+        width: 150%;
+        height: auto;
+        margin-left: -25%;
       }
     }
     .info-section {
@@ -638,8 +648,8 @@
           margin-bottom: 10px;
         }
         p {
-          font-size: 12px;
-          line-height: 16px;
+          font-size: 0.75rem;
+          line-height: 1rem;
           margin-bottom: 4px;
         }
       }

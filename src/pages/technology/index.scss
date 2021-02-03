@@ -33,7 +33,7 @@
     line-height: 24px;
   }
   @mixin h3-small {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 24px;
   }
   @mixin p-large {
@@ -142,6 +142,7 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 40px;
+        padding: 0 80px;
         img {
           height: 60px;
           width: auto;
@@ -201,6 +202,18 @@
       -webkit-text-fill-color: transparent;
     }
   }
+  @media (max-width: 991px) {
+    .search-section,
+    .study-section,
+    .no-touch-section,
+    .security-section {
+      .advantage-list {
+        li {
+          padding: 0 32px;
+        }
+      }
+    }
+  }
   @media (max-width: 767px) {
     section {
       padding: 20px 0;
@@ -214,8 +227,14 @@
       margin-bottom: 10px;
     }
     .bg-section {
+      overflow-x: hidden;
       h2 {
         top: 130px;
+      }
+      img {
+        width: 150%;
+        height: auto;
+        margin-left: -25%;
       }
     }
     .search-section,
@@ -227,6 +246,11 @@
       }
       .row.flex-center {
         top: -120px;
+      }
+      .advantage-list {
+        li {
+          padding: 0 28px;
+        }
       }
     }
   }
@@ -241,13 +265,14 @@
     }
     .bg-section {
       h2 {
-        top: 100px;
+        top: 80px;
       }
     }
     .search-section {
       p.description {
-        margin-bottom: 20px;
-        font-size: 14px;
+        margin-bottom: 50px;
+        font-size: 0.875rem;
+        line-height: 24px;
       }
     }
     .search-section,
@@ -262,8 +287,14 @@
       }
       .advantage-list {
         margin-top: 40px;
-        li p {
-          font-size: 14px;
+        li {
+          padding: 0 0.75rem;
+          &.pl-1 {
+            padding-left: 1rem !important;
+          }
+          p {
+            font-size: 0.875rem;
+          }
         }
       }
     }

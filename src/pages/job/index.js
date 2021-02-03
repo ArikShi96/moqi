@@ -24,10 +24,15 @@ $(document).ready(() => {
   // 滚动事件
   $(window).scroll(() => {
     // header 是否透明
-    if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
-      $("header.header").addClass("transparent").removeClass("white");
-    } else {
-      $("header.header").removeClass("transparent").addClass("white");
+    if (
+      !$(".navbar-wrap-mobile").is(":visible") &&
+      !$("header.header .product-nav-header").is(":visible")
+    ) {
+      if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
+        $("header.header").addClass("transparent").removeClass("white");
+      } else {
+        $("header.header").removeClass("transparent").addClass("white");
+      }
     }
   });
   //

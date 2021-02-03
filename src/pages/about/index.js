@@ -101,11 +101,17 @@ $(document).ready(() => {
   // 滚动事件
   $(window).scroll(() => {
     // header 是否透明
-    if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
-      $("header.header").addClass("transparent").removeClass("white");
-    } else {
-      $("header.header").removeClass("transparent").addClass("white");
+    if (
+      !$(".navbar-wrap-mobile").is(":visible") &&
+      !$("header.header .product-nav-header").is(":visible")
+    ) {
+      if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
+        $("header.header").addClass("transparent").removeClass("white");
+      } else {
+        $("header.header").removeClass("transparent").addClass("white");
+      }
     }
+
     // 侧边滚动条颜色
     if (
       $("section.info-section")[0].getBoundingClientRect().top <
@@ -160,7 +166,7 @@ $(document).ready(() => {
             $("section.section")
               .eq(parseInt(hash, 10) || 0)
               .animatescroll({
-                padding: window.innerWidth < 500 ? 65 : 60,
+                padding: window.innerWidth <= 500 ? 65 : 60,
               });
           }, 0);
         }
@@ -177,35 +183,36 @@ $(document).ready(() => {
   const textMaps = {
     2015: {
       text: ["", "2015", "2017", "2018"],
-      desc: "研发下一代无标注机器学习技术，突破深度学习框架。",
+      desc: "<li>研发下一代无标注机器学习技术，突破深度学习框架。</li>",
       translateX: 0,
     },
     2017: {
       text: ["2015", "2017", "2018", "2019"],
       desc:
-        "将无监督机器学习技术应用于生物特征识别领域，推出全球领先的海量高速高精度指纹比对系统<br/>完成A轮融资",
+        "<li>将无监督机器学习技术应用于生物特征识别领域，推出全球领先的海量高速高精度指纹比对系统</li><li>完成A轮融资</li>",
       translateX: -4,
     },
     2018: {
       text: ["2017", "2018", "2019", "2020"],
-      desc: "AI指纹系统成功获得全国大范围应用<br/>指纹中心已累计20亿枚指纹",
+      desc:
+        "<li>AI指纹系统成功获得全国大范围应用</li><li>指纹中心已累计20亿枚指纹</li>",
       translateX: -8,
     },
     2019: {
       text: ["2018", "2019", "2020", "至今"],
       desc:
-        "正或发布新一代“指纹-身份识别”AI系统，在业内引起巨大反响<br/>入选部委“双十计划”重点推广项目<br/>研发全球颠覆性的非接触指纹采集仪",
+        "<li>正或发布新一代“指纹-身份识别”AI系统，在业内引起巨大反响</li><li>入选部委“双十计划”重点推广项目</li><li>研发全球颠覆性的非接触指纹采集仪</li>",
       translateX: -12,
     },
     2020: {
       text: ["2019", "2020", "至今", "..."],
       desc:
-        "推出掌纹、足迹智能比对系统<br/>入选黑马中国“新基建产业独角兽100强<br/>入选“2020中国潜在独角兽企业榜单<br/>推出统一身份认证平台 Moqi ID",
+        "<li>推出掌纹、足迹智能比对系统</li><li>入选黑马中国“新基建产业独角兽100强</li><li>入选“2020中国潜在独角兽企业榜单</li><li>推出统一身份认证平台 Moqi ID</li>",
       translateX: -16,
     },
     至今: {
       text: ["2020", "至今", "...", ""],
-      desc: "加速行业落地，创造生物特征识别的未来!",
+      desc: "<li>加速行业落地，创造生物特征识别的未来!</li>",
       translateX: -20,
     },
   };
@@ -225,6 +232,7 @@ $(document).ready(() => {
       `translateX(${textMap.translateX}vw)`
     );
   });
+  $(".development-section .text-wrap-item").eq(1).click();
   // 根据hash值滚动到某个section
   const hash = window.location.hash.split("#")[1];
   if (hash) {
@@ -232,7 +240,7 @@ $(document).ready(() => {
       $("section.section")
         .eq(parseInt(hash, 10) || 0)
         .animatescroll({
-          padding: window.innerWidth < 500 ? 65 : 60,
+          padding: window.innerWidth <= 500 ? 65 : 60,
         });
     }, 0);
   }

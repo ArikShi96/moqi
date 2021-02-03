@@ -11,10 +11,15 @@ $(document).ready(() => {
   // 滚动事件
   $(window).scroll(() => {
     // header 是否透明
-    if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
-      $("header.header").addClass("transparent").removeClass("white");
-    } else {
-      $("header.header").removeClass("transparent").addClass("white");
+    if (
+      !$(".navbar-wrap-mobile").is(":visible") &&
+      !$("header.header .product-nav-header").is(":visible")
+    ) {
+      if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
+        $("header.header").addClass("transparent").removeClass("white");
+      } else {
+        $("header.header").removeClass("transparent").addClass("white");
+      }
     }
     // 侧边滚动条颜色
     if (
@@ -33,7 +38,7 @@ $(document).ready(() => {
       $("section.section")
         .eq(parseInt(hash, 10) || 0)
         .animatescroll({
-          padding: window.innerWidth < 500 ? 65 : 60,
+          padding: window.innerWidth <= 500 ? 65 : 60,
         });
     }, 0);
   }

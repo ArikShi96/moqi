@@ -1,6 +1,9 @@
 /**
     这里放一些自定义的全局css
  */
+.rem-16 {
+  font-size: calc(100vw * 16 / 375);
+}
 html,
 body {
   height: 100%;
@@ -45,7 +48,12 @@ li {
   padding: 0;
   margin: 0;
 }
-
+.mobile-view {
+  display: none;
+}
+.pc-view {
+  display: block;
+}
 .alert-wrap {
   z-index: 10000;
   position: fixed;
@@ -98,9 +106,6 @@ li {
     &.black {
       display: none;
     }
-    &.brown {
-      display: none;
-    }
   }
   .navbar-wrap {
     ul {
@@ -124,25 +129,17 @@ li {
       }
     }
   }
+  #dropdownMenuLink {
+    display: none;
+  }
+  .navbar-wrap-mobile {
+    display: none;
+  }
   &.black:not(.white) {
     background-color: #000000;
     .logo-wrap {
       display: none;
       &.black {
-        display: block;
-      }
-    }
-    .navbar-wrap ul {
-      color: #ffffff;
-      a.active {
-        border-bottom: 2px solid #ffffff;
-      }
-    }
-  }
-  &.brown:not(.white):not(.black) {
-    .logo-wrap {
-      display: none;
-      &.brown {
         display: block;
       }
     }
@@ -287,6 +284,12 @@ li {
           opacity: 0.4;
         }
         .wechat-code {
+          position: absolute;
+          width: 104px;
+          height: auto;
+          top: -110px;
+        }
+        .wechat-service {
           position: absolute;
           width: 104px;
           height: auto;
@@ -466,11 +469,65 @@ li {
     padding: 0 30%;
   }
   .header {
-    padding: 0;
-    padding-bottom: 22px;
+    justify-content: space-between;
+    padding: 12px 0;
     .logo-wrap {
       position: static;
+    }
+    .navbar-wrap {
+      display: none;
+    }
+    #dropdownMenuLink {
+      padding-right: 36px;
+      display: block;
+      .white-menu {
+        display: none;
+      }
+      .black-menu {
+        display: inline-block;
+      }
+      img {
+        height: 14px;
+        width: auto;
+      }
+    }
+    .navbar-wrap-mobile {
+      display: block;
       width: 100%;
+      ul {
+        margin-top: 16px;
+      }
+      .dropdown-item {
+        padding: 10px 36px;
+        border-top: 1px solid #eeeeee;
+        &:active,
+        &:focus,
+        &:hover {
+          background-color: unset;
+        }
+      }
+      .product-list {
+        margin-top: 0;
+        .dropdown-item {
+          padding: 10px 56px;
+        }
+      }
+    }
+    &.black:not(.white) {
+      #dropdownMenuLink {
+        .black-menu {
+          display: none;
+        }
+        .white-menu {
+          display: inline-block;
+        }
+      }
+      .navbar-wrap-mobile {
+        .dropdown-item {
+          color: #ffffff;
+          border-top: 1px solid #666666;
+        }
+      }
     }
   }
   .footer {
@@ -489,13 +546,6 @@ li {
 }
 
 @media (max-width: 500px) {
-  .header {
-    .navbar-wrap ul {
-      li {
-        margin-right: 20px;
-      }
-    }
-  }
   .footer {
     padding: 40px;
     padding-bottom: 60px;
@@ -510,6 +560,26 @@ li {
     right: 80px;
     .form-control {
       width: 180px;
+    }
+  }
+  .mobile-view {
+    display: block;
+  }
+  .pc-view {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .header {
+    padding: 14px 0;
+  }
+  .footer .privacy-info {
+    .beian {
+      flex-shrink: 1;
+    }
+    .copyright {
+      margin-right: 0;
     }
   }
 }

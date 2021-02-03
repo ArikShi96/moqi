@@ -21,7 +21,7 @@
     line-height: 24px;
   }
   @mixin h3-small {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 24px;
   }
   @mixin p-large {
@@ -94,8 +94,11 @@
       @include p-large;
       font-family: SourceHanSansCN-Normal, SourceHanSansCN;
       font-weight: 400;
-      color: #ffffff;
+      color: #212121;
       z-index: 1;
+      &.white {
+        color: #ffffff;
+      }
     }
     .carousel-indicators {
       visibility: hidden;
@@ -381,12 +384,18 @@
       margin-bottom: 10px;
     }
     .bg-section {
+      overflow-x: hidden;
       h2 {
         top: 100px;
       }
       p {
         top: 140px;
         font-size: 16px;
+      }
+      a img {
+        width: 150%;
+        height: auto;
+        margin-left: -25%;
       }
     }
     .creativity-section {
@@ -433,10 +442,12 @@
     }
     .bg-section {
       h2 {
-        top: 70px;
+        // top: 70px;
+        top: 50px;
       }
       p {
-        top: 100px;
+        // top: 100px;
+        top: 80px;
       }
       .video-wrap {
         bottom: 10px;
@@ -474,6 +485,11 @@
       .find-wrap {
         bottom: 10px;
       }
+    }
+  }
+  @media (max-width: 360px) {
+    .creativity-section .advantage-wrap h3 img.point-right {
+      margin-left: 2px;
     }
   }
 }

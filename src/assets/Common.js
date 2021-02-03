@@ -30,6 +30,13 @@ function debounce(func, time) {
 
 // 绑定全局事件
 $(document).ready(() => {
+  // 判断是否mobile
+  if (window.innerWidth <= 500) {
+    $("html").addClass("rem-16");
+  } else {
+    $("html").removeClass("rem-16");
+  }
+  // 底部操作
   $(".tip-nav-wrap .tip-finger").click(() => {
     $(".tip-nav-wrap .tip-nav").slideToggle();
   });
@@ -38,11 +45,34 @@ $(document).ready(() => {
     $("#zc__sdk__sys__btn").click();
   });
   // product 导航
+  let initClassName = "";
   $("header.header .toggle-product").hover(() => {
     if ($("header.header .product-nav-header").is(":visible")) {
       return;
     }
     $("header.header .product-nav-header").slideDown();
+    calculateHeaderColor();
+    $("header.header").mouseleave(() => {
+      if (!$("header.header .product-nav-header").is(":visible")) {
+        return;
+      }
+      $("header.header .product-nav-header").slideUp(0);
+      $("header.header").attr("class", initClassName);
+    });
+  });
+  $("header.header #dropdownMenuLink").click((event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (!$(".navbar-wrap-mobile").is(":visible")) {
+      calculateHeaderColor();
+    }
+    $(".navbar-wrap-mobile").slideToggle(500, () => {
+      if (!$(".navbar-wrap-mobile").is(":visible")) {
+        $("header.header").attr("class", initClassName);
+      }
+    });
+  });
+  function calculateHeaderColor() {
     const breakSection = $("section[data-break='black']");
     let color = "white";
     if (
@@ -55,19 +85,21 @@ $(document).ready(() => {
     if (breakSection && !breakSection.length) {
       color = "black";
     }
-    const initClassName = $("header.header").attr("class");
+    initClassName = $("header.header").attr("class");
     $("header.header")
       .removeClass("white")
       .removeClass("black")
       .removeClass("transparent")
       .addClass(color);
-    $("header.header").mouseleave(() => {
-      if (!$("header.header .product-nav-header").is(":visible")) {
-        return;
-      }
-      $("header.header .product-nav-header").slideUp(0);
-      $("header.header").attr("class", initClassName);
-    });
+  }
+  $("header.header .toggle-product-list").click((event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    $("header.header ul.product-list").slideToggle();
+  });
+  // back-top
+  $(".tip-nav .back-top").click(() => {
+    $(document.body).animatescroll();
   });
   // 弹出框
   $(".tip-nav .trigger-popover").hover((event) => {
@@ -161,7 +193,7 @@ $(document).ready(() => {
           $("section.section")
             .eq(index)
             .animatescroll({
-              padding: window.innerWidth < 500 ? 65 : 60,
+              padding: window.innerWidth <= 500 ? 65 : 60,
             });
           $(li).addClass("active");
         }
@@ -192,5 +224,15 @@ $(document).ready(() => {
     .eq(0)
     .on("mouseleave", () => {
       $(".contact-wrapper .contact-icon-wrap .wechat-code").fadeOut();
+    });
+  $(".contact-wrapper .contact-icon-wrap")
+    .eq(1)
+    .on("mouseenter", () => {
+      $(".contact-wrapper .contact-icon-wrap .wechat-service").fadeIn();
+    });
+  $(".contact-wrapper .contact-icon-wrap")
+    .eq(1)
+    .on("mouseleave", () => {
+      $(".contact-wrapper .contact-icon-wrap .wechat-service").fadeOut();
     });
 });

@@ -208,6 +208,7 @@
     }
   }
   @media (max-width: 767px) {
+    padding-top: 48px;
     h2.title {
       @include h2-mid;
       margin-bottom: 20px;
@@ -242,17 +243,17 @@
       @include h2-small;
       margin-bottom: 10px;
       .sub {
-        font-size: 14px;
+        font-size: 0.875rem;
       }
     }
     h3.title {
-      font-size: 18px;
+      font-size: 1.125rem;
       line-height: 24px;
       margin-bottom: 10px;
     }
     aside {
       p {
-        font-size: 16px;
+        font-size: 1rem;
       }
     }
     .platform-section,
@@ -266,19 +267,25 @@
           margin-bottom: 20px;
         }
         h3 {
-          font-size: 18px;
+          font-size: 1.125rem;
           line-height: 24px;
           margin-bottom: 20px;
         }
         p {
-          font-size: 16px;
+          font-size: 1rem;
           line-height: 24px;
         }
       }
     }
+    .advantage-section article p.desc {
+      font-size: 0.875rem;
+    }
     .service-section {
       .row {
         padding: 20px 0;
+        aside p {
+          font-size: 1rem;
+        }
       }
     }
   }
