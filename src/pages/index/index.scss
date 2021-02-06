@@ -193,7 +193,7 @@
       }
     }
     .advantage-wrap {
-      padding: 45px 45px 9%;
+      padding: 45px 45px 9% 105px;
       background-color: #ffffff;
       display: flex;
       flex-direction: column;
@@ -201,6 +201,7 @@
       h3 {
         display: flex;
         align-items: center;
+        transform: translateX(-60px);
         span {
           flex-shrink: 0;
         }
@@ -301,8 +302,12 @@
           align-items: center;
           justify-content: flex-end;
           border-right: 1px solid rgba(255, 255, 255, 0.8);
+          background-size: 0;
           &:last-child {
             border-right: none;
+          }
+          &.bg-visible {
+            background-size: cover;
           }
           img {
             width: 28px;
@@ -371,6 +376,9 @@
     .creativity-section {
       .advantage-wrap {
         padding: 45px 30px 9%;
+        h3.title {
+          transform: translateX(0);
+        }
       }
     }
   }
@@ -400,7 +408,7 @@
     }
     .creativity-section {
       .advantage-wrap {
-        padding: 20px 20px 9%;
+        padding: 40px 40px 9% 60px;
       }
     }
     .class-section {
@@ -484,6 +492,11 @@
       }
       .find-wrap {
         bottom: 10px;
+      }
+    }
+    .creativity-section {
+      .advantage-wrap {
+        padding: 30px 20px 9% 30px;
       }
     }
   }

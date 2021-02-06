@@ -98,6 +98,7 @@ JqueryAjax.prototype = {
 
 // 新闻
 // https://moqi.com.cn/api/news/actived/?limit=5&offset=0
+// https://moqi.com.cn/api/news/:id/actived/
 
 // 商务合作
 // https://moqi.com.cn/api/send_business_email/

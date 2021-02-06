@@ -57,13 +57,23 @@ $(document).ready(() => {
     if (!$el.data("index") && $el.data("index") !== 0) {
       return;
     }
+    // 清空所有样式
+    const closeCallBack = () => {
+      $(".class-section .class-wrap").removeClass("bg-visible");
+    };
+    closeCallBack();
+    $(".class-section .class-wrap")
+      .eq($el.data("index"))
+      .addClass("bg-visible");
+    // 打开视频
     window.openVideo(
       [
         "./file/现实图像搜索难题对AI的极限挑战.mp4",
         "./file/异构并行计算和性能优化.mp4",
         "./file/持久内存在图像搜索系统中的应用.mp4",
         "./file/3D-AI.mp4",
-      ][$el.data("index")]
+      ][$el.data("index")],
+      closeCallBack
       // [
       //   "https://seafile.moqi.com.cn/seafhttp/files/ce9eb45a-f925-4a60-8cae-b38e50d4ec92/%E6%B1%A4%E6%9E%97%E9%B9%8F%EF%BC%9A%E7%8E%B0%E5%AE%9E%E5%9B%BE%E5%83%8F%E6%90%9C%E7%B4%A2%E9%9A%BE%E9%A2%98%E5%AF%B9%20AI%20%E7%9A%84%E6%9E%81%E9%99%90%E6%8C%91%E6%88%98.mp4",
       //   "https://seafile.moqi.com.cn/seafhttp/files/c4c4f252-da00-4047-82fc-7b94e4d416b1/%E5%BC%A0%E9%9D%92%E7%AC%9B%EF%BC%9A%E5%BC%82%E6%9E%84%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E5%92%8C%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.mp4",

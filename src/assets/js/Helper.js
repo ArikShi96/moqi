@@ -126,7 +126,7 @@ window.Helper = {
   },
 };
 
-window.openVideo = (url) => {
+window.openVideo = (url, closeCallback) => {
   // window.open(
   //   url,
   //   "Video",
@@ -199,6 +199,7 @@ window.openVideo = (url) => {
       class="video-js vjs-big-play-centered"
       style="display: none"
     ></video>`);
+    closeCallback && closeCallback();
   };
   const closeButton = new CloseButton(player);
   player.addChild(closeButton);

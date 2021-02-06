@@ -11,21 +11,21 @@ $(document).ready(() => {
   // 导航条选中
   $(".navbar-wrap li a").eq(3).addClass("active");
   // 播放视频
-  // let videoIntervalEvent = window.setInterval(() => {
-  //   if (
-  //     $(".video-section video")[0] &&
-  //     $(".video-section video")[0].readyState === 4
-  //   ) {
-  //     window.clearInterval(videoIntervalEvent);
-  //     $(".video-section video")[0].play();
-  //     videoIntervalEvent = window.setInterval(() => {
-  //       if ($(".video-section video")[0].currentTime > 3.5) {
-  //         $(".video-section video")[0].pause();
-  //         window.clearInterval(videoIntervalEvent);
-  //       }
-  //     }, 100);
-  //   }
-  // }, 500);
+  let videoIntervalEvent = window.setInterval(() => {
+    if (
+      $(".video-section video")[0] &&
+      $(".video-section video")[0].readyState === 4
+    ) {
+      window.clearInterval(videoIntervalEvent);
+      $(".video-section video")[0].play();
+      videoIntervalEvent = window.setInterval(() => {
+        if ($(".video-section video")[0].currentTime > 107) {
+          $(".video-section video")[0].pause();
+          window.clearInterval(videoIntervalEvent);
+        }
+      }, 200);
+    }
+  }, 500);
   // 创始人左右滚动
   function calculateScrollBar(position) {
     $(".team-section .scroll-wrap .scroll-bar.full")
@@ -153,11 +153,11 @@ $(document).ready(() => {
             .eq(index)
             .fadeIn()
             .before(html);
-          if (item.source_link) {
+          if (item.id) {
             $(".news-section .col-12 .enter-wrap")
               .eq(index)
               .css("pointer-events", "auto")
-              .attr("href", item.source_link);
+              .attr("href", `../news.html?id=${item.id}`);
           }
         });
         const hash = window.location.hash.split("#")[1];

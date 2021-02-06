@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --config webpack.config.js --progress",
     "start": "cross-env NODE_ENV=dev webpack-dev-server --config webpack.config.js --progress",
-    "build": "cross-env NODE_ENV=prod webpack --config webpack.config.js --progress && cp -r src/assets/file ./dist && rm -f dist.zip && rm -f moqi.zip && zip moqi.zip -r ./dist",
+    "build": "cross-env NODE_ENV=prod webpack --config webpack.config.js --progress && cp -r src/assets/file ./dist && cp -r src/assets/bg-img ./dist && rm -f dist.zip && rm -f moqi.zip && zip moqi.zip -r ./dist",
     "eslint-fix": "eslint --fix ./src/**/index.js & eslint --fix ./src/assets/js/*.js"
   },
   "author": "shifeng",
