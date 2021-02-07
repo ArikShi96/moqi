@@ -126,7 +126,7 @@ window.Helper = {
   },
 };
 
-window.openVideo = (url, closeCallback) => {
+window.openVideo = (url, closeCallback, hideControl) => {
   // window.open(
   //   url,
   //   "Video",
@@ -187,20 +187,26 @@ window.openVideo = (url, closeCallback) => {
       ],
     },
     function () {
-      // console.log("视频可以播放了", this);
+      // if (hideControl) {
+      //   window.setTimeout(() => {
+      //     $("#video-section-wrap .vjs-icon-placeholder")[0].click();
+      //   }, 1000);
+      // }
     }
   );
-  const CloseButton = window.VideoJs.getComponent("CloseButton");
-  CloseButton.prototype.handleClick = () => {
-    player.dispose();
-    $(document.body).append(`
+  if (!hideControl) {
+    const CloseButton = window.VideoJs.getComponent("CloseButton");
+    CloseButton.prototype.handleClick = () => {
+      player.dispose();
+      $(document.body).append(`
     <video
       id="global-video"
       class="video-js vjs-big-play-centered"
       style="display: none"
     ></video>`);
-    closeCallback && closeCallback();
-  };
-  const closeButton = new CloseButton(player);
-  player.addChild(closeButton);
+      closeCallback && closeCallback();
+    };
+    const closeButton = new CloseButton(player);
+    player.addChild(closeButton);
+  }
 };

@@ -7,13 +7,14 @@ $(document).ready(() => {
   $(".header").addClass("black");
   // 滚动事件
   $(window).scroll(() => {
-    // header 是否透明
-    // if ($(".product-header")[0].getBoundingClientRect().top < 0) {
-    //   $(".product-header").addClass("fixed");
-    // } else {
-    //   $(".product-header").removeClass("fixed");
-    // }
-    // 侧边滚动条颜色
+    if (
+      (window.innerWidth > 768 && $(document).scrollTop() > 68) ||
+      (window.innerWidth <= 768 && $(document).scrollTop() > 48)
+    ) {
+      $(".product-header").css("position", "fixed");
+    } else {
+      $(".product-header").css("position", "static");
+    }
   });
   // 导航条选中
   $(".navbar-wrap li a").eq(2).addClass("active");
@@ -68,6 +69,7 @@ $(document).ready(() => {
       //
       $(".protect-section .arrow-wrap:not(.hidden)").fadeOut(0);
       $(".protect-section .arrow-wrap.hidden").fadeIn(0);
+      $(".protect-section .scroll-bar.full").css("left", "33.33%");
     } else {
       $(".protect-section .row").animate(
         {
@@ -77,6 +79,7 @@ $(document).ready(() => {
       );
       $(".protect-section .arrow-wrap:not(.hidden)").fadeIn(0);
       $(".protect-section .arrow-wrap.hidden").fadeOut(0);
+      $(".protect-section .scroll-bar.full").css("left", "0");
     }
   });
 });

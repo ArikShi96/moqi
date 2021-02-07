@@ -90,17 +90,17 @@ li {
     padding: 0 36px;
     .logo-img {
       width: auto;
-      height: 16px;
+      height: 20px;
     }
     .divider {
-      height: 16px;
+      height: 20px;
       width: 1px;
       background-color: #000000;
       margin: 0 4px;
     }
     .logo-text {
-      font-size: 16px;
-      line-height: 16px;
+      font-size: 20px;
+      line-height: 20px;
       white-space: nowrap;
     }
     &.black {
@@ -110,7 +110,7 @@ li {
   .navbar-wrap {
     ul {
       flex-shrink: 0;
-      font-size: 12px;
+      font-size: 16px;
       font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212121;
@@ -184,13 +184,16 @@ li {
 .footer {
   padding: 80px 0;
   background: linear-gradient(180deg, #e6e9ec 0%, #ffffff 100%);
-  h1 {
+  h2 {
     font-size: 12px;
     font-family: SourceHanSansCN-Medium, SourceHanSansCN;
     font-weight: 500;
     color: #212121;
     line-height: 18px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+  .col-6.col-md-3 {
+    margin-bottom: 20px;
   }
   nav li {
     font-size: 12px;
@@ -199,6 +202,9 @@ li {
     color: #212121;
     line-height: 18px;
     margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     a {
       cursor: pointer;
       color: inherit;
@@ -327,7 +333,7 @@ li {
 .tip-nav-wrap {
   z-index: 10000;
   position: fixed;
-  bottom: 20px;
+  bottom: 85px;
   right: 40px;
   display: flex;
   flex-direction: column-reverse;
@@ -353,6 +359,36 @@ li {
       }
       a {
         outline: none;
+        &.pen {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+.back-top-wrap {
+  z-index: 10000;
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  background-color: #e9ecee;
+  border-radius: 2px;
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    img {
+      width: 32px;
+      height: auto;
+    }
+    a {
+      outline: none;
+      &.pen {
+        pointer-events: none;
       }
     }
   }
@@ -487,7 +523,7 @@ li {
         display: inline-block;
       }
       img {
-        height: 14px;
+        height: 18px;
         width: auto;
       }
     }
@@ -532,6 +568,19 @@ li {
   }
   .footer {
     padding: 80px;
+    .company-info .contact-wrapper .contact-icon-wrap {
+      border: none;
+      width: auto;
+      height: auto;
+      .contact-icon {
+        display: none;
+      }
+      .wechat-code,
+      .wechat-service {
+        display: inline-block !important;
+        position: static;
+      }
+    }
   }
   .scroll-nav-wrap {
     display: none;
@@ -542,6 +591,9 @@ li {
     width: 100vw;
     z-index: 99999;
     opacity: 1 !important;
+    video {
+      opacity: 1 !important;
+    }
   }
 }
 
@@ -553,7 +605,8 @@ li {
       flex-shrink: 1;
     }
   }
-  .tip-nav-wrap {
+  .tip-nav-wrap,
+  .back-top-wrap {
     right: 20px;
   }
   .popover-wrap {

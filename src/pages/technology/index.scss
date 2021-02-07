@@ -21,7 +21,7 @@
     line-height: 100px;
   }
   @mixin color-text-small {
-    font-size: 40px;
+    font-size: 2.25rem;
     line-height: 60px;
   }
   @mixin h3-large {
@@ -41,7 +41,7 @@
     line-height: 28px;
   }
   section {
-    padding: 45px 0;
+    padding: 60px 0;
     &.bg-gray {
       background-color: #f7f9fa;
     }
@@ -122,10 +122,16 @@
       color: #212121;
       z-index: 0;
     }
+    .color-title-img {
+      display: block;
+      margin: auto;
+      width: 60%;
+      margin-bottom: 60px;
+    }
     .row.flex-center {
       justify-content: center;
       position: relative;
-      top: -120px;
+      // top: -120px;
       .hidden-img {
         visibility: hidden;
       }
@@ -136,13 +142,15 @@
     .advantage-list {
       display: flex;
       flex-wrap: wrap;
-      margin-top: -20px;
+      // margin-top: -20px;
+      margin-top: 100px;
+      width: 100%;
       li {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 40px;
-        padding: 0 80px;
+        // padding: 0 80px;
         img {
           height: 60px;
           width: auto;
@@ -170,9 +178,16 @@
       font-weight: 400;
       color: #212112;
       line-height: 33px;
-      margin-bottom: 40px;
+      margin-bottom: 80px;
     }
     .color-title {
+      // background-image: -webkit-gradient(
+      //   linear,
+      //   0 0,
+      //   0 bottom,
+      //   from(#208fe7),
+      //   to(#17d9d9)
+      // );
       background: linear-gradient(357deg, #208fe7 0%, #17d9d9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -216,7 +231,7 @@
   }
   @media (max-width: 767px) {
     section {
-      padding: 20px 0;
+      padding: 40px 0;
     }
     h2.title {
       @include h2-mid;
@@ -245,7 +260,7 @@
         @include color-text-mid;
       }
       .row.flex-center {
-        top: -120px;
+        // top: -120px;
       }
       .advantage-list {
         li {
@@ -281,6 +296,7 @@
     .security-section {
       .color-title {
         @include color-text-small;
+        margin-bottom: 40px;
       }
       .row.flex-center {
         top: -40px;

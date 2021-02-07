@@ -121,8 +121,9 @@ $scaleKeyframe: (
       height: auto;
       left: 40%;
       top: 10%;
+      transform: translateY(-10%);
       $an1-1: (
-        transform: translateY(-15%),
+        transform: translateY(-10%),
       );
       $an1-2: (
         transform: translateY(0),
@@ -327,6 +328,7 @@ $scaleKeyframe: (
       width: 100%;
       height: auto;
       bottom: -8%;
+      left: 0;
     }
     .animation-2 {
       width: 33.6%;
@@ -404,6 +406,7 @@ $scaleKeyframe: (
       width: 100%;
       height: auto;
       bottom: -8%;
+      left: 0;
     }
     .animation-2 {
       width: 2%;
@@ -518,6 +521,7 @@ $scaleKeyframe: (
       width: 100%;
       height: auto;
       bottom: -8%;
+      left: 0;
     }
     .animation-2 {
       width: 3.5%;
@@ -664,6 +668,7 @@ $scaleKeyframe: (
       width: 100%;
       height: auto;
       bottom: -8%;
+      left: 0;
     }
     .animation-2 {
       width: 28.8%;
@@ -692,6 +697,82 @@ $scaleKeyframe: (
       top: 55%;
       left: 16%;
       @include animation(keyframe7 2s linear infinite);
+    }
+  }
+}
+@media (max-width: 500px) {
+  .ai-section {
+    .animation-wrap-1 {
+      & * {
+        animation-play-state: paused !important;
+      }
+      &:hover {
+        & * {
+          animation-play-state: paused !important;
+        }
+      }
+    }
+    .animation-wrap-2 {
+      & * {
+        animation-play-state: paused !important;
+      }
+      &:hover {
+        & * {
+          animation-play-state: paused !important;
+        }
+      }
+    }
+    .animation-wrap-3 {
+      & * {
+        animation-play-state: paused !important;
+      }
+      &:hover {
+        & * {
+          animation-play-state: paused !important;
+        }
+      }
+    }
+  }
+  .creativity-section {
+    .animation-wrap-1 {
+      & * {
+        animation-play-state: paused !important;
+      }
+      &:hover {
+        & * {
+          animation-play-state: paused !important;
+        }
+      }
+    }
+    .animation-wrap-2 {
+      & * {
+        animation-play-state: paused !important;
+      }
+      &:hover {
+        & * {
+          animation-play-state: paused !important;
+        }
+      }
+    }
+    .animation-wrap-3 {
+      & * {
+        animation-play-state: paused !important;
+      }
+      &:hover {
+        & * {
+          animation-play-state: paused !important;
+        }
+      }
+    }
+    .animation-wrap-4 {
+      & * {
+        animation-play-state: paused !important;
+      }
+      &:hover {
+        & * {
+          animation-play-state: paused !important;
+        }
+      }
     }
   }
 }

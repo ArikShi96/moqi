@@ -67,6 +67,7 @@
         color: #212121;
         line-height: 28px;
         margin-bottom: 20px;
+        text-align: justify;
       }
     }
     .row {
@@ -103,6 +104,7 @@
         font-weight: 400;
         color: #ababab;
         line-height: 28px;
+        text-align: justify;
         a {
           color: #2365eb;
         }
@@ -157,10 +159,9 @@
       }
       .service-nav {
         display: flex;
-        position: absolute;
-        bottom: 40px;
-        left: 18%;
         z-index: 9;
+        margin-top: 40px;
+        margin-bottom: 20px;
         li {
           cursor: pointer;
           margin-right: 14px;
@@ -173,6 +174,7 @@
             font-weight: 500;
             color: #ababab;
             line-height: 35px;
+            margin-bottom: 0;
           }
           &.active {
             p {
@@ -207,6 +209,12 @@
       }
     }
   }
+  //
+  .color-text-img {
+    height: 50px;
+    width: auto;
+    margin-bottom: 40px;
+  }
   @media (max-width: 767px) {
     padding-top: 48px;
     h2.title {
@@ -236,6 +244,9 @@
       .application-wrap {
         padding-bottom: 60px;
       }
+    }
+    .color-text-img {
+      height: 40px;
     }
   }
   @media (max-width: 500px) {
@@ -287,6 +298,9 @@
           font-size: 1rem;
         }
       }
+    }
+    .color-text-img {
+      height: 32px;
     }
   }
 }

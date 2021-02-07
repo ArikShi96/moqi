@@ -293,4 +293,14 @@
       }
     }
   }
+  @media (max-width: 372px) {
+    .job-section {
+      .search-form {
+        .search-icon {
+          right: 130px;
+          left: auto;
+        }
+      }
+    }
+  }
 }

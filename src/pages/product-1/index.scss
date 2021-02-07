@@ -42,6 +42,7 @@
       color: #212112;
       line-height: 24px;
       margin-bottom: 20px;
+      text-align: justify;
     }
   }
   h2.title {
@@ -72,6 +73,7 @@
     color: #212112;
     line-height: 28px;
     margin-bottom: 40px;
+    text-align: justify;
     &.white {
       color: #ffffff;
     }
@@ -86,15 +88,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 28px;
-    // TODO
-    position: sticky;
+    padding: 16px 34px;
+    position: static;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 9;
     h2 {
-      font-size: 12px;
+      font-size: 14px;
       font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #ffffff;
@@ -104,7 +105,7 @@
       display: flex;
       align-items: center;
       li {
-        font-size: 12px;
+        font-size: 14px;
         font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #ababab;
@@ -164,7 +165,11 @@
         justify-content: space-between;
         .img-wrap {
           width: 80%;
+          height: 100%;
           margin-bottom: 20px;
+          img {
+            height: auto;
+          }
         }
         p {
           font-size: 24px;
@@ -186,7 +191,7 @@
     }
     .scroll-wrap {
       background-color: #313336;
-      padding: 10% 35% 0;
+      padding: 0 35%;
       .img-wrap img {
         position: relative;
         top: 10vw;
@@ -304,13 +309,16 @@
     .text-quality {
       position: absolute;
       height: auto;
-      width: 340px;
-      left: calc(50% - 171px);
+      // width: 340px;
+      // left: calc(50% - 171px);
+      width: 432px;
+      left: calc(50% - 216px);
       &.up {
         top: calc(50% - 54px);
       }
       &.down {
-        top: calc(50% + 32px);
+        // top: calc(50% + 32px);
+        top: calc(50% + 46px);
       }
     }
   }
@@ -321,6 +329,7 @@
     text-align: center;
     h3.title {
       margin-bottom: 72px;
+      text-align: center;
       span {
         font-size: 28px;
       }
@@ -330,14 +339,8 @@
       // overflow-x: hidden;
       background-color: #fff;
       padding: 40px;
-      .img-wrap {
-        display: inline-flex;
-        img {
-          flex: 0 0 50%;
-          display: inline-block;
-          width: 50%;
-          height: 50%;
-        }
+      .carousel.slide {
+        width: 100%;
       }
       .carousel-indicators {
         top: -100px;
@@ -355,6 +358,19 @@
         }
         li.active {
           border-bottom: 1px solid #000000;
+        }
+      }
+      // TODO 解决IE图片消失问题
+      .img-wrap {
+        // display: inline-flex;
+        width: 100%;
+        overflow: hidden;
+        img {
+          // flex: 0 0 50%;
+          // display: inline-block;
+          width: 50%;
+          height: auto;
+          float: left;
         }
       }
       .name-wrap {
@@ -384,23 +400,32 @@
     .text-area {
       position: absolute;
       width: auto;
-      height: 64px;
+      // height: 64px;
+      height: 84px;
       top: calc(50% - 32px);
       &.left {
-        left: calc(50% - 200px);
+        // left: calc(50% - 200px);
+        left: calc(50% - 260px);
       }
       &.left2 {
-        left: calc(50% - 225px);
+        // left: calc(50% - 225px);
+        left: calc(50% - 285px);
       }
       &.right {
-        height: 50px;
-        left: calc(50% + 175px);
-        top: calc(50% - 16px);
+        // height: 50px;
+        // left: calc(50% + 175px);
+        // top: calc(50% - 16px);
+        height: 60px;
+        left: calc(50% + 220px);
+        top: calc(50% - 11px);
       }
       &.right2 {
-        height: 50px;
-        left: calc(50% + 200px);
-        top: calc(50% - 16px);
+        // height: 50px;
+        // left: calc(50% + 200px);
+        // top: calc(50% - 16px);
+        height: 60px;
+        left: calc(50% + 252px);
+        top: calc(50% - 11px);
       }
     }
   }
@@ -409,7 +434,8 @@
     position: relative;
     .text-speed {
       position: absolute;
-      top: calc(50% - 42px);
+      // top: calc(50% - 42px);
+      top: calc(50% - 33px);
       left: calc(50% - 175px);
       height: 84px;
       width: auto;
@@ -456,8 +482,7 @@
     padding: 20px 0;
     .row {
       flex-wrap: nowrap;
-      overflow-x: scroll;
-      overflow-y: hidden;
+      overflow: hidden;
       padding-bottom: 20px;
       margin: 0;
       // & > div {
@@ -532,6 +557,22 @@
         }
       }
     }
+    .scroll-wrap {
+      width: 100%;
+      position: relative;
+      .scroll-bar {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        border-radius: 1px;
+        background-color: #ffffff;
+        &.full {
+          width: 0;
+          z-index: 1;
+          background-color: #212121;
+        }
+      }
+    }
     /* 滚动条默认显示样式 */
     ::-webkit-scrollbar-thumb {
       background-color: #000000;
@@ -576,7 +617,14 @@
       z-index: 1;
       position: absolute;
       top: calc(50% - 42px);
-      left: calc(50% - 175px);
+      // left: calc(50% - 175px);
+      left: 0;
+      width: 100%;
+      text-align: center;
+      .color-text-img {
+        height: 84px;
+        width: auto;
+      }
     }
   }
   @media (max-width: 991px) {
@@ -613,9 +661,9 @@
       .logo-wrap img {
         left: 20px;
       }
-      // .scroll-wrap .img-wrap img {
-      //   top: 16px;
-      // }
+      .scroll-wrap {
+        padding-top: 10%;
+      }
     }
     .lighting-design {
       h2 img {
@@ -629,7 +677,11 @@
       h2 {
         font-size: 40px;
         top: calc(50% - 24px);
-        left: calc(50% - 100px);
+        // left: calc(50% - 100px);
+        .color-text-img {
+          height: 36px;
+          width: auto;
+        }
       }
     }
     .collection-speed {
@@ -646,34 +698,46 @@
         position: absolute;
         width: auto;
         height: 36px;
-        top: calc(50% - 18px);
+        // top: calc(50% - 18px);
+        top: calc(50% - 14px);
         &.left {
-          left: calc(50% - 116px);
+          // left: calc(50% - 116px);
+          left: calc(50% - 113px);
         }
         &.left2 {
-          left: calc(50% - 132px);
+          // left: calc(50% - 132px);
+          left: calc(50% - 126px);
         }
         &.right {
+          // height: 28px;
+          // left: calc(50% + 100px);
+          // top: calc(50% - 10px);
           height: 28px;
-          left: calc(50% + 100px);
-          top: calc(50% - 10px);
+          left: calc(50% + 96px);
+          top: calc(50% - 5px);
         }
         &.right2 {
+          // height: 28px;
+          // left: calc(50% + 116px);
+          // top: calc(50% - 10px);
           height: 28px;
-          left: calc(50% + 116px);
-          top: calc(50% - 10px);
+          left: calc(50% + 112px);
+          top: calc(50% - 5px);
         }
       }
     }
     .picture-high-quality {
       .text-quality {
-        width: 196px;
-        left: calc(50% - 98px);
+        // width: 196px;
+        width: 182px;
+        // left: calc(50% - 98px);
+        left: calc(50% - 92px);
         &.up {
-          top: calc(50% - 32px);
+          // top: calc(50% - 32px);
+          top: calc(50% - 26px);
         }
         &.down {
-          top: calc(50% + 20px);
+          top: calc(50% + 23px);
         }
       }
     }
@@ -708,7 +772,7 @@
     h2.title {
       font-size: 24px;
       line-height: 32px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       .sub {
         font-size: 14px;
       }
@@ -716,7 +780,7 @@
     h3.title {
       font-size: 18px;
       line-height: 24px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
     aside {
       p {
@@ -725,7 +789,8 @@
     }
     .no-touch-text {
       h2 {
-        left: calc(50% - 120px);
+        // left: calc(50% - 120px);
+        left: 0;
       }
     }
     .protect-section {
@@ -736,9 +801,12 @@
       }
     }
   }
-  @media (max-width: 360px) {
+  @media (max-width: 372px) {
     .product-header h2 {
       font-size: 10px;
+    }
+    .protect-section h2 {
+      flex-wrap: wrap;
     }
   }
 }

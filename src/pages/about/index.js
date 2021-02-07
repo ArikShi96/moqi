@@ -11,21 +11,28 @@ $(document).ready(() => {
   // 导航条选中
   $(".navbar-wrap li a").eq(3).addClass("active");
   // 播放视频
-  let videoIntervalEvent = window.setInterval(() => {
-    if (
-      $(".video-section video")[0] &&
-      $(".video-section video")[0].readyState === 4
-    ) {
-      window.clearInterval(videoIntervalEvent);
-      $(".video-section video")[0].play();
-      videoIntervalEvent = window.setInterval(() => {
-        if ($(".video-section video")[0].currentTime > 107) {
-          $(".video-section video")[0].pause();
-          window.clearInterval(videoIntervalEvent);
-        }
-      }, 200);
-    }
-  }, 500);
+  // $(".video-section-button").on("click", () => {
+  //   $(".video-section video")[0].muted = false;
+  // });
+  // let videoIntervalEvent = window.setInterval(() => {
+  //   if (
+  //     $(".video-section video")[0] &&
+  //     $(".video-section video")[0].readyState === 4
+  //   ) {
+  //     window.clearInterval(videoIntervalEvent);
+  //     $(".video-section video")[0].play();
+  //     setTimeout(() => {
+  //       $(".video-section-button").click();
+  //     }, 10);
+  //     videoIntervalEvent = window.setInterval(() => {
+  //       if ($(".video-section video")[0].currentTime > 107) {
+  //         $(".video-section video")[0].pause();
+  //         window.clearInterval(videoIntervalEvent);
+  //       }
+  //     }, 200);
+  //   }
+  // }, 500);
+  window.openVideo("./file/墨奇&绿城.mp4", () => {}, true);
   // 创始人左右滚动
   function calculateScrollBar(position) {
     $(".team-section .scroll-wrap .scroll-bar.full")
@@ -139,7 +146,7 @@ $(document).ready(() => {
             ></div>
             <div class="news-content">
               <div class="time-tag">${new Date(
-                item.create_time
+                item.publish_time
               ).toLocaleDateString()}</div>
               <h2 class="title">
                 ${item.title}
@@ -170,6 +177,16 @@ $(document).ready(() => {
               });
           }, 0);
         }
+        $("article.news").click((event) => {
+          let $el = $(event.target);
+          if (!$el.hasClass("news")) {
+            $el = $el.parent(".news");
+          }
+          const href = $el.find(".enter-wrap").attr("href");
+          if (href && href !== "#") {
+            window.location = href;
+          }
+        });
       },
       error: function () {
         $(".news-section .row").empty();

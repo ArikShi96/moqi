@@ -4,6 +4,28 @@ import "./index.html";
 
 // 绑定事件
 $(document).ready(() => {
+  // IE 解决高度塌陷
+  let initIeHeight = $(".advantage-wrap")[0].clientHeight;
+  function resetAdvantageWrapHeight() {
+    let ieImgHeight = 0;
+    Array.from($(".advantage-wrap .img-wrap")).forEach((el) => {
+      if (el.clientHeight === 0) {
+        ieImgHeight =
+          ieImgHeight > $(el).find(".hidden-img")[0].clientHeight
+            ? ieImgHeight
+            : $(el).find(".hidden-img")[0].clientHeight;
+      }
+    });
+    if (ieImgHeight > 0) {
+      $(".advantage-wrap").css("height", `${ieImgHeight + initIeHeight}px`);
+    }
+  }
+  if ($(".advantage-wrap .img-wrap").css("height") === "0px") {
+    resetAdvantageWrapHeight();
+    $(window).resize(() => {
+      resetAdvantageWrapHeight();
+    });
+  }
   $("header.header").addClass("black").addClass("transparent");
   $(".scroll-nav-wrap").addClass("white");
   // 导航条选中
@@ -63,7 +85,7 @@ $(document).ready(() => {
     };
     closeCallBack();
     $(".class-section .class-wrap")
-      .eq($el.data("index"))
+      // .eq($el.data("index"))
       .addClass("bg-visible");
     // 打开视频
     window.openVideo(

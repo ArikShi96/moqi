@@ -27,6 +27,14 @@
     font-size: 28px;
     line-height: 28px;
   }
+  #global-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 56vw;
+    z-index: 0;
+  }
   section {
     padding: 60px 0;
     &.bg-gray {
@@ -117,6 +125,7 @@
         color: #212121;
         line-height: 28px;
         margin-bottom: 10px;
+        text-align: justify;
       }
     }
   }
@@ -229,9 +238,11 @@
         &.job {
           margin-bottom: 4px;
           font-size: 16px;
+          width: 100%;
         }
         &.title {
           font-size: 12px;
+          width: 100%;
         }
       }
     }
@@ -315,6 +326,7 @@
             line-height: 32px;
             li {
               list-style: disc;
+              text-align: justify;
             }
           }
         }
@@ -331,6 +343,7 @@
       background-color: #ffffff;
       height: 100%;
       position: relative;
+      cursor: pointer;
       .news-img {
         background-size: cover;
         background-position: center;
@@ -356,6 +369,7 @@
       h2.title {
         font-size: 16px;
         line-height: 28px;
+        text-align: justify;
       }
       p.content {
         font-size: 12px;
@@ -363,6 +377,7 @@
         font-weight: 400;
         color: #ababab;
         line-height: 19px;
+        text-align: justify;
       }
       .enter-wrap {
         position: absolute;

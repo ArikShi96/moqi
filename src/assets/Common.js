@@ -36,14 +36,6 @@ $(document).ready(() => {
   } else {
     $("html").removeClass("rem-16");
   }
-  // 底部操作
-  $(".tip-nav-wrap .tip-finger").click(() => {
-    $(".tip-nav-wrap .tip-nav").slideToggle();
-  });
-  $(".tip-nav-wrap li.contact").click(() => {
-    $(".tip-nav-wrap .tip-nav").slideToggle();
-    $("#zc__sdk__sys__btn").click();
-  });
   // product 导航
   let initClassName = "";
   $("header.header .toggle-product").hover(() => {
@@ -72,6 +64,18 @@ $(document).ready(() => {
       }
     });
   });
+  $("header.header > .navbar-wrap a").hover((event) => {
+    if (
+      event.target.tagName.toLocaleLowerCase() === "a" &&
+      $(event.target).attr("href")
+    ) {
+      if (!$("header.header .product-nav-header").is(":visible")) {
+        return;
+      }
+      $("header.header .product-nav-header").slideUp(0);
+      $("header.header").attr("class", initClassName);
+    }
+  });
   function calculateHeaderColor() {
     const breakSection = $("section[data-break='black']");
     let color = "white";
@@ -97,8 +101,15 @@ $(document).ready(() => {
     event.stopPropagation();
     $("header.header ul.product-list").slideToggle();
   });
-  // back-top
-  $(".tip-nav .back-top").click(() => {
+  // 底部操作
+  $(".tip-nav-wrap .tip-finger").click(() => {
+    $(".tip-nav-wrap .tip-nav").slideToggle();
+  });
+  $(".tip-nav-wrap li.contact").click(() => {
+    $(".tip-nav-wrap .tip-nav").slideToggle();
+    $("#zc__sdk__sys__btn").click();
+  });
+  $(".back-top-wrap").click(() => {
     $(document.body).animatescroll();
   });
   // 弹出框
@@ -109,6 +120,11 @@ $(document).ready(() => {
     $(".popover-wrap").mouseleave(() => {
       $(".popover-wrap").fadeOut();
     });
+  });
+  $(".tip-nav :not(.trigger-popover)").hover((event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    $(".popover-wrap").fadeOut();
   });
   $(".tip-nav .trigger-popover").click((event) => {
     event.stopPropagation();
