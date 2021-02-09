@@ -500,6 +500,12 @@ li {
   display: none !important;
 }
 
+@media (max-width: 991px) {
+  .header .navbar-wrap {
+    margin-right: -120px;
+  }
+}
+
 @media (max-width: 767px) {
   .alert-wrap {
     padding: 0 30%;

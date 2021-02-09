@@ -309,15 +309,13 @@
           &.bg-visible {
             background-size: cover;
           }
+          &:hover {
+            background-size: cover;
+          }
           img {
             width: 28px;
             height: auto;
             margin-bottom: 16px;
-          }
-        }
-        &:hover {
-          .class-wrap {
-            background-size: cover;
           }
         }
       }
@@ -527,6 +525,9 @@
     }
     .color-text-img {
       height: 1.125rem;
+      &.title {
+        height: 1.225rem;
+      }
     }
   }
   @media (max-width: 360px) {

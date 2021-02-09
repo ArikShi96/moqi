@@ -231,24 +231,26 @@ $(document).ready(() => {
     );
   }
   // 底部操作
-  $(".contact-wrapper .contact-icon-wrap")
-    .eq(0)
-    .on("mouseenter", () => {
-      $(".contact-wrapper .contact-icon-wrap .wechat-code").fadeIn();
-    });
-  $(".contact-wrapper .contact-icon-wrap")
-    .eq(0)
-    .on("mouseleave", () => {
-      $(".contact-wrapper .contact-icon-wrap .wechat-code").fadeOut();
-    });
-  $(".contact-wrapper .contact-icon-wrap")
-    .eq(1)
-    .on("mouseenter", () => {
-      $(".contact-wrapper .contact-icon-wrap .wechat-service").fadeIn();
-    });
-  $(".contact-wrapper .contact-icon-wrap")
-    .eq(1)
-    .on("mouseleave", () => {
-      $(".contact-wrapper .contact-icon-wrap .wechat-service").fadeOut();
-    });
+  if (window.innerWidth > 767) {
+    $(".contact-wrapper .contact-icon-wrap")
+      .eq(0)
+      .on("mouseenter", () => {
+        $(".contact-wrapper .contact-icon-wrap .wechat-code").fadeIn();
+      });
+    $(".contact-wrapper .contact-icon-wrap")
+      .eq(0)
+      .on("mouseleave", () => {
+        $(".contact-wrapper .contact-icon-wrap .wechat-code").fadeOut();
+      });
+    $(".contact-wrapper .contact-icon-wrap")
+      .eq(1)
+      .on("mouseenter", () => {
+        $(".contact-wrapper .contact-icon-wrap .wechat-service").fadeIn();
+      });
+    $(".contact-wrapper .contact-icon-wrap")
+      .eq(1)
+      .on("mouseleave", () => {
+        $(".contact-wrapper .contact-icon-wrap .wechat-service").fadeOut();
+      });
+  }
 });

@@ -126,7 +126,7 @@ window.Helper = {
   },
 };
 
-window.openVideo = (url, closeCallback, hideControl) => {
+window.openVideo = (url, closeCallback, hideControl, poster) => {
   // window.open(
   //   url,
   //   "Video",
@@ -141,7 +141,7 @@ window.openVideo = (url, closeCallback, hideControl) => {
     document.getElementById("global-video"),
     {
       controls: true, // 是否显示控制条
-      // poster: "", // 视频封面图地址
+      poster: poster || null, // 视频封面图地址
       // preload: "auto",
       autoplay: true,
       // fluid: true, // 自适应宽高

@@ -6,7 +6,8 @@ import "jscroll"; // jquery.jscroll.js
 
 // 绑定事件
 $(document).ready(() => {
-  $("header.header").addClass("black").addClass("transparent");
+  // $("header.header").addClass("black").addClass("transparent");
+  $("header.header").addClass("black").addClass("white");
   $(".scroll-nav-wrap").addClass("white");
   // 导航条选中
   $(".navbar-wrap li a").eq(3).addClass("active");
@@ -32,7 +33,12 @@ $(document).ready(() => {
   //     }, 200);
   //   }
   // }, 500);
-  window.openVideo("./file/墨奇&绿城.mp4", () => {}, true);
+  window.openVideo(
+    "./file/墨奇&绿城.mp4",
+    () => {},
+    true,
+    "./bg-img/poster.png"
+  );
   // 创始人左右滚动
   function calculateScrollBar(position) {
     $(".team-section .scroll-wrap .scroll-bar.full")
@@ -108,16 +114,16 @@ $(document).ready(() => {
   // 滚动事件
   $(window).scroll(() => {
     // header 是否透明
-    if (
-      !$(".navbar-wrap-mobile").is(":visible") &&
-      !$("header.header .product-nav-header").is(":visible")
-    ) {
-      if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
-        $("header.header").addClass("transparent").removeClass("white");
-      } else {
-        $("header.header").removeClass("transparent").addClass("white");
-      }
-    }
+    // if (
+    //   !$(".navbar-wrap-mobile").is(":visible") &&
+    //   !$("header.header .product-nav-header").is(":visible")
+    // ) {
+    //   if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
+    //     $("header.header").addClass("transparent").removeClass("white");
+    //   } else {
+    //     $("header.header").removeClass("transparent").addClass("white");
+    //   }
+    // }
 
     // 侧边滚动条颜色
     if (
