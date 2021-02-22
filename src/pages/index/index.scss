@@ -365,6 +365,12 @@
       margin-bottom: 32px;
     }
   }
+  @media (min-width: 2000px) {
+    .container-fluid {
+      max-width: 1920px;
+      margin: auto;
+    }
+  }
   @media (max-width: 1199px) {
     .creativity-section {
       .advantage-wrap {
