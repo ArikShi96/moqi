@@ -195,6 +195,7 @@ $(document).ready(() => {
   const sections = $("section.section");
   if (sections.length) {
     let html = "";
+    let SCROLL_NAV_WRAP_HEIGHT = 0;
     Array.from(sections).forEach((section, index) => {
       html += `<li class="${index === 0 ? "active" : ""}">
       <div class="line"></div>
@@ -202,6 +203,12 @@ $(document).ready(() => {
     </li>`;
     });
     $(".scroll-nav-wrap ul").append(html);
+    window.setTimeout(() => {
+      SCROLL_NAV_WRAP_HEIGHT =
+        $(".scroll-nav-wrap ul")[0].getBoundingClientRect().top +
+        $(".scroll-nav-wrap ul")[0].clientHeight -
+        10;
+    });
     Array.from($(".scroll-nav-wrap li")).forEach((li, index) => {
       $(li).click(() => {
         if (!$(li).hasClass("active")) {
@@ -215,20 +222,27 @@ $(document).ready(() => {
         }
       });
     });
-    $(window).scroll(
-      debounce(() => {
-        let hashIndex = 0;
-        let result = 9999;
-        Array.from(sections).forEach((section, index) => {
-          if (Math.abs(section.getBoundingClientRect().top) < result) {
-            hashIndex = index;
-            result = Math.abs(section.getBoundingClientRect().top);
-          }
-        });
-        $(".scroll-nav-wrap li").removeClass("active");
-        $(".scroll-nav-wrap li").eq(hashIndex).addClass("active");
-      }, 20)
-    );
+    $(window).on("scroll", () => {
+      let hashIndex = 0;
+      let result = 9999;
+      Array.from(sections).forEach((section, index) => {
+        if (Math.abs(section.getBoundingClientRect().top) < result) {
+          hashIndex = index;
+          result = Math.abs(section.getBoundingClientRect().top);
+        }
+      });
+      $(".scroll-nav-wrap li").removeClass("active");
+      $(".scroll-nav-wrap li").eq(hashIndex).addClass("active");
+      // scroll-nav-wrap 不能落在footer区域
+      if (
+        SCROLL_NAV_WRAP_HEIGHT >
+        $("footer.footer")[0].getBoundingClientRect().top
+      ) {
+        $(".scroll-nav-wrap ul").fadeOut(0);
+      } else {
+        $(".scroll-nav-wrap ul").fadeIn(0);
+      }
+    });
   }
   // 底部操作
   if (window.innerWidth > 767) {

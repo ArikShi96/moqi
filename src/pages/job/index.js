@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import "../../assets/Common";
 import "./index.scss";
 import "./index.html";
@@ -90,13 +91,15 @@ $(document).ready(() => {
   }
   // 筛选列表
   function filterList() {
-    const filterValue = $(".search-form input").val();
+    const filterValue = ($(".search-form input").val() || "").toLowerCase();
     if (filterValue) {
       allList = allOriginalList.filter((item, index) => {
         return (
-          (item.title || "").indexOf(filterValue) > -1 ||
-          getProvince(allOriginalList, index).indexOf(filterValue) > -1 ||
-          (item.department.name || "").indexOf(filterValue) > -1
+          (item.title || "").toLowerCase().indexOf(filterValue) > -1 ||
+          getProvince(allOriginalList, index)
+            .toLowerCase()
+            .indexOf(filterValue) > -1 ||
+          (item.department.name || "").toLowerCase().indexOf(filterValue) > -1
         );
       });
     } else {
@@ -118,7 +121,9 @@ $(document).ready(() => {
         </div>
         <div class="col-3"><p>${allList[i].department.name || ""}</p></div>
         <div class="col-3"><a
-          href="https://app.mokahr.com/apply/moqi/24494#/job/${allList[i].id}">查看详情</a>
+          href="https://app.mokahr.com/apply/moqi/24494#/job/${
+            allList[i].id
+          }">查看详情</a>
         </div>
       `;
       }
@@ -126,7 +131,7 @@ $(document).ready(() => {
     $(".table-wrap .table-content").empty().append(html);
   }
   // 切换列表
-  $(".search-form .search-tab").click(() => {
+  $(".search-form .search-tab").click((event) => {
     if (event.target.className.indexOf("active") > -1) {
       return;
     }
@@ -180,6 +185,12 @@ $(document).ready(() => {
   });
   // 搜索change事件
   $(".search-form input").on("input", () => {
+    const filterValue = $(".search-form input").val();
+    if (filterValue) {
+      $(".search-form .search-icon").fadeOut();
+    } else {
+      $(".search-form .search-icon").fadeIn();
+    }
     filterList();
     refreshList();
     setPagination();

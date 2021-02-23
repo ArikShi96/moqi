@@ -172,6 +172,11 @@
       margin-bottom: 80px;
     }
   }
+  .r-text {
+    font-size: 10px !important;
+    position: relative;
+    top: -4px;
+  }
   @media (max-width: 767px) {
     padding-top: 48px;
     h2.title {

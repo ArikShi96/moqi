@@ -352,7 +352,7 @@ $scaleKeyframe: (
     .animation-3 {
       width: 11.2%;
       height: auto;
-      top: 33.5%;
+      top: 35.5%;
       left: 13%;
       $an7-1: (
         transform: translateY(-30%),
@@ -466,14 +466,14 @@ $scaleKeyframe: (
     }
     .animation-9 {
       right: 47%;
-      bottom: 52%;
+      bottom: 45%;
       width: 20%;
       height: auto;
       $an5-1: (
-        bottom: 52%,
+        bottom: 45%,
       );
       $an5-2: (
-        bottom: 42%,
+        bottom: 35%,
       );
       $keyframe5: (
         0%: $an5-1,
@@ -485,14 +485,14 @@ $scaleKeyframe: (
     }
     .animation-10 {
       right: 16%;
-      bottom: 31%;
+      bottom: 25%;
       width: 10%;
       height: auto;
       $an4-1: (
-        bottom: 31%,
+        bottom: 25%,
       );
       $an4-2: (
-        bottom: 41%,
+        bottom: 35%,
       );
       $keyframe4: (
         0%: $an4-1,
@@ -614,7 +614,7 @@ $scaleKeyframe: (
     .animation-15 {
       width: 28.6%;
       height: auto;
-      top: 3%;
+      top: 16%;
       left: 35%;
       $an10-1: (
         transform: translateY(0),
@@ -633,7 +633,7 @@ $scaleKeyframe: (
     .animation-16 {
       width: 15.2%;
       height: auto;
-      top: 23%;
+      top: 41%;
       left: 50%;
       $an9-1: (
         transform: translateY(-15%),
@@ -694,7 +694,7 @@ $scaleKeyframe: (
     .animation-5 {
       width: 14%;
       height: auto;
-      top: 55%;
+      top: 60%;
       left: 16%;
       @include animation(keyframe7 2s linear infinite);
     }

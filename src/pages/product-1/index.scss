@@ -144,6 +144,11 @@
   .video-section {
     padding: 0;
   }
+  .r-text {
+    font-size: 12px !important;
+    position: relative;
+    top: -8px;
+  }
   // 非接触指纹采集仪
   .product-detail {
     h2.title {
@@ -283,7 +288,7 @@
     }
     .absolute.row {
       position: absolute;
-      top: 25%;
+      top: 40%;
       width: 80%;
     }
     h2 img {
