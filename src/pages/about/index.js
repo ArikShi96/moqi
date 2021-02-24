@@ -12,33 +12,11 @@ $(document).ready(() => {
   // 导航条选中
   $(".navbar-wrap li a").eq(3).addClass("active");
   // 播放视频
-  // $(".video-section-button").on("click", () => {
-  //   $(".video-section video")[0].muted = false;
-  // });
-  // let videoIntervalEvent = window.setInterval(() => {
-  //   if (
-  //     $(".video-section video")[0] &&
-  //     $(".video-section video")[0].readyState === 4
-  //   ) {
-  //     window.clearInterval(videoIntervalEvent);
-  //     $(".video-section video")[0].play();
-  //     setTimeout(() => {
-  //       $(".video-section-button").click();
-  //     }, 10);
-  //     videoIntervalEvent = window.setInterval(() => {
-  //       if ($(".video-section video")[0].currentTime > 107) {
-  //         $(".video-section video")[0].pause();
-  //         window.clearInterval(videoIntervalEvent);
-  //       }
-  //     }, 200);
-  //   }
-  // }, 500);
-  window.openVideo(
-    "./file/墨奇&绿城.mp4",
-    () => {},
-    true,
-    "./bg-img/poster.png"
-  );
+  window.openVideo({
+    url: "./file/墨奇&绿城.mp4",
+    hideControl: true,
+    poster: "./bg-img/poster.png",
+  });
   // 创始人左右滚动
   function calculateScrollBar(position) {
     $(".team-section .scroll-wrap .scroll-bar.full")
@@ -224,7 +202,7 @@ $(document).ready(() => {
     2019: {
       text: ["2018", "2019", "2020", "今天"],
       desc:
-        "<li>正式发布新一代“指纹 - 身份识别” AI 系统，在业内引起巨大反响</li><li>入选部委“双十计划”重点推广项目</li><li>研发出颠覆性的非接触 3D 指纹采集仪</li>",
+        "<li>正式发布新一代“指纹-身份识别” AI 系统，在业内引起巨大反响</li><li>入选部委“双十计划”重点推广项目</li><li>研发出颠覆性的非接触 3D 指纹采集仪</li>",
       translateX: -12,
     },
     2020: {

@@ -469,11 +469,14 @@ $scaleKeyframe: (
       bottom: 45%;
       width: 20%;
       height: auto;
+      &.home-ani {
+        bottom: 40%;
+      }
       $an5-1: (
-        bottom: 45%,
+        transform: translateY(0)
       );
       $an5-2: (
-        bottom: 35%,
+        transform: translateY(30%)
       );
       $keyframe5: (
         0%: $an5-1,
@@ -683,6 +686,9 @@ $scaleKeyframe: (
       top: 39%;
       left: 45%;
       @include animation(keyframe8 4s linear infinite);
+      &.home-ani {
+        top: 47%;
+      }
     }
     .animation-4 {
       width: 18.2%;
@@ -697,6 +703,9 @@ $scaleKeyframe: (
       top: 60%;
       left: 16%;
       @include animation(keyframe7 2s linear infinite);
+      &.home-ani {
+        top: 65%;
+      }
     }
   }
 }

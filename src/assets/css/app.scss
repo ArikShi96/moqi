@@ -23,6 +23,12 @@ body {
   z-index: 99999;
   opacity: 1 !important;
 }
+.video-js button.vjs-play-control {
+  outline: none;
+  & > * {
+    outline: none;
+  }
+}
 h1,
 h2,
 h3,
@@ -536,6 +542,7 @@ li {
     .navbar-wrap-mobile {
       display: block;
       width: 100%;
+      z-index: 100000;
       ul {
         margin-top: 16px;
       }
@@ -592,6 +599,7 @@ li {
     display: none;
   }
   #global-video {
+    top: 0;
     left: 0;
     height: 60vw;
     width: 100vw;
@@ -610,10 +618,16 @@ li {
     .company-info .address {
       flex-shrink: 1;
     }
+    .privacy-info {
+      font-size: 0.725rem;
+    }
   }
   .tip-nav-wrap,
   .back-top-wrap {
-    right: 20px;
+    right: 10px;
+  }
+  .tip-nav-wrap {
+    bottom: 90px;
   }
   .popover-wrap {
     right: 80px;

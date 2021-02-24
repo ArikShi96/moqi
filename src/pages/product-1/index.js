@@ -8,8 +8,8 @@ $(document).ready(() => {
   // 滚动事件
   $(window).scroll(() => {
     if (
-      (window.innerWidth > 768 && $(document).scrollTop() > 68) ||
-      (window.innerWidth <= 768 && $(document).scrollTop() > 48)
+      (window.innerWidth > 767 && $(document).scrollTop() > 68) ||
+      (window.innerWidth <= 767 && $(document).scrollTop() > 48)
     ) {
       $(".product-header").css("position", "fixed");
     } else {
@@ -19,13 +19,18 @@ $(document).ready(() => {
   // 导航条选中
   $(".navbar-wrap li a").eq(2).addClass("active");
   // 视频
+  // if ($("video.pc-view").is(":visible")) {
   let videoIntervalEvent = window.setInterval(() => {
     if (
       $(".video-section video")[0] &&
       $(".video-section video")[0].readyState === 4
     ) {
       window.clearInterval(videoIntervalEvent);
-      $(".video-section video")[0].play();
+      try {
+        $(".video-section video")[0].play();
+      } catch (err) {
+        //
+      }
       videoIntervalEvent = window.setInterval(() => {
         if ($(".video-section video")[0].currentTime > 3.5) {
           $(".video-section video")[0].pause();
@@ -34,8 +39,32 @@ $(document).ready(() => {
       }, 100);
     }
   }, 500);
+  // } else {
+  //   $(document.getElementById("product-video")).fadeIn();
+  //   window.VideoJs(
+  //     document.getElementById("product-video"),
+  //     {
+  //       controls: true, // 是否显示控制条
+  //       poster: null, // 视频封面图地址
+  //       // preload: "auto",
+  //       autoplay: true,
+  //       // fluid: true, // 自适应宽高
+  //       language: "zh-CN", // 设置语言
+  //       muted: false, // 是否静音
+  //       sources: [
+  //         // 视频源
+  //         {
+  //           src: "./file/video.mp4",
+  //           type: "video/mp4",
+  //           poster: "",
+  //         },
+  //       ],
+  //     },
+  //     function () {}
+  //   );
+  // }
   $(".advantage-section .view-video").click(() => {
-    window.openVideo("./file/video.mp4");
+    window.openVideo({ url: "./file/video.mp4", muted: true });
   });
   // 轮播图
   Array.from($(".carousel-wrap li")).forEach((li, index) => {

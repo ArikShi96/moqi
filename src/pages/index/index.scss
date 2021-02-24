@@ -307,7 +307,7 @@
             border-right: none;
           }
           &.bg-visible {
-            background-size: cover;
+            background-size: cover !important;
           }
           &:hover {
             background-size: cover;
@@ -485,7 +485,7 @@
       }
       p {
         // top: 100px;
-        top: 80px;
+        top: 5rem;
       }
       .video-wrap {
         bottom: 10px;
@@ -503,6 +503,9 @@
           img {
             width: 16px;
             margin-bottom: 8px;
+          }
+          &:hover {
+            background-size: 0;
           }
         }
       }

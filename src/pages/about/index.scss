@@ -282,6 +282,7 @@
             border-right: 1px solid rgba(255, 255, 255, 0.3);
             justify-content: flex-end;
             cursor: pointer;
+            overflow-y: auto;
             &.active {
               justify-content: space-between;
               h2.title {
@@ -709,7 +710,7 @@
           line-height: 24px;
         }
         p {
-          font-size: 12px;
+          font-size: 0.6875rem;
           line-height: 16px;
         }
         .color-text {
@@ -724,7 +725,7 @@
       }
       .row {
         width: 400vw;
-        height: calc(100vw + 20px);
+        height: calc(100vw + 60px);
       }
       .member-wrap {
         padding: 20px 45px;

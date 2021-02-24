@@ -5,8 +5,8 @@ $(document).ready(() => {
   // 滚动事件
   $(window).scroll(() => {
     if (
-      (window.innerWidth > 768 && $(document).scrollTop() > 68) ||
-      (window.innerWidth <= 768 && $(document).scrollTop() > 48)
+      (window.innerWidth > 767 && $(document).scrollTop() > 68) ||
+      (window.innerWidth <= 767 && $(document).scrollTop() > 48)
     ) {
       $(".product-header").css("position", "fixed");
     } else {

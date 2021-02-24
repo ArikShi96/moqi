@@ -138,7 +138,9 @@
           text-align: justify;
         }
       }
-      &:hover {
+      &:hover,
+      &:focus,
+      &:active {
         h2 {
           color: #2365eb;
         }

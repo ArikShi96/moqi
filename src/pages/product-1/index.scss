@@ -22,6 +22,9 @@
   .p0 {
     padding: 0;
   }
+  .pr-2em {
+    padding-right: 2em;
+  }
   .bg-gray {
     background: linear-gradient(135deg, #fafbfc 0%, #d5d8dc 100%);
   }
@@ -143,6 +146,25 @@
   }
   .video-section {
     padding: 0;
+  }
+  #video-section-wrap {
+    .vjs-control-bar {
+      visibility: hidden;
+    }
+    #product-video {
+      display: none;
+      z-index: 99999;
+      opacity: 1 !important;
+      video {
+        opacity: 1 !important;
+      }
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 56vw;
+      z-index: 0;
+    }
   }
   .r-text {
     font-size: 12px !important;
@@ -644,6 +666,9 @@
   }
   @media (max-width: 767px) {
     padding-top: 48px;
+    .pr-2em {
+      padding-right: 0;
+    }
     h2.title {
       font-size: 32px;
       line-height: 40px;
@@ -789,7 +814,7 @@
     }
     aside {
       p {
-        font-size: 1rem;
+        font-size: 0.9375rem;
       }
     }
     .no-touch-text {
