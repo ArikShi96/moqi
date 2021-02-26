@@ -19,52 +19,19 @@ $(document).ready(() => {
   // 导航条选中
   $(".navbar-wrap li a").eq(2).addClass("active");
   // 视频
-  // if ($("video.pc-view").is(":visible")) {
-  let videoIntervalEvent = window.setInterval(() => {
-    if (
-      $(".video-section video")[0] &&
-      $(".video-section video")[0].readyState === 4
-    ) {
+  // h5下自动播放不可用
+  const videoIntervalEvent = window.setInterval(() => {
+    if ($(".video-section video:visible")[0].currentTime > 3.5) {
+      $(".video-section video:visible")[0].pause();
       window.clearInterval(videoIntervalEvent);
-      try {
-        $(".video-section video")[0].play();
-      } catch (err) {
-        //
-      }
-      videoIntervalEvent = window.setInterval(() => {
-        if ($(".video-section video")[0].currentTime > 3.5) {
-          $(".video-section video")[0].pause();
-          window.clearInterval(videoIntervalEvent);
-        }
-      }, 100);
     }
-  }, 500);
-  // } else {
-  //   $(document.getElementById("product-video")).fadeIn();
-  //   window.VideoJs(
-  //     document.getElementById("product-video"),
-  //     {
-  //       controls: true, // 是否显示控制条
-  //       poster: null, // 视频封面图地址
-  //       // preload: "auto",
-  //       autoplay: true,
-  //       // fluid: true, // 自适应宽高
-  //       language: "zh-CN", // 设置语言
-  //       muted: false, // 是否静音
-  //       sources: [
-  //         // 视频源
-  //         {
-  //           src: "./file/video.mp4",
-  //           type: "video/mp4",
-  //           poster: "",
-  //         },
-  //       ],
-  //     },
-  //     function () {}
-  //   );
-  // }
+  }, 100);
   $(".advantage-section .view-video").click(() => {
-    window.openVideo({ url: "./file/video.mp4", muted: true });
+    window.openVideo({
+      url: "./file/video.mp4",
+      muted: true,
+      isFullScreen: window.innerWidth <= 500,
+    });
   });
   // 轮播图
   Array.from($(".carousel-wrap li")).forEach((li, index) => {

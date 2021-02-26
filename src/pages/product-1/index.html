@@ -30,9 +30,16 @@
       <!-- 视频区域 -->
       <section class="bg-black video-section">
         <video
-          muted
-          autoplay
+          class="pc-view"
+          autoplay="true"
+          muted="true"
           src="./file/video.mp4"
+        ></video>
+        <video
+          class="mobile-view"
+          muted="true"
+          src="./file/video.mp4"
+          controls="controls"
           x5-playsinline="true"
           playsinline="true"
           webkit-playsinline="true"

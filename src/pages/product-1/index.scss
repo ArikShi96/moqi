@@ -799,6 +799,15 @@
     section {
       padding: 60px 0;
     }
+    .product-header {
+      h2 {
+        font-size: 0.8125rem;
+      }
+      nav ul li {
+        font-size: 0.8125rem;
+        padding-right: 8px;
+      }
+    }
     h2.title {
       font-size: 24px;
       line-height: 32px;
@@ -832,9 +841,6 @@
     }
   }
   @media (max-width: 372px) {
-    .product-header h2 {
-      font-size: 10px;
-    }
     .protect-section h2 {
       flex-wrap: wrap;
     }

@@ -202,7 +202,7 @@ $(document).ready(() => {
     2019: {
       text: ["2018", "2019", "2020", "今天"],
       desc:
-        "<li>正式发布新一代“指纹-身份识别” AI 系统，在业内引起巨大反响</li><li>入选部委“双十计划”重点推广项目</li><li>研发出颠覆性的非接触 3D 指纹采集仪</li>",
+        "<li>正式发布新一代“指纹 - 身份识别” AI 系统，在业内引起巨大反响</li><li>入选部委“双十计划”重点推广项目</li><li>研发出颠覆性的非接触 3D 指纹采集仪</li>",
       translateX: -12,
     },
     2020: {
@@ -232,6 +232,11 @@ $(document).ready(() => {
       "transform",
       `translateX(${textMap.translateX}vw)`
     );
+    if (String(currentYear) === "2019") {
+      $(".text-wrap-item.col-4.active").addClass("pv-10");
+    } else {
+      $(".text-wrap-item.col-4.active").removeClass("pv-10");
+    }
   });
   $(".development-section .text-wrap-item").eq(1).click();
   // 根据hash值滚动到某个section

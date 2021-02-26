@@ -198,4 +198,29 @@ window.openVideo = (options) => {
     const closeButton = new CloseButton(player);
     player.addChild(closeButton);
   }
+  let currentIsFullScreen = false;
+  if (options.isFullScreen && player.requestFullscreen) {
+    player.requestFullscreen();
+    player.on("fullscreenchange", (e) => {
+      if (currentIsFullScreen) {
+        player.dispose();
+        $(document.body).append(`
+    <video
+      id="global-video"
+      class="video-js vjs-big-play-centered"
+      style="display: none"
+      x5-playsinline=""
+      playsinline="true"
+      webkit-playsinline="true"
+      x-webkit-airplay="true"
+      x5-video-player-type="h5"
+      x5-video-player-fullscreen=""
+      x5-video-orientation="portraint"
+    ></video>`);
+        options.closeCallback && options.closeCallback();
+      } else {
+        currentIsFullScreen = true;
+      }
+    });
+  }
 };

@@ -69,7 +69,11 @@ $(document).ready(() => {
   });
   // 播放视频
   $(".bg-section .video-wrap").click(() => {
-    window.openVideo({ url: "./file/video.mp4", muted: true });
+    window.openVideo({
+      url: "./file/video.mp4",
+      muted: true,
+      isFullScreen: window.innerWidth <= 500,
+    });
   });
   $(".class-section .class-wrap").click((event) => {
     let $el = $(event.target);
@@ -96,6 +100,7 @@ $(document).ready(() => {
         "./file/3D-AI.mp4",
       ][$el.data("index")],
       closeCallback,
+      isFullScreen: window.innerWidth <= 500,
     });
   });
 });
