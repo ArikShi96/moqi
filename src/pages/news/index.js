@@ -29,7 +29,7 @@ $(document).ready(() => {
       $(".info .link").css("pointer-events", "none");
     }
     $(".info .date").text(
-      `—— ${new Date(newsData.publish_time).toLocaleDateString()}`
+      `—— ${new Date(newsData.publish_time * 1000).toLocaleDateString()}`
     );
     // 内容
     let html = "";

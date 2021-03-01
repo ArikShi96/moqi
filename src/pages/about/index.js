@@ -130,7 +130,7 @@ $(document).ready(() => {
             ></div>
             <div class="news-content">
               <div class="time-tag">${new Date(
-                item.publish_time
+                item.publish_time * 1000
               ).toLocaleDateString()}</div>
               <h2 class="title">
                 ${item.title}
