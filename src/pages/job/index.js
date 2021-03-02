@@ -184,13 +184,18 @@ $(document).ready(() => {
       .addClass("active");
   });
   // 搜索change事件
-  $(".search-form input").on("input", () => {
-    const filterValue = $(".search-form input").val();
-    if (filterValue) {
-      $(".search-form .search-icon").fadeOut();
-    } else {
-      $(".search-form .search-icon").fadeIn();
-    }
+  // $(".search-form input").on("input", () => {
+  //   const filterValue = $(".search-form input").val();
+  //   if (filterValue) {
+  //     $(".search-form .search-icon").fadeOut();
+  //   } else {
+  //     $(".search-form .search-icon").fadeIn();
+  //   }
+  //   filterList();
+  //   refreshList();
+  //   setPagination();
+  // });
+  $(".search-form .search-icon").on("click", () => {
     filterList();
     refreshList();
     setPagination();

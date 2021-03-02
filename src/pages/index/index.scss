@@ -1,20 +1,28 @@
 @import "../../assets/css/animation.scss";
 .home-page {
-  @mixin h2-large {
-    font-size: 51px;
+  @mixin h2-x-large {
+    font-size: 48px;
     line-height: 76px;
   }
+  @mixin h2-large {
+    font-size: 36px;
+    line-height: 48px;
+  }
   @mixin h2-mid {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 24px;
+    line-height: 36px;
   }
   @mixin h2-small {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 24px;
   }
-  @mixin h3-large {
+  @mixin h3-x-large {
     font-size: 32px;
     line-height: 48px;
+  }
+  @mixin h3-large {
+    font-size: 24px;
+    line-height: 32px;
   }
   @mixin h3-mid {
     font-size: 18px;
@@ -24,9 +32,13 @@
     font-size: 1.125rem;
     line-height: 24px;
   }
+  @mixin p-x-large {
+    font-size: 24px;
+    line-height: 24px;
+  }
   @mixin p-large {
-    font-size: 28px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 18px;
   }
   section {
     padding: 45px 0;
@@ -40,7 +52,6 @@
   }
   h2.title {
     @include h2-large;
-    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
     font-weight: 400;
     color: #212121;
     &.white {
@@ -59,7 +70,6 @@
   }
   h3.title {
     @include h3-large;
-    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
     font-weight: 400;
     color: #212112;
     &.blue {
@@ -86,19 +96,20 @@
       position: absolute;
       top: 9vw;
       z-index: 1;
+      pointer-events: none;
     }
     p {
       width: 100%;
       position: absolute;
-      top: calc(9vw + 90px);
+      top: calc(9vw + 60px);
       @include p-large;
-      font-family: SourceHanSansCN-Normal, SourceHanSansCN;
       font-weight: 400;
       color: #212121;
       z-index: 1;
       &.white {
         color: #ffffff;
       }
+      pointer-events: none;
     }
     .carousel-indicators {
       visibility: hidden;
@@ -172,7 +183,6 @@
       }
       span {
         font-size: 14px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #000000;
         line-height: 21px;
@@ -213,7 +223,7 @@
       }
       .img-wrap {
         flex: 1;
-        width: 100%;
+        width: 75%;
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
@@ -222,6 +232,11 @@
           height: auto;
           width: 100%;
           visibility: hidden;
+        }
+      }
+      &:hover {
+        h3.title {
+          color: #2365eb;
         }
       }
     }
@@ -237,6 +252,21 @@
       position: relative;
       margin-bottom: 16px;
       padding: 0 8px;
+      .animation-container {
+        background-color: #f2f4f5;
+        width: 100%;
+      }
+      &:hover {
+        h3.title {
+          color: #2365eb;
+        }
+        p.sub {
+          color: #2365eb;
+        }
+        .find-wrap p {
+          color: #2365eb;
+        }
+      }
     }
     h3,
     p.sub,
@@ -253,13 +283,12 @@
     p {
       top: 90px;
       font-size: 16px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212112;
       line-height: 28px;
     }
     .find-wrap {
-      bottom: 40px;
+      bottom: 20px;
       display: flex;
       align-items: center;
       .point-img {
@@ -323,7 +352,6 @@
     p.title {
       text-align: center;
       font-size: 16px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #ffffff;
       line-height: 25px;
@@ -333,7 +361,6 @@
     p.description {
       text-align: center;
       font-size: 16px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #000000;
       line-height: 28px;
@@ -342,7 +369,6 @@
     p.description-tip {
       text-align: center;
       font-size: 12px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #ababab;
       line-height: 19px;
@@ -357,55 +383,51 @@
     }
   }
   .color-text-img {
-    height: 32px;
+    height: 24px;
     width: auto;
     margin-bottom: 5px;
     &.title {
-      height: 48px;
+      height: 36px;
       margin-bottom: 32px;
     }
   }
-  @media (min-width: 2000px) {
+  @media (min-width: 1920px) {
     .container-fluid {
       max-width: 1920px;
       margin: auto;
     }
-  }
-  @media (max-width: 1199px) {
-    .creativity-section {
-      .advantage-wrap {
-        h3 span {
-          font-size: 24px;
-        }
-      }
+    h2.title {
+      @include h2-x-large;
+      margin-bottom: 20px;
     }
-    .ai-section {
-      h3 {
-        font-size: 24px;
-        top: 30px;
-      }
-      p.sub {
-        font-size: 12px;
-        top: 80px;
-      }
+    h3.title {
+      @include h3-x-large;
+      margin-bottom: 10px;
+    }
+    .bg-section p {
+      top: calc(9vw + 90px);
     }
     .color-text-img {
+      height: 32px;
       &.title {
-        height: 36px;
+        height: 48px;
       }
     }
-  }
-  @media (max-width: 991px) {
-    .creativity-section {
-      .advantage-wrap {
-        padding: 45px 30px 9%;
-        h3.title {
-          transform: translateX(0);
-        }
-      }
+    .creativity-section .advantage-wrap .img-wrap {
+      width: 100%;
     }
   }
-  @media (max-width: 767px) {
+  // @media (max-width: 1919px) {
+  //   .bg-section {
+  //     overflow-x: hidden;
+  //     a img {
+  //       width: 120%;
+  //       height: auto;
+  //       margin-left: -10%;
+  //     }
+  //   }
+  // }
+  @media (max-width: 1199px) {
     h2.title {
       @include h2-mid;
       margin-bottom: 20px;
@@ -429,6 +451,47 @@
         margin-left: -25%;
       }
     }
+    .creativity-section {
+      .advantage-wrap {
+        h3 span {
+          @include h3-mid;
+        }
+      }
+    }
+    .ai-section {
+      h3 {
+        top: 30px;
+      }
+      p.sub {
+        font-size: 12px;
+        line-height: 18px;
+        top: 80px;
+      }
+      .find-wrap p {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+    .color-text-img {
+      &.title {
+        height: 36px;
+      }
+    }
+    .creativity-section .advantage-wrap .img-wrap {
+      width: 65%;
+    }
+  }
+  @media (max-width: 991px) {
+    .creativity-section {
+      .advantage-wrap {
+        padding: 45px 30px 9%;
+        h3.title {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
     .creativity-section {
       .advantage-wrap {
         padding: 40px 40px 9% 60px;
@@ -464,6 +527,9 @@
       &.title {
         height: 28px;
       }
+    }
+    .creativity-section .advantage-wrap .img-wrap {
+      width: 75%;
     }
   }
   @media (max-width: 500px) {

@@ -97,6 +97,8 @@ $scaleKeyframe: (
   .animation-wrap-1 {
     width: 100%;
     position: relative;
+    background-color: #f2f4f5;
+    overflow: hidden;
     & * {
       animation-play-state: paused !important;
     }
@@ -105,10 +107,17 @@ $scaleKeyframe: (
         animation-play-state: running !important;
       }
     }
+    .animation-0,
     .animation-1,
     .animation-2,
     .animation-3 {
       position: absolute;
+    }
+    .animation-0 {
+      width: 62%;
+      height: auto;
+      left: 19%;
+      bottom: -22%;
     }
     .animation-1 {
       width: 12.8%;
@@ -142,10 +151,10 @@ $scaleKeyframe: (
       left: 54%;
       top: 60%;
       $an2-1: (
-        top: 40%,
+        transform: translateY(-30%),
       );
       $an2-2: (
-        top: 60%,
+        transform: translateY(0),
       );
       $keyframe2: (
         0%: $an2-1,
@@ -159,6 +168,7 @@ $scaleKeyframe: (
   .animation-wrap-2 {
     width: 100%;
     position: relative;
+    background-color: #f2f4f5;
     & * {
       animation-play-state: paused !important;
     }
@@ -169,6 +179,12 @@ $scaleKeyframe: (
     }
     .animation {
       position: absolute;
+    }
+    .animation-1 {
+      width: 80%;
+      height: auto;
+      bottom: 0;
+      right: 0;
     }
     .animation-2 {
       width: 6.79%;
@@ -268,7 +284,7 @@ $scaleKeyframe: (
   .animation-wrap-3 {
     width: 100%;
     position: relative;
-    background-color: #d9dee0;
+    background-color: #f2f4f5;
     & * {
       animation-play-state: paused !important;
     }
@@ -473,10 +489,10 @@ $scaleKeyframe: (
         bottom: 40%;
       }
       $an5-1: (
-        transform: translateY(0)
+        transform: translateY(0),
       );
       $an5-2: (
-        transform: translateY(30%)
+        transform: translateY(30%),
       );
       $keyframe5: (
         0%: $an5-1,
@@ -706,6 +722,35 @@ $scaleKeyframe: (
       &.home-ani {
         top: 65%;
       }
+    }
+  }
+}
+@media (max-width: 1919px) {
+  .ai-section {
+    .animation-wrap-1 {
+      width: 75%;
+      margin-left: 12.5%;
+    }
+    .animation-wrap-2,
+    .animation-wrap-3 {
+      width: 75%;
+      margin-left: 25%;
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .home-page .ai-section {
+    .animation-container {
+      padding-top: 90px !important;
+    }
+    .animation-wrap-1 {
+      width: 50%;
+      margin-left: 25%;
+    }
+    .animation-wrap-2,
+    .animation-wrap-3 {
+      width: 50%;
+      margin-left: 50%;
     }
   }
 }

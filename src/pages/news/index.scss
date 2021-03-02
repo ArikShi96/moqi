@@ -48,14 +48,12 @@
     h2.title {
       @include h2-large;
       font-size: 35px;
-      font-family: SourceHanSansCN-Medium, SourceHanSansCN;
       font-weight: 500;
       color: #212121;
       margin-bottom: 20px;
     }
     h3.title {
       @include h3-large;
-      font-family: SourceHanSansCN-Medium, SourceHanSansCN;
       font-weight: 500;
       color: #212112;
       margin: 18px 0;
@@ -64,7 +62,6 @@
     p,
     ul {
       @include p-large;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212121;
       margin-bottom: 16px;
@@ -79,8 +76,7 @@
       &.info {
         margin-bottom: 24px;
         font-size: 12px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
-        font-weight: 400;
+          font-weight: 400;
         color: #212121;
       }
     }

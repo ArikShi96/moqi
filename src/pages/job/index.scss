@@ -1,19 +1,39 @@
 .job-page {
+  @mixin h2-x-large {
+    font-size: 48px;
+    line-height: 76px;
+  }
   @mixin h2-large {
-    font-size: 51px;
-    line-height: 63px;
+    font-size: 36px;
+    line-height: 48px;
   }
   @mixin h2-mid {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 24px;
+    line-height: 36px;
   }
   @mixin h2-small {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 24px;
   }
-  @mixin h3-large {
+  @mixin color-text-large {
+    font-size: 120px;
+    line-height: 150px;
+  }
+  @mixin color-text-mid {
+    font-size: 80px;
+    line-height: 100px;
+  }
+  @mixin color-text-small {
+    font-size: 2.25rem;
+    line-height: 60px;
+  }
+  @mixin h3-x-large {
     font-size: 32px;
     line-height: 48px;
+  }
+  @mixin h3-large {
+    font-size: 24px;
+    line-height: 32px;
   }
   @mixin h3-mid {
     font-size: 18px;
@@ -23,9 +43,13 @@
     font-size: 1.125rem;
     line-height: 24px;
   }
+  @mixin p-x-large {
+    font-size: 24px;
+    line-height: 24px;
+  }
   @mixin p-large {
-    font-size: 21px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 18px;
   }
   img {
     width: 100%;
@@ -33,7 +57,6 @@
   }
   h2.title {
     @include h2-large;
-    font-family: SourceHanSansCN-Medium, SourceHanSansCN;
     font-weight: 500;
     color: #212121;
     line-height: 63px;
@@ -41,7 +64,6 @@
   }
   p {
     @include p-large;
-    font-family: SourceHanSansCN-Normal, SourceHanSansCN;
     font-weight: 400;
     color: #212121;
   }
@@ -54,11 +76,13 @@
       width: 100%;
       position: absolute;
       top: 9vw;
+      z-index: 1;
     }
     p {
       width: 100%;
       position: absolute;
-      top: calc(9vw + 90px);
+      top: calc(9vw + 60px);
+      z-index: 1;
     }
   }
   // 招聘列表
@@ -73,6 +97,7 @@
         height: auto;
         left: calc(5% + 240px);
         top: 34px;
+        cursor: pointer;
       }
       input {
         flex: 1;
@@ -87,7 +112,6 @@
         text-align: center;
         width: 175px;
         font-size: 21px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #212121;
         line-height: 32px;
@@ -105,7 +129,6 @@
       padding-top: 40px;
       .table-header {
         font-size: 21px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #212121;
         line-height: 32px;
@@ -132,7 +155,6 @@
           p,
           a {
             font-size: 14px;
-            font-family: SourceHanSansCN-Regular, SourceHanSansCN;
             font-weight: 400;
             color: #212121;
             line-height: 18px;
@@ -148,7 +170,6 @@
         justify-content: center;
         align-items: center;
         font-size: 16px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #212121;
         line-height: 16px;
@@ -188,7 +209,6 @@
         }
         .total {
           font-size: 16px;
-          font-family: SourceHanSansCN-Regular, SourceHanSansCN;
           font-weight: 400;
           color: #212121;
           line-height: 16px;
@@ -197,7 +217,20 @@
       }
     }
   }
-  @media (max-width: 767px) {
+  @media (min-width: 1920px) {
+    h2.title {
+      @include h2-x-large;
+      margin-bottom: 20px;
+    }
+    h3.title {
+      @include h3-x-large;
+      margin-bottom: 10px;
+    }
+    .bg-section p {
+      top: calc(9vw + 90px);
+    }
+  }
+  @media (max-width: 1199px) {
     h2.title {
       @include h2-mid;
       margin-bottom: 20px;
@@ -205,9 +238,6 @@
     h3.title {
       @include h3-mid;
       margin-bottom: 10px;
-    }
-    p {
-      font-size: 18px;
     }
     .bg-section {
       overflow-x: hidden;
@@ -222,6 +252,11 @@
         height: auto;
         margin-left: -25%;
       }
+    }
+  }
+  @media (max-width: 767px) {
+    p {
+      font-size: 18px;
     }
     .job-section .search-form {
       .search-icon {

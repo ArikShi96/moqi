@@ -1,4 +1,56 @@
 .product-1 {
+  @mixin h2-x-large {
+    font-size: 48px;
+    line-height: 76px;
+  }
+  @mixin h2-large {
+    font-size: 36px;
+    line-height: 48px;
+  }
+  @mixin h2-mid {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  @mixin h2-small {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @mixin color-text-large {
+    font-size: 120px;
+    line-height: 150px;
+  }
+  @mixin color-text-mid {
+    font-size: 80px;
+    line-height: 100px;
+  }
+  @mixin color-text-small {
+    font-size: 2.25rem;
+    line-height: 60px;
+  }
+  @mixin h3-x-large {
+    font-size: 30px;
+    line-height: 48px;
+  }
+  @mixin h3-large {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @mixin h3-mid {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  @mixin h3-small {
+    font-size: 1.125rem;
+    line-height: 24px;
+  }
+  @mixin p-x-large {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  @mixin p-large {
+    font-size: 18px;
+    line-height: 18px;
+  }
   padding-top: 68px;
   section {
     padding: 45px 0;
@@ -40,7 +92,6 @@
     justify-content: center;
     p {
       font-size: 18px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212112;
       line-height: 24px;
@@ -49,11 +100,9 @@
     }
   }
   h2.title {
-    font-size: 42px;
-    font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+    @include h2-large;
     font-weight: bold;
     color: #212112;
-    line-height: 56px;
     margin-bottom: 40px;
     &.white {
       color: #ffffff;
@@ -71,7 +120,6 @@
   }
   h3.title {
     font-size: 21px;
-    font-family: SourceHanSansCN-Medium, SourceHanSansCN;
     font-weight: 500;
     color: #212112;
     line-height: 28px;
@@ -99,7 +147,6 @@
     z-index: 9;
     h2 {
       font-size: 14px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #ffffff;
       line-height: 18px;
@@ -109,7 +156,6 @@
       align-items: center;
       li {
         font-size: 14px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #ababab;
         line-height: 18px;
@@ -136,7 +182,6 @@
         }
         span {
           font-size: 12px;
-          font-family: SourceHanSansCN-Regular, SourceHanSansCN;
           font-weight: 400;
           color: #ffffff;
           line-height: 18px;
@@ -200,7 +245,6 @@
         }
         p {
           font-size: 24px;
-          font-family: SourceHanSansCN-Regular, SourceHanSansCN;
           font-weight: 400;
           color: #ffffff;
           line-height: 40px;
@@ -288,7 +332,7 @@
   .powerful-performance {
     position: relative;
     img {
-      z-index: -1;
+      // z-index: -1;
     }
     .row.absolute {
       width: 100%;
@@ -306,7 +350,7 @@
   .high-precision-algorithm {
     position: relative;
     img {
-      z-index: -1;
+      // z-index: -1;
     }
     .absolute.row {
       position: absolute;
@@ -314,7 +358,7 @@
       width: 80%;
     }
     h2 img {
-      height: 60px;
+      height: 48px;
       width: auto;
     }
   }
@@ -489,7 +533,6 @@
         }
         p {
           font-size: 18px;
-          font-family: SourceHanSansCN-Regular, SourceHanSansCN;
           font-weight: 400;
           color: #212112;
           line-height: 21px;
@@ -546,7 +589,6 @@
       }
       p {
         font-size: 16px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #ffffff;
         line-height: 21px;
@@ -635,7 +677,6 @@
   .picture-high-quality {
     h2 {
       font-size: 70px;
-      font-family: SourceHanSansCN-Bold, SourceHanSansCN;
       font-weight: bold;
       color: #212121;
       background: linear-gradient(176deg, #3eefea 0%, #07a0f1 100%);
@@ -652,6 +693,22 @@
         height: 84px;
         width: auto;
       }
+    }
+  }
+  @media (min-width: 1920px) {
+    h2.title {
+      @include h2-x-large;
+    }
+    h3.title {
+      @include h3-x-large;
+    }
+  }
+  @media (max-width: 1199px) {
+    h2.title {
+      @include h2-mid;
+    }
+    h3.title {
+      @include h3-mid;
     }
   }
   @media (max-width: 991px) {

@@ -13,7 +13,6 @@
   }
   h1.title {
     @include h1-large;
-    font-family: SourceHanSansCN-Medium, SourceHanSansCN;
     font-weight: 500;
     color: #212121;
     line-height: 63px;
@@ -21,7 +20,6 @@
   }
   p {
     @include p-large;
-    font-family: SourceHanSansCN-Normal, SourceHanSansCN;
     font-weight: 400;
     color: #212121;
   }

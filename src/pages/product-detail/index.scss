@@ -34,7 +34,6 @@
     justify-content: center;
     p {
       @include p-large;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212112;
     }
@@ -45,7 +44,6 @@
   }
   h2.title {
     @include h2-large;
-    font-family: SourceHanSansCN-Bold, SourceHanSansCN;
     font-weight: bold;
     color: #212112;
     margin-bottom: 40px;
@@ -58,7 +56,6 @@
   }
   h3.title {
     @include h3-large;
-    font-family: SourceHanSansCN-Medium, SourceHanSansCN;
     font-weight: 500;
     color: #212112;
     margin-bottom: 40px;
@@ -93,7 +90,6 @@
     z-index: 9;
     h2 {
       font-size: 14px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212121;
       line-height: 18px;
@@ -103,7 +99,6 @@
       align-items: center;
       li {
         font-size: 14px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #ababab;
         line-height: 18px;
@@ -130,7 +125,6 @@
         }
         span {
           font-size: 12px;
-          font-family: SourceHanSansCN-Regular, SourceHanSansCN;
           font-weight: 400;
           color: #ffffff;
           line-height: 18px;
@@ -152,14 +146,12 @@
         display: flex;
         align-items: center;
         font-size: 14px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #212112;
         line-height: 18px;
         padding: 20px 10px;
         &.bold {
           font-size: 21px;
-          font-family: SourceHanSansCN-Medium, SourceHanSansCN;
           font-weight: 500;
           line-height: 28px;
         }

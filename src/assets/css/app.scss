@@ -13,6 +13,7 @@ body {
   & * {
     box-sizing: border-box;
   }
+  font-family: PingFangSC-Regular, sans-serif, Noto Sans SC, SimSun;
 }
 #global-video {
   position: fixed;
@@ -30,7 +31,7 @@ body {
   }
 }
 .video-js .vjs-control.vjs-close-button {
-  z-index: 100000;
+  z-index: 100000 !important;
 }
 h1,
 h2,
@@ -57,18 +58,18 @@ li {
   padding: 0;
   margin: 0;
 }
-// img {
-//   position: relative;
-// }
-// img::after {
-//   content: "";
-//   height: 100%;
-//   width: 100%;
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   background-color: #eeeeee;
-// }
+img {
+  position: relative;
+}
+img::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #eef1f7;
+}
 .mobile-view {
   display: none;
 }
@@ -132,7 +133,6 @@ li {
     ul {
       flex-shrink: 0;
       font-size: 16px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212121;
       line-height: 18px;
@@ -143,8 +143,16 @@ li {
         a {
           color: inherit;
           padding: 10px 0;
+          &:hover {
+            color: #2365eb;
+            border-bottom-color: #2365eb !important;
+            text-decoration: underline;
+          }
           &.active {
             border-bottom: 2px solid #212121;
+            &:hover {
+              text-decoration: none;
+            }
           }
         }
       }
@@ -207,7 +215,6 @@ li {
   background: linear-gradient(180deg, #e6e9ec 0%, #ffffff 100%);
   h2 {
     font-size: 12px;
-    font-family: SourceHanSansCN-Medium, SourceHanSansCN;
     font-weight: 500;
     color: #212121;
     line-height: 18px;
@@ -218,7 +225,6 @@ li {
   }
   nav li {
     font-size: 12px;
-    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
     font-weight: 400;
     color: #212121;
     line-height: 18px;
@@ -230,7 +236,8 @@ li {
       cursor: pointer;
       color: inherit;
       &:hover {
-        color: inherit;
+        color: #2365eb;
+        text-decoration: underline;
       }
     }
   }
@@ -248,7 +255,6 @@ li {
       display: flex;
       align-items: center;
       font-size: 12px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #ababab;
       line-height: 16px;
@@ -276,7 +282,6 @@ li {
       display: flex;
       align-items: center;
       font-size: 12px;
-      font-family: SourceHanSansCN-Regular, SourceHanSansCN;
       font-weight: 400;
       color: #212121;
       line-height: 18px;
@@ -330,7 +335,6 @@ li {
     align-items: center;
     flex-wrap: wrap;
     font-size: 12px;
-    font-family: SourceHanSansCN-Regular, SourceHanSansCN;
     font-weight: 400;
     color: #ababab;
     line-height: 16px;
@@ -437,7 +441,6 @@ li {
   }
   h1 {
     font-size: 21px;
-    font-family: SourceHanSansCN-Medium, SourceHanSansCN;
     font-weight: 500;
     color: #212121;
     line-height: 28px;
@@ -482,7 +485,6 @@ li {
       p {
         display: none;
         font-size: 14px;
-        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
         font-weight: 400;
         color: #212121;
         line-height: 16px;
