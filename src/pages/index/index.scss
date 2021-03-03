@@ -13,8 +13,8 @@
     line-height: 36px;
   }
   @mixin h2-small {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.75rem;
+    line-height: 32px;
   }
   @mixin h3-x-large {
     font-size: 32px;
@@ -193,8 +193,12 @@
   // 创造性
   .creativity-section {
     h2,
-    h3 {
+    h3,
+    p {
       text-align: center;
+    }
+    p.title {
+      font-size: 18px;
     }
     .row {
       margin-top: 40px;
@@ -219,6 +223,9 @@
           width: 50px;
           height: auto;
           margin-left: 30px;
+          &.hover {
+            display: none;
+          }
         }
       }
       .img-wrap {
@@ -237,6 +244,12 @@
       &:hover {
         h3.title {
           color: #2365eb;
+        }
+        img.point-right {
+          display: none;
+          &.hover {
+            display: inline-block;
+          }
         }
       }
     }
@@ -263,8 +276,17 @@
         p.sub {
           color: #2365eb;
         }
-        .find-wrap p {
-          color: #2365eb;
+        .find-wrap {
+          p {
+            color: #2365eb;
+          }
+          .point-img,
+          .point-right {
+            display: none;
+            &.hover {
+              display: inline-block;
+            }
+          }
         }
       }
     }
@@ -295,11 +317,17 @@
         width: 14px;
         height: auto;
         margin-right: 10px;
+        &.hover {
+          display: none;
+        }
       }
       .point-right {
         width: 50px;
         height: auto;
         margin-left: 10px;
+        &.hover {
+          display: none;
+        }
       }
     }
   }
@@ -330,16 +358,20 @@
           flex-direction: column;
           align-items: center;
           justify-content: flex-end;
-          border-right: 1px solid rgba(255, 255, 255, 0.8);
-          background-size: 0;
+          border-right: 1px solid rgba(255, 255, 255, 0.5);
+          background-size: 100%;
+          background-image: none;
+          background-position: center;
+          background-repeat: no-repeat;
+          transition: background-size 0.5s;
           &:last-child {
             border-right: none;
           }
           &.bg-visible {
-            background-size: cover !important;
+            background-size: 120% !important;
           }
           &:hover {
-            background-size: cover;
+            background-size: 120%;
           }
           img {
             width: 28px;
@@ -372,10 +404,11 @@
       font-weight: 400;
       color: #ababab;
       line-height: 19px;
+      min-height: 38px;
     }
     .logo-wrap {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 20px;
       img {
         width: 30px;
         height: auto;
@@ -383,19 +416,15 @@
     }
   }
   .color-text-img {
-    height: 24px;
+    height: 18px;
     width: auto;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     &.title {
-      height: 36px;
+      height: 28px;
       margin-bottom: 32px;
     }
   }
   @media (min-width: 1920px) {
-    .container-fluid {
-      max-width: 1920px;
-      margin: auto;
-    }
     h2.title {
       @include h2-x-large;
       margin-bottom: 20px;
@@ -408,13 +437,18 @@
       top: calc(9vw + 90px);
     }
     .color-text-img {
-      height: 32px;
+      height: 24px;
       &.title {
-        height: 48px;
+        height: 40px;
       }
     }
-    .creativity-section .advantage-wrap .img-wrap {
-      width: 100%;
+    .creativity-section {
+      p.title {
+        font-size: 24px;
+      }
+      .advantage-wrap .img-wrap {
+        width: 100%;
+      }
     }
   }
   // @media (max-width: 1919px) {
@@ -474,7 +508,7 @@
     }
     .color-text-img {
       &.title {
-        height: 36px;
+        height: 28px;
       }
     }
     .creativity-section .advantage-wrap .img-wrap {
@@ -525,7 +559,7 @@
       height: 18px;
       margin-bottom: 3px;
       &.title {
-        height: 28px;
+        height: 24px;
       }
     }
     .creativity-section .advantage-wrap .img-wrap {
@@ -571,7 +605,7 @@
             margin-bottom: 8px;
           }
           &:hover {
-            background-size: 0;
+            background-image: none;
           }
         }
       }

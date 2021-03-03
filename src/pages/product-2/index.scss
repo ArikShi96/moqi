@@ -12,8 +12,8 @@
     line-height: 36px;
   }
   @mixin h2-small {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.75rem;
+    line-height: 32px;
   }
   @mixin color-text-large {
     font-size: 120px;
@@ -273,7 +273,7 @@
     .background-section,
     .advantage-section,
     .localization-section {
-      padding: 20px 0;
+      padding: 40px 0;
       aside {
         h2 {
           @include h2-small;
@@ -291,8 +291,20 @@
         margin-bottom: 20px;
       }
     }
-    .advantage-section article p.desc {
-      font-size: 0.85rem;
+    .advantage-section article {
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+      .advantage-img {
+        width: 4.5rem;
+        margin-right: 2rem;
+        height: auto;
+        float: left;
+      }
+      p.desc {
+        line-height: 1.25rem;
+        font-size: 0.75rem;
+      }
     }
   }
 }

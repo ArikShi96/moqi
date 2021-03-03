@@ -12,8 +12,8 @@
     line-height: 36px;
   }
   @mixin h2-small {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.75rem;
+    line-height: 32px;
   }
   @mixin color-text-large {
     font-size: 120px;
@@ -40,7 +40,7 @@
     line-height: 24px;
   }
   @mixin h3-small {
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 24px;
   }
   @mixin p-x-large {
@@ -265,8 +265,7 @@
           margin-bottom: 20px;
         }
         h3 {
-          font-size: 18px;
-          line-height: 24px;
+          @include h3-mid;
           margin-bottom: 20px;
         }
         p {
@@ -287,50 +286,57 @@
   @media (max-width: 500px) {
     h2.title {
       @include h2-small;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       .sub {
         font-size: 0.875rem;
       }
     }
     h3.title {
-      font-size: 1.125rem;
-      line-height: 24px;
+      @include h3-small;
       margin-bottom: 10px;
     }
     aside {
       p {
-        font-size: 1rem;
+        font-size: 0.75rem;
       }
     }
     .platform-section,
     .advantage-section,
     .service-section,
     .application-section {
-      padding: 20px 0;
+      padding: 40px 0;
       aside {
         h2 {
           @include h2-small;
           margin-bottom: 20px;
         }
         h3 {
-          font-size: 1.125rem;
-          line-height: 24px;
+          @include h3-small;
           margin-bottom: 20px;
         }
         p {
-          font-size: 1rem;
-          line-height: 24px;
+          font-size: 0.75rem;
+          line-height: 18px;
         }
       }
     }
-    .advantage-section article p.desc {
-      font-size: 0.925rem;
+    .advantage-section article {
+      .advantage-img {
+        float: left;
+        width: 4rem;
+        height: auto;
+        margin-right: 2rem;
+      }
+      p.desc {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+      }
     }
     .service-section {
       .row {
         padding: 20px 0;
         aside p {
-          font-size: 1rem;
+          font-size: 0.75rem;
         }
       }
     }
