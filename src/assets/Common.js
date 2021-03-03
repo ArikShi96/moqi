@@ -2,6 +2,7 @@ import "jquery";
 import "bootstrap";
 import "bootstrap/scss/bootstrap.scss";
 import "font-awesome/scss/font-awesome.scss";
+import "jquery-lazy";
 
 import "./css/app.scss";
 import "./css/bootstrap-msg.css";
@@ -28,8 +29,25 @@ function debounce(func, time) {
   };
 }
 
+function setImageInitialHeight() {
+  Array.from($("img")).forEach((el) => {
+    if ($(el).data("percents")) {
+      $(el).css("height", `${$(el).data("percents") * $(el).width()}px`);
+    }
+  });
+}
+
 // 绑定全局事件
 $(document).ready(() => {
+  $("img").Lazy({
+    // skip_invisible: true,
+    defaultImage: null,
+    placeholder: null,
+  });
+  setImageInitialHeight();
+  $(window).resize(() => {
+    setImageInitialHeight();
+  });
   // 判断是否mobile
   if (window.innerWidth <= 500) {
     $("html").addClass("rem-16");
@@ -249,22 +267,34 @@ $(document).ready(() => {
     $(".contact-wrapper .contact-icon-wrap")
       .eq(0)
       .on("mouseenter", () => {
-        $(".contact-wrapper .contact-icon-wrap .wechat-code").fadeIn();
+        $(".contact-wrapper .contact-icon-wrap .wechat-code").css(
+          "visibility",
+          "visible"
+        );
       });
     $(".contact-wrapper .contact-icon-wrap")
       .eq(0)
       .on("mouseleave", () => {
-        $(".contact-wrapper .contact-icon-wrap .wechat-code").fadeOut();
+        $(".contact-wrapper .contact-icon-wrap .wechat-code").css(
+          "visibility",
+          "hidden"
+        );
       });
     $(".contact-wrapper .contact-icon-wrap")
       .eq(1)
       .on("mouseenter", () => {
-        $(".contact-wrapper .contact-icon-wrap .wechat-service").fadeIn();
+        $(".contact-wrapper .contact-icon-wrap .wechat-service").css(
+          "visibility",
+          "visible"
+        );
       });
     $(".contact-wrapper .contact-icon-wrap")
       .eq(1)
       .on("mouseleave", () => {
-        $(".contact-wrapper .contact-icon-wrap .wechat-service").fadeOut();
+        $(".contact-wrapper .contact-icon-wrap .wechat-service").css(
+          "visibility",
+          "hidden"
+        );
       });
   }
 });

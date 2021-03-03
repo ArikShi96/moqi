@@ -321,12 +321,16 @@ img::after {
           opacity: 0.4;
         }
         .wechat-code {
+          visibility: hidden;
+          transition: visibility 0.2s;
           position: absolute;
           width: 104px;
           height: auto;
           top: -110px;
         }
         .wechat-service {
+          visibility: hidden;
+          transition: visibility 0.2s;
           position: absolute;
           width: 104px;
           height: auto;
@@ -551,10 +555,10 @@ img::after {
       padding-right: 36px;
       display: block;
       .white-menu {
-        display: none;
+        display: none !important;
       }
       .black-menu {
-        display: inline-block;
+        display: inline-block !important;
       }
       img {
         height: 18px;
@@ -587,10 +591,10 @@ img::after {
     &.black:not(.white) {
       #dropdownMenuLink {
         .black-menu {
-          display: none;
+          display: none !important;
         }
         .white-menu {
-          display: inline-block;
+          display: inline-block !important;
         }
       }
       .navbar-wrap-mobile {
@@ -611,11 +615,11 @@ img::after {
         height: auto;
         margin: 0 18px 0 0;
         .contact-icon {
-          display: none;
+          display: none !important;
         }
         .wechat-code,
         .wechat-service {
-          display: inline-block !important;
+          visibility: visible;
           position: static;
         }
       }
@@ -639,10 +643,11 @@ img::after {
 
 @media (max-width: 500px) {
   .footer {
-    padding: 40px;
+    padding: 1rem;
     padding-bottom: 60px;
     .company-info .address {
       flex-shrink: 1;
+      font-size: 0.6875rem;
     }
     .privacy-info {
       font-size: 0.725rem;

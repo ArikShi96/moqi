@@ -811,27 +811,27 @@ $scaleKeyframe: (
 }
 @media (max-width: 500px) {
   .ai-section {
-    .animation-wrap-1 {
+    .animation-wrap-1 * {
       animation: none !important;
     }
-    .animation-wrap-2 {
+    .animation-wrap-2 * {
       animation: none !important;
     }
-    .animation-wrap-3 {
+    .animation-wrap-3 * {
       animation: none !important;
     }
   }
   .creativity-section {
-    .animation-wrap-1 {
+    .animation-wrap-1 * {
       animation: none !important;
     }
-    .animation-wrap-2 {
+    .animation-wrap-2 * {
       animation: none !important;
     }
-    .animation-wrap-3 {
+    .animation-wrap-3 * {
       animation: none !important;
     }
-    .animation-wrap-4 {
+    .animation-wrap-4 * {
       animation: none !important;
     }
   }

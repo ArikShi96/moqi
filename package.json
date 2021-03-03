@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --config webpack.config.js --progress",
     "start": "cross-env NODE_ENV=dev webpack-dev-server --config webpack.config.js --progress",
-    "build": "cross-env NODE_ENV=prod webpack --config webpack.config.js --progress && cp -r src/assets/file ./dist && cp -r src/assets/bg-img ./dist && rm -f dist.zip && rm -f moqi.zip && zip moqi.zip -r ./dist",
+    "build": "cross-env NODE_ENV=prod webpack --config webpack.config.js --progress && cp -r src/assets/file ./dist && cp -r src/assets/bg-img ./dist && cp -r src/assets/img ./dist/bg-img && rm -f dist.zip && rm -f moqi.zip && zip moqi.zip -r ./dist",
     "eslint-fix": "eslint --fix ./src/**/index.js & eslint --fix ./src/assets/js/*.js"
   },
   "author": "shifeng",
@@ -47,6 +47,7 @@
     "expose-loader": "^0.7.5",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
+    "jquery-lazy": "^1.7.11",
     "jscroll": "^2.4.1",
     "popper.js": "^1.14.3",
     "sweetalert2": "^7.26.9"
