@@ -60,6 +60,7 @@ li {
 }
 img {
   position: relative;
+  // background-color: #eef1f7;
 }
 img::after {
   content: "";
@@ -144,8 +145,8 @@ img::after {
           color: inherit;
           padding: 10px 0;
           &:hover {
-            color: #2365eb;
-            border-bottom-color: #2365eb !important;
+            color: #003ce7;
+            border-bottom-color: #003ce7 !important;
             text-decoration: underline;
           }
           &.active {
@@ -236,7 +237,7 @@ img::after {
       cursor: pointer;
       color: inherit;
       &:hover {
-        color: #2365eb;
+        color: #003ce7;
         text-decoration: underline;
       }
     }
@@ -268,7 +269,7 @@ img::after {
         }
         &:hover {
           .download-text {
-            color: #2365eb;
+            color: #003ce7;
           }
         }
       }
@@ -390,6 +391,7 @@ img::after {
       img {
         width: 32px;
         height: auto;
+        background-color: transparent;
       }
       a {
         outline: none;
@@ -418,6 +420,7 @@ img::after {
     img {
       width: 32px;
       height: auto;
+      background-color: transparent;
     }
     a {
       outline: none;
@@ -470,10 +473,13 @@ img::after {
 .scroll-nav-wrap {
   position: fixed;
   left: 0;
-  top: 90px;
-  min-height: calc(100vh - 68px);
+  // top: 90px;
+  top: 0;
+  height: calc(100vh - 68px);
   padding: 80px 36px;
   // justify-content: center;
+  display: flex;
+  align-items: center;
   z-index: 10000;
   pointer-events: none;
   ul {

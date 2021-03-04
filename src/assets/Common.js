@@ -37,6 +37,12 @@ function setImageInitialHeight() {
   });
 }
 
+function setScrollNavWrapPosition() {
+  window.setTimeout(() => {
+    $(".scroll-nav-wrap").css("height", $("section")[0].offsetHeight);
+  });
+}
+
 // 绑定全局事件
 $(document).ready(() => {
   $("img").Lazy({
@@ -45,8 +51,10 @@ $(document).ready(() => {
     placeholder: null,
   });
   setImageInitialHeight();
+  setScrollNavWrapPosition();
   $(window).resize(() => {
     setImageInitialHeight();
+    setScrollNavWrapPosition();
   });
   // 判断是否mobile
   if (window.innerWidth <= 500) {

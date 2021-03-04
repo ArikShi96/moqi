@@ -232,6 +232,7 @@
       .img-wrap {
         flex: 1;
         width: 75%;
+        margin: 12.5% 0;
         margin-left: 10%;
         display: flex;
         align-items: flex-end;
@@ -245,7 +246,7 @@
       }
       &:hover {
         h3.title {
-          color: #2365eb;
+          color: #003ce7;
         }
         img.point-right {
           display: none;
@@ -273,14 +274,14 @@
       }
       &:hover {
         h3.title {
-          color: #2365eb;
+          color: #003ce7;
         }
         p.sub {
-          color: #2365eb;
+          color: #003ce7;
         }
         .find-wrap {
           p {
-            color: #2365eb;
+            color: #003ce7;
           }
           .point-img,
           .point-right {
@@ -418,11 +419,15 @@
     }
   }
   .color-text-img {
-    height: 18px;
-    width: auto;
-    margin-bottom: 3px;
+    // height: 18px;
+    // width: auto;
+    // margin-bottom: 3px;
+    font-size: 18px;
+    color: #003ce7;
     &.title {
-      height: 28px;
+      color: #003ce7;
+      // height: 28px;
+      font-size: 28px;
       margin-bottom: 32px;
     }
   }
@@ -443,9 +448,11 @@
       top: calc(9vw + 90px);
     }
     .color-text-img {
-      height: 24px;
+      // height: 24px;
+      font-size: 24px;
       &.title {
-        height: 40px;
+        // height: 40px;
+        font-size: 40px;
       }
     }
     .creativity-section {
@@ -454,6 +461,7 @@
       }
       .advantage-wrap .img-wrap {
         width: 100%;
+        margin: 0;
         margin-left: -4%;
       }
     }
@@ -515,7 +523,8 @@
     }
     .color-text-img {
       &.title {
-        height: 28px;
+        // height: 28px;
+        font-size: 28px;
       }
     }
     .creativity-section .advantage-wrap .img-wrap {
@@ -563,10 +572,12 @@
       }
     }
     .color-text-img {
-      height: 18px;
-      margin-bottom: 3px;
+      // height: 18px;
+      font-size: 18px;
+      // margin-bottom: 3px;
       &.title {
-        height: 24px;
+        // height: 24px;
+        font-size: 24px;
       }
     }
     .creativity-section .advantage-wrap .img-wrap {
@@ -638,11 +649,16 @@
       .advantage-wrap {
         padding: 30px 20px 9% 30px;
       }
+      p.title {
+        font-size: 0.75rem;
+      }
     }
     .color-text-img {
-      height: 1.125rem;
+      // height: 1.125rem;
+      font-size: 0.75rem;
       &.title {
-        height: 1.125rem;
+        // height: 1.125rem;
+        font-size: 1.125rem;
       }
     }
   }

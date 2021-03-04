@@ -217,7 +217,7 @@ $(document).ready(() => {
       translateX: -20,
     },
   };
-  $(".development-section .text-wrap-item").click((event) => {
+  $(".development-section .pc-view .text-wrap-item").click((event) => {
     const currentYear = $(event.target).children("h2.title").text();
     const textMap = textMaps[currentYear];
     if (!textMap) {
@@ -238,7 +238,7 @@ $(document).ready(() => {
       $(".text-wrap-item.col-4.active").removeClass("pv-10");
     }
   });
-  $(".development-section .text-wrap-item").eq(1).click();
+  $(".development-section .pc-view .text-wrap-item").eq(1).click();
   // 根据hash值滚动到某个section
   const hash = window.location.hash.split("#")[1];
   if (hash) {

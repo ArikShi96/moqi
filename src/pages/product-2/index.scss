@@ -98,7 +98,7 @@
         text-align: justify;
         .strong {
           font-weight: normal;
-          color: #2365eb;
+          color: #003ce7;
         }
       }
     }
@@ -153,7 +153,7 @@
           color: #212121;
           margin-bottom: 40px;
           &.active {
-            color: #2365eb;
+            color: #003ce7;
           }
         }
         .divider {
@@ -175,10 +175,10 @@
       &:focus,
       &:active {
         h2 {
-          color: #2365eb;
+          color: #003ce7;
         }
         .divider {
-          background-color: #2365eb;
+          background-color: #003ce7;
         }
       }
     }
