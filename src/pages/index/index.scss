@@ -232,6 +232,7 @@
       .img-wrap {
         flex: 1;
         width: 75%;
+        margin-left: 10%;
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
@@ -426,6 +427,10 @@
     }
   }
   @media (min-width: 1920px) {
+    .container-fluid {
+      max-width: 1920px;
+      margin: auto;
+    }
     h2.title {
       @include h2-x-large;
       margin-bottom: 20px;
@@ -449,6 +454,7 @@
       }
       .advantage-wrap .img-wrap {
         width: 100%;
+        margin-left: -4%;
       }
     }
   }

@@ -192,17 +192,17 @@
           &.last-page,
           &.next-page {
             .disabled-img {
-              display: none;
+              display: none !important;
             }
             .enabled-img {
-              display: inline-block;
+              display: inline-block !important;
             }
             &.disabled {
               .disabled-img {
-                display: inline-block;
+                display: inline-block !important;
               }
               .enabled-img {
-                display: none;
+                display: none !important;
               }
             }
           }
