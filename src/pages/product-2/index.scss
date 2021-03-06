@@ -81,6 +81,10 @@
         display: block;
         height: 115px;
         width: auto;
+        img {
+          height: 100%;
+          width: auto;
+        }
       }
       margin-bottom: 40px;
       h2 {
@@ -261,13 +265,15 @@
     h2.title {
       @include h2-small;
       margin-bottom: 10px;
+      text-align: left;
+      font-weight: bold;
       .sub {
         font-size: 14px;
       }
     }
     aside {
       p {
-        font-size: 1rem;
+        font-size: 0.875rem;
       }
     }
     .background-section,
@@ -278,9 +284,10 @@
         h2 {
           @include h2-small;
           margin-bottom: 20px;
+          font-weight: bold;
         }
         p {
-          font-size: 1rem;
+          font-size: 0.875rem;
           line-height: 24px;
         }
       }
@@ -297,9 +304,12 @@
       }
       .advantage-img {
         width: 4.5rem;
-        margin-right: 2rem;
-        height: auto;
+        // margin-right: 1rem;
         float: left;
+        img {
+          width: 60%;
+          height: auto;
+        }
       }
       p.desc {
         line-height: 1.25rem;

@@ -78,4 +78,55 @@ $(document).ready(() => {
       $(".protect-section .scroll-bar.full").css("left", "0");
     }
   });
+  // mobile 多重防护，增强您的体验分页
+  (() => {
+    let currentPage = 0;
+    $(".protect-section .pagination-wrap img").on("click", (event) => {
+      const $el = $(event.target);
+      // 右滚动
+      if ($el.index() === 1) {
+        if (currentPage === 2) {
+          return;
+        }
+        currentPage += 1;
+      }
+      // 左滚动
+      if ($el.index() === 0) {
+        if (currentPage === 0) {
+          return;
+        }
+        currentPage -= 1;
+      }
+      $(".protect-section .mobile-view .row").animate(
+        {
+          scrollLeft:
+            currentPage *
+            $(".protect-section .mobile-view .row .col-11")[0].offsetWidth,
+        },
+        500
+      );
+      // 设置滚动条
+      $(".protect-section .pagination-wrap .scroll-bar.full").css(
+        "left",
+        `${33.33 * currentPage}%`
+      );
+      // 设置图片
+      $(".protect-section .pagination-wrap img")
+        .eq(0)
+        .attr(
+          "src",
+          `./bg-img/img/about/about-arrow-left${
+            currentPage === 0 ? "-disabled" : ""
+          }.png`
+        );
+      $(".protect-section .pagination-wrap img")
+        .eq(1)
+        .attr(
+          "src",
+          `./bg-img/img/about/about-arrow-right${
+            currentPage === 2 ? "-disabled" : ""
+          }.png`
+        );
+    });
+  })();
 });

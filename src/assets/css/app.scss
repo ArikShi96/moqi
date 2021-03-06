@@ -209,6 +209,23 @@ img::after {
       }
     }
   }
+  .toggle-blog {
+    position: relative;
+    .nav-blog-wrap {
+      display: none;
+      height: 68px;
+      position: absolute;
+      top: 40px;
+      align-items: center;
+      background-color: #ffffff;
+      width: 96px;
+      justify-content: center;
+      left: -16px;
+      &.visible {
+        display: flex;
+      }
+    }
+  }
 }
 
 .footer {
@@ -684,9 +701,12 @@ img::after {
 
 @media (max-width: 500px) {
   .footer {
-    .company-info .address {
-      flex-shrink: 1;
-      font-size: 0.6875rem;
+    .company-info {
+      margin-bottom: 1.25rem;
+      .address {
+        flex-shrink: 1;
+        font-size: 0.6875rem;
+      }
     }
     .privacy-info {
       font-size: 0.725rem;
