@@ -13,7 +13,7 @@
     line-height: 36px;
   }
   @mixin h2-small {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     line-height: 32px;
   }
   @mixin color-text-large {
@@ -298,8 +298,20 @@
       margin-bottom: 10px;
     }
     .bg-section {
+      min-height: 150vw;
       h2 {
-        top: 80px;
+        // top: 70px;
+        top: 8rem;
+      }
+      p {
+        // top: 100px;
+        top: 10rem;
+        font-size: 0.75rem;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
       }
     }
     .search-section {

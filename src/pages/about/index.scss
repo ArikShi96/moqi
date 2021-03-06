@@ -13,7 +13,7 @@
     line-height: 36px;
   }
   @mixin h2-small {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     line-height: 32px;
   }
   @mixin h3-x-large {
@@ -688,16 +688,24 @@
         margin: 10px 0 8px;
       }
       .contact-img-wrap {
+        .col-12 {
+          margin-bottom: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
         .text-wrap {
+          padding: 2rem;
           h3.title {
-            line-height: 14px;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
           }
           .row .col-4 {
             padding: 10px 8px;
           }
           p.desc {
-            font-size: 10px;
-            line-height: 14px;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            line-height: 18px;
+            padding-right: 4em;
           }
         }
       }
@@ -734,7 +742,8 @@
             line-height: 16px;
           }
           .color-text {
-            font-size: 4rem;
+            font-size: 3rem;
+            margin-top: 4rem;
           }
         }
       }

@@ -305,4 +305,9 @@ $(document).ready(() => {
         );
       });
   }
+  // mobile footer展开/折叠
+  $("footer.footer .expand-icon").on("click", (event) => {
+    $(event.target).next("nav").slideToggle();
+    $(event.target).text($(event.target).text() === "+" ? "-" : "+");
+  });
 });
