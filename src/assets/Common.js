@@ -64,20 +64,33 @@ $(document).ready(() => {
   }
   // product 导航
   let initClassName = "";
-  $("header.header .toggle-product").hover(() => {
-    if ($("header.header .product-nav-header").is(":visible")) {
-      return;
-    }
-    $("header.header .product-nav-header").slideDown();
-    calculateHeaderColor();
-    $("header.header").mouseleave(() => {
-      if (!$("header.header .product-nav-header").is(":visible")) {
+  $("header.header .toggle-product, header.header .toggle-about").hover(
+    (event) => {
+      let $el = $(event.target);
+      if (event.target.tagName.toLowerCase()) {
+        $el = $el.parent("li");
+      }
+      if ($el.hasClass("toggle-product")) {
+        $("header.header .product-nav-header .about-wrap").fadeOut(0);
+        $("header.header .product-nav-header nav:not(.about-wrap)").fadeIn(0);
+      } else {
+        $("header.header .product-nav-header .about-wrap").fadeIn(0);
+        $("header.header .product-nav-header nav:not(.about-wrap)").fadeOut(0);
+      }
+      if ($("header.header .product-nav-header").is(":visible")) {
         return;
       }
-      $("header.header .product-nav-header").slideUp(0);
-      $("header.header").attr("class", initClassName);
-    });
-  });
+      $("header.header .product-nav-header").slideDown();
+      calculateHeaderColor();
+      $("header.header").mouseleave(() => {
+        if (!$("header.header .product-nav-header").is(":visible")) {
+          return;
+        }
+        $("header.header .product-nav-header").slideUp(0);
+        $("header.header").attr("class", initClassName);
+      });
+    }
+  );
   $("header.header #dropdownMenuLink").click((event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -126,6 +139,11 @@ $(document).ready(() => {
     event.preventDefault();
     event.stopPropagation();
     $("header.header ul.product-list").slideToggle();
+  });
+  $("header.header .toggle-about-list").click((event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    $("header.header ul.about-list").slideToggle();
   });
   // 底部操作
   $(".tip-nav-wrap .tip-finger").click(() => {

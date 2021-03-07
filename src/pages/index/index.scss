@@ -299,14 +299,14 @@
       z-index: 5;
       position: absolute;
       left: 40px;
-      width: calc(50% - 40px);
+      width: calc(100% - 80px);
     }
     h3 {
       top: 40px;
       width: 80%;
     }
     p {
-      top: 90px;
+      top: 80px;
       font-size: 16px;
       font-weight: 400;
       color: #212112;
@@ -514,7 +514,7 @@
       p.sub {
         font-size: 12px;
         line-height: 18px;
-        top: 80px;
+        top: 60px;
       }
       .find-wrap p {
         font-size: 12px;
@@ -624,18 +624,19 @@
       .container-fluid {
         .row {
           overflow: hidden;
+          margin: 0;
         }
         .col-12 {
           overflow-x: auto;
           padding: 0;
           margin: 0 15px 0 0;
           img.class-bg-img {
-            width: 400%;
+            width: 320%;
             height: auto;
           }
           .class-wraps {
             padding: 0;
-            width: 400%;
+            width: 320%;
             .class-wrap {
               padding: 32px 20px;
               justify-content: space-between;

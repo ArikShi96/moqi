@@ -209,23 +209,6 @@ img::after {
       }
     }
   }
-  .toggle-blog {
-    position: relative;
-    .nav-blog-wrap {
-      display: none;
-      height: 68px;
-      position: absolute;
-      top: 40px;
-      align-items: center;
-      background-color: #ffffff;
-      width: 96px;
-      justify-content: center;
-      left: -16px;
-      &.visible {
-        display: flex;
-      }
-    }
-  }
 }
 
 .footer {
@@ -607,7 +590,8 @@ img::after {
           background-color: unset;
         }
       }
-      .product-list {
+      .product-list,
+      .about-list {
         margin-top: 0;
         .dropdown-item {
           padding: 10px 56px;

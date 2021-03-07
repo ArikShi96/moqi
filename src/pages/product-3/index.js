@@ -61,4 +61,10 @@ $(document).ready(() => {
         }.png`
       );
   });
+  window.setInterval(() => {
+    if (currentPage === 2) {
+      currentPage = -1;
+    }
+    $(".application-section .pagination-wrap img").eq(1).click();
+  }, 3000);
 });
