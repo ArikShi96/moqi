@@ -61,22 +61,22 @@ $(document).ready(() => {
         $el = $el.parent("li");
       }
       if ($el.hasClass("toggle-product")) {
-        $("header.header .product-nav-header .about-wrap").fadeOut(0);
-        $("header.header .product-nav-header nav:not(.about-wrap)").fadeIn(0);
+        $("header.header .toggle-nav-header .about-wrap").fadeOut(0);
+        $("header.header .toggle-nav-header nav:not(.about-wrap)").fadeIn(0);
       } else {
-        $("header.header .product-nav-header .about-wrap").fadeIn(0);
-        $("header.header .product-nav-header nav:not(.about-wrap)").fadeOut(0);
+        $("header.header .toggle-nav-header .about-wrap").fadeIn(0);
+        $("header.header .toggle-nav-header nav:not(.about-wrap)").fadeOut(0);
       }
-      if ($("header.header .product-nav-header").is(":visible")) {
+      if ($("header.header .toggle-nav-header").is(":visible")) {
         return;
       }
-      $("header.header .product-nav-header").slideDown();
+      $("header.header .toggle-nav-header").slideDown();
       calculateHeaderColor();
       $("header.header").mouseleave(() => {
-        if (!$("header.header .product-nav-header").is(":visible")) {
+        if (!$("header.header .toggle-nav-header").is(":visible")) {
           return;
         }
-        $("header.header .product-nav-header").slideUp(0);
+        $("header.header .toggle-nav-header").slideUp(0);
         $("header.header").attr("class", initClassName);
       });
     }
@@ -98,12 +98,15 @@ $(document).ready(() => {
       event.target.tagName.toLocaleLowerCase() === "a" &&
       $(event.target).attr("href")
     ) {
-      if (!$("header.header .product-nav-header").is(":visible")) {
+      if (!$("header.header .toggle-nav-header").is(":visible")) {
         return;
       }
-      $("header.header .product-nav-header").slideUp(0);
+      $("header.header .toggle-nav-header").slideUp(0);
       $("header.header").attr("class", initClassName);
     }
+  });
+  $("header.header .toggle-about").on("click", () => {
+    window.location.href = "./about.html";
   });
   function calculateHeaderColor() {
     const breakSection = $("section[data-break='black']");

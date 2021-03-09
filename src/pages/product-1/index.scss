@@ -216,6 +216,9 @@
     position: relative;
     top: -8px;
   }
+  strong {
+    color: #003ce7;
+  }
   // 非接触指纹采集仪
   .product-detail {
     h2.title {
@@ -978,7 +981,7 @@
     }
     .collection-speed-easy {
       .img-wrap {
-        padding: 0 15px;
+        padding: 0 20px 0 36px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;

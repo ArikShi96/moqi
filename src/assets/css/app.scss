@@ -189,7 +189,7 @@ img::after {
   &.white {
     background-color: #ffffff;
   }
-  .product-nav-header {
+  .toggle-nav-header {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -199,6 +199,7 @@ img::after {
       justify-content: center;
       align-items: center;
       li {
+        margin: 0 10px;
         a {
           display: flex;
           flex-direction: column;
@@ -207,6 +208,11 @@ img::after {
             width: 48px;
             height: auto;
             margin-bottom: 8px;
+          }
+          span {
+            display: inline-block;
+            width: 190px;
+            text-align: center;
           }
         }
       }

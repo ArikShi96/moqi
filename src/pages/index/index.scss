@@ -98,6 +98,7 @@
       top: 9vw;
       z-index: 1;
       pointer-events: none;
+      font-size: 40px;
     }
     p {
       width: 100%;
@@ -107,6 +108,7 @@
       font-weight: 400;
       color: #212121;
       z-index: 1;
+      font-size: 20px;
       &.white {
         color: #ffffff;
       }
@@ -490,10 +492,11 @@
       overflow-x: hidden;
       h2 {
         top: 100px;
+        font-size: 28px;
       }
       p {
         top: 140px;
-        font-size: 16px;
+        font-size: 18px;
       }
       a img {
         width: 150%;
@@ -602,11 +605,12 @@
       h2 {
         // top: 70px;
         top: 8rem;
+        font-size: 1.75rem;
       }
       p {
         // top: 100px;
         top: 10rem;
-        font-size: 0.75rem;
+        font-size: 0.875rem;
       }
       a img {
         width: 100%;
@@ -639,7 +643,7 @@
             padding: 0;
             width: 320%;
             .class-wrap {
-              padding: 32px 20px;
+              padding: 32px 24px;
               justify-content: space-between;
               align-items: flex-start;
               img {

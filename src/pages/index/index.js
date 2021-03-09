@@ -35,7 +35,7 @@ $(document).ready(() => {
     // header 是否透明
     if (
       !$(".navbar-wrap-mobile").is(":visible") &&
-      !$("header.header .product-nav-header").is(":visible")
+      !$("header.header .toggle-nav-header").is(":visible")
     ) {
       if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
         $("header.header").addClass("transparent").removeClass("white");
@@ -104,7 +104,20 @@ $(document).ready(() => {
     });
   });
   // 课堂文案切换
-  $(".class-section .class-wrap").hover((event) => {
+  if (window.innerWidth > 500) {
+    $(".class-section .class-wrap").hover((event) => {
+      handleHoverEvent(event);
+    });
+    $(".class-section .class-wrap").mouseleave((event) => {
+      $(".class-section .class-wrap").css("background-image", "none");
+    });
+  } else {
+    $(".class-section .class-wrap").on("touchend", (event) => {
+      $(".class-section .class-wrap").css("background-image", "none");
+      handleHoverEvent(event);
+    });
+  }
+  function handleHoverEvent(event) {
     let $el = $(event.target);
     if (!$el.hasClass("class-wrap")) {
       $el = $el.parent(".class-wrap");
@@ -144,8 +157,5 @@ $(document).ready(() => {
       "background-image",
       `url('./image/home/home-class-bg-${$el.data("index") + 1}.png')`
     );
-  });
-  $(".class-section .class-wrap").mouseleave((event) => {
-    $(".class-section .class-wrap").css("background-image", "none");
-  });
+  }
 });

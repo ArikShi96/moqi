@@ -76,6 +76,24 @@
     &.white {
       color: #ffffff;
     }
+    &.flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .more {
+        padding: 10px 18px;
+        background-color: #003ce7;
+        font-size: 16px;
+        font-weight: 400;
+        color: #ffffff;
+        line-height: 16px;
+        border-radius: 2px;
+        &:hover {
+          // color: #003ce7;
+          text-decoration: underline;
+        }
+      }
+    }
   }
   h3.title {
     @include h3-large;
@@ -289,7 +307,6 @@
             border-right: 1px solid rgba(255, 255, 255, 0.3);
             justify-content: flex-end;
             cursor: pointer;
-            overflow-y: auto;
             &.active {
               justify-content: space-between;
               h2.title {
@@ -304,7 +321,6 @@
           }
           h2.title {
             font-size: 75px;
-            font-family: Helvetica;
             color: rgba(255, 255, 255, 0.3);
             line-height: 140px;
             letter-spacing: 2px;
@@ -319,7 +335,6 @@
           .color-text {
             display: none;
             font-size: 123px;
-            font-family: Helvetica;
             color: #ffffff;
             line-height: 140px;
             letter-spacing: 4px;
@@ -736,7 +751,6 @@
           }
           li {
             font-size: 0.8125rem;
-            font-family: Helvetica;
             color: #ffffff;
             line-height: 1.25rem;
             list-style: disc;

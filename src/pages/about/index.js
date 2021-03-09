@@ -94,7 +94,7 @@ $(document).ready(() => {
     // header 是否透明
     // if (
     //   !$(".navbar-wrap-mobile").is(":visible") &&
-    //   !$("header.header .product-nav-header").is(":visible")
+    //   !$("header.header .toggle-nav-header").is(":visible")
     // ) {
     //   if ($(".bg-section")[0].getBoundingClientRect().top === 0) {
     //     $("header.header").addClass("transparent").removeClass("white");
