@@ -23,6 +23,9 @@ body {
   width: 50vw;
   z-index: 99999;
   opacity: 1 !important;
+  video {
+    opacity: 1 !important;
+  }
 }
 .video-js button.vjs-play-control {
   outline: none;
@@ -363,6 +366,13 @@ img::after {
       .beian-icon {
         width: 18px;
         height: auto;
+      }
+    }
+    a {
+      color: inherit;
+      &:hover {
+        color: #003ce7;
+        text-decoration: underline;
       }
     }
   }

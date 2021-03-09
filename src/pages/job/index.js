@@ -16,7 +16,7 @@ $(document).ready(() => {
   let total = 0;
   // 初始化
   fetchAllList();
-  $("header.header").addClass("job").addClass("transparent");
+  $("header.header").addClass("black").addClass("transparent");
   if (mode === "campus") {
     $(".search-form .search-tab").eq(1).addClass("active");
   } else {

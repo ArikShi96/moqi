@@ -380,6 +380,7 @@
             width: 28px;
             height: auto;
             margin-bottom: 16px;
+            pointer-events: none;
           }
         }
       }
@@ -656,6 +657,7 @@
               .watch-wrap {
                 display: flex;
                 align-items: center;
+                pointer-events: none;
                 img {
                   margin: 0 8px;
                   &.point-right {

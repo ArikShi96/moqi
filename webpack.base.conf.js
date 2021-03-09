@@ -17,7 +17,7 @@ dirJSON.forEach((page) => {
   }
   plugins.push(
     new HtmlPlugin({
-      favicon: path.resolve(__dirname, `./src/assets/img/favicon.ico`),
+      favicon: path.resolve(__dirname, `./src/assets/image/favicon.ico`),
       filename: path.resolve(__dirname, `./dist/${page.url}.html`),
       template: path.resolve(__dirname, `./src/pages/${page.url}/index.html`),
       chunks: chunks,

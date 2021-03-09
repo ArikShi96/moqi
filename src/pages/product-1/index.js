@@ -115,7 +115,7 @@ $(document).ready(() => {
         .eq(0)
         .attr(
           "src",
-          `./bg-img/img/about/about-arrow-left${
+          `./image/about/about-arrow-left${
             currentPage === 0 ? "-disabled" : ""
           }.png`
         );
@@ -123,7 +123,7 @@ $(document).ready(() => {
         .eq(1)
         .attr(
           "src",
-          `./bg-img/img/about/about-arrow-right${
+          `./image/about/about-arrow-right${
             currentPage === 2 ? "-disabled" : ""
           }.png`
         );

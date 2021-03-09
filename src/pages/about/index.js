@@ -15,7 +15,7 @@ $(document).ready(() => {
   window.openVideo({
     url: "./file/墨奇&绿城.mp4",
     hideControl: true,
-    poster: "./bg-img/poster.png",
+    poster: "./image/home/poster.png",
   });
   // 创始人左右滚动
   function calculateScrollBar(position) {

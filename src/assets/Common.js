@@ -19,16 +19,6 @@ import VideoJs from "./js/libs/video.min";
 
 window.VideoJs = VideoJs;
 
-function debounce(func, time) {
-  let timer = null;
-  return function () {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, arguments);
-    }, time);
-  };
-}
-
 function setImageInitialHeight() {
   Array.from($("img")).forEach((el) => {
     if ($(el).data("percents")) {

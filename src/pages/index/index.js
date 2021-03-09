@@ -142,7 +142,7 @@ $(document).ready(() => {
     );
     $el.css(
       "background-image",
-      `url('./bg-img/home-class-bg-${$el.data("index") + 1}.png')`
+      `url('./image/home/home-class-bg-${$el.data("index") + 1}.png')`
     );
   });
   $(".class-section .class-wrap").mouseleave((event) => {
