@@ -78,6 +78,13 @@ $(document).ready(() => {
       $(".protect-section .scroll-bar.full").css("left", "0");
     }
   });
+  window.setInterval(() => {
+    if ($(".protect-section .row")[0].scrollLeft === 0) {
+      $(".protect-section .arrow-wrap .arrow-icon")[1].click();
+    } else {
+      $(".protect-section .arrow-wrap .arrow-icon")[2].click();
+    }
+  }, 3000);
   // mobile 多重防护，增强您的体验分页
   // (() => {
   //   let currentPage = 0;

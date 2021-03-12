@@ -13,7 +13,7 @@ $(document).ready(() => {
   $(".navbar-wrap li a").eq(3).addClass("active");
   // 播放视频
   window.openVideo({
-    url: "./file/墨奇&绿城.mp4",
+    url: "http://moqi.ysdftech.com/file/墨奇&绿城.mp4",
     hideControl: true,
     poster: "./image/home/poster.png",
     muted: true,
@@ -162,10 +162,10 @@ $(document).ready(() => {
               });
           }, 0);
         }
-        $("article.news").click((event) => {
+        $("article.news").on("click", (event) => {
           let $el = $(event.target);
           if (!$el.hasClass("news")) {
-            $el = $el.parent(".news");
+            $el = $el.parents(".news");
           }
           const href = $el.find(".enter-wrap").attr("href");
           if (href && href !== "#") {

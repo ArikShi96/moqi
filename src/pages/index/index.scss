@@ -43,7 +43,7 @@
   section {
     padding: 45px 0;
     &.bg-gray {
-      background-color: #f7f9fa;
+      background-color: #f2f4f5;
     }
   }
   img {
@@ -255,7 +255,7 @@
           color: #003ce7;
         }
         img.point-right {
-          display: none;
+          display: none !important;
           &.hover {
             display: inline-block !important;
           }
@@ -275,7 +275,6 @@
       margin-bottom: 16px;
       padding: 0 8px;
       .animation-container {
-        background-color: #f2f4f5;
         width: 100%;
       }
       &:hover {
@@ -319,7 +318,8 @@
       line-height: 28px;
     }
     .find-wrap {
-      bottom: 20px;
+      // bottom: 20px;
+      top: 120px;
       display: flex;
       align-items: center;
       .point-img {
@@ -382,7 +382,8 @@
           // }
           &:hover {
             // background-size: 120%;
-            transform: scale(1.05);
+            transform: scale(1.1);
+            // border-right: none;
           }
           img {
             width: 28px;
@@ -408,7 +409,7 @@
       font-weight: 400;
       color: #000000;
       line-height: 28px;
-      margin: 20px 0 10px;
+      margin: 40px 0 10px;
     }
     p.description-tip {
       text-align: center;
@@ -529,9 +530,12 @@
         line-height: 18px;
         top: 60px;
       }
-      .find-wrap p {
-        font-size: 12px;
-        line-height: 18px;
+      .find-wrap {
+        top: 90px;
+        p {
+          font-size: 12px;
+          line-height: 18px;
+        }
       }
     }
     .color-text-img {
@@ -581,7 +585,7 @@
         font-weight: bold;
       }
       .find-wrap {
-        bottom: 20px;
+        // bottom: 20px;
       }
     }
     .color-text-img {
@@ -706,7 +710,6 @@
         width: calc(100% - 80px);
       }
       .find-wrap {
-        bottom: 68%;
         font-size: 0.75rem;
         width: auto;
       }
@@ -727,7 +730,7 @@
             padding-top: 8rem;
             height: 100%;
             position: relative;
-            background-color: #f2f4f5;
+            background-color: #ffffff;
             overflow: hidden;
             &.ani-1 {
               width: 200%;

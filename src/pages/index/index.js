@@ -95,10 +95,10 @@ $(document).ready(() => {
     // 打开视频
     window.openVideo({
       url: [
-        "./file/现实图像搜索难题对AI的极限挑战.mp4",
-        "./file/异构并行计算和性能优化.mp4",
-        "./file/持久内存在图像搜索系统中的应用.mp4",
-        "./file/3D-AI.mp4",
+        "http://moqi.ysdftech.com/file/现实图像搜索难题对AI的极限挑战.mp4",
+        "http://moqi.ysdftech.com/file/异构并行计算和性能优化.mp4",
+        "http://moqi.ysdftech.com/file/持久内存在图像搜索系统中的应用.mp4",
+        "http://moqi.ysdftech.com/file/3D-AI.mp4",
       ][$el.data("index")],
       closeCallback,
       isFullScreen: window.innerWidth <= 500,

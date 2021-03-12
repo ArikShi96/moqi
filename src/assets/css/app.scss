@@ -220,7 +220,7 @@ img {
   padding: 80px 0;
   background: linear-gradient(180deg, #e6e9ec 0%, #ffffff 100%);
   h2 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: #212121;
     line-height: 18px;
@@ -229,27 +229,38 @@ img {
   .expand-icon {
     display: none;
   }
-  .col-12.col-md-3 {
+  .col-12.col-md-3,
+  .col-12.col-md-2 {
     margin-bottom: 20px;
+    // TODO
+    flex: 0 0 20%;
+    max-width: 20%;
+    text-align: center;
   }
-  nav li {
-    font-size: 14px;
-    font-weight: 400;
-    color: #212121;
-    line-height: 18px;
-    margin-bottom: 16px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-    a {
-      cursor: pointer;
-      color: inherit;
-      &:any-link {
-        text-decoration: underline;
+  nav {
+    display: block;
+    li {
+      font-size: 14px;
+      font-weight: 400;
+      color: #212121;
+      line-height: 18px;
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
       }
-      &:hover {
-        color: #003ce7;
-        text-decoration: underline;
+      &.no-wrap {
+        white-space: nowrap;
+      }
+      a {
+        cursor: pointer;
+        color: inherit;
+        &:any-link {
+          text-decoration: underline;
+        }
+        &:hover {
+          color: #003ce7;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -649,11 +660,16 @@ img {
     .row {
       margin: 0;
     }
-    .col-12.col-md-3 {
+    .col-12.col-md-3,
+    .col-12.col-md-2 {
       position: relative;
       padding: 1rem 0;
       margin-bottom: 0;
       border-bottom: 1px solid #cccccc;
+      // TODO
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: left;
       &:last-child {
         border-bottom: none;
       }
@@ -681,6 +697,7 @@ img {
       }
     }
     .company-info {
+      margin-bottom: 20px;
       .logo-wrap .download-link {
         display: none;
       }
@@ -697,7 +714,7 @@ img {
           }
           .wechat-code,
           .wechat-service {
-            visibility: visible;
+            visibility: visible !important;
             position: static;
           }
           .contact-icon-tip {

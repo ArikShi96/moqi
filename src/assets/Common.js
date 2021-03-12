@@ -109,6 +109,9 @@ $(document).ready(() => {
       $("header.header").attr("class", initClassName);
     }
   });
+  $("header.header .toggle-about").on("click", () => {
+    window.location.href = "./about.html";
+  });
   function calculateHeaderColor() {
     const breakSection = $("section[data-break='black']");
     let color = "white";
