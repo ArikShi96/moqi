@@ -67,6 +67,12 @@ $(document).ready(() => {
       return `<a href=${element.href}>${element.content[0].content}</a>`;
     } else if (element.type === "img") {
       return `<img src=${element.src} />`;
+    } else if (Array.isArray(element.content)) {
+      return `<${element.type}>${element.content
+        .map((el) => {
+          return getContent(el);
+        })
+        .join("")}</${element.type}>`;
     } else {
       return `<${element.type}>${element.content[0].content}</${element.type}>`;
     }

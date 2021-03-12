@@ -13,7 +13,7 @@ $(document).ready(() => {
   // 动态计算图片高度
   function setImageHeight() {
     Array.from($("main .container .col-md-3")).forEach((el) => {
-      $(el).css("height", `${0.56 * $(el).width()}px`);
+      $(el).css("height", `${0.66 * $(el).width()}px`);
     });
   }
   // 获取news `
@@ -31,15 +31,15 @@ $(document).ready(() => {
           data.data.forEach((item, index) => {
             html += `
             <a class='row' href="../news.html?id=${item.id}">
-           <div class="col-12 col-md-3" style="background-image: url(${
+           <div class="col-4 col-md-3" style="background-image: url(${
              item.cover_image
            }")></div>
-            <div class="col-12 col-md-9">
+            <div class="col-8 col-md-9">
               <article>
                 <h3 class="title">
                   ${item.title}
                 </h3>
-                <p>
+                <p class='abstract'>
                   ${item.abstract}
                 </p>
                 <p class="time">${new Date(

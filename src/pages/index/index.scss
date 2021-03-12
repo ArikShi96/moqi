@@ -215,6 +215,7 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+      transition: box-shadow 0.5s;
       h3 {
         display: flex;
         align-items: center;
@@ -233,9 +234,12 @@
       }
       .img-wrap {
         flex: 1;
-        width: 75%;
-        margin: 12.5% 0;
-        margin-left: 10%;
+        // width: 75%;
+        // margin: 12.5% 0;
+        // margin-left: 10%;
+        width: 100%;
+        margin: 0;
+        margin-left: -4%;
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
@@ -368,15 +372,17 @@
           background-image: none;
           background-position: center;
           background-repeat: no-repeat;
-          transition: background-size 0.5s;
+          transition: all 0.5s;
           &:last-child {
             border-right: none;
           }
-          &.bg-visible {
-            background-size: 120% !important;
-          }
+          // &.bg-visible {
+          //   // background-size: 120% !important;
+          //   transform: scale(1.05);
+          // }
           &:hover {
-            background-size: 120%;
+            // background-size: 120%;
+            transform: scale(1.05);
           }
           img {
             width: 28px;
@@ -463,9 +469,12 @@
         font-size: 24px;
       }
       .advantage-wrap .img-wrap {
-        width: 100%;
-        margin: 0;
-        margin-left: -4%;
+        // width: 100%;
+        // margin: 0;
+        // margin-left: -4%;
+        // width: 85%;
+        // margin: 7.5% 0;
+        // margin-left: 4%;
       }
     }
   }
@@ -532,7 +541,7 @@
       }
     }
     .creativity-section .advantage-wrap .img-wrap {
-      width: 65%;
+      // width: 65%;
     }
   }
   @media (max-width: 991px) {
@@ -585,7 +594,10 @@
       }
     }
     .creativity-section .advantage-wrap .img-wrap {
-      width: 75%;
+      // width: 75%;
+      width: 80%;
+      margin: 12.5% 0;
+      margin-left: 10%;
     }
   }
   @media (max-width: 500px) {
@@ -626,7 +638,7 @@
       }
     }
     .class-section {
-      .container-fluid {
+      .container.image-section {
         .row {
           overflow: hidden;
           margin: 0;
@@ -643,7 +655,7 @@
             padding: 0;
             width: 320%;
             .class-wrap {
-              padding: 32px 24px;
+              padding: 2rem 1.5rem;
               justify-content: space-between;
               align-items: flex-start;
               img {
@@ -701,9 +713,13 @@
       .row {
         flex-wrap: nowrap;
         overflow-x: auto;
+        margin: 0;
         a.col-10 {
           margin-bottom: 0;
           overflow: hidden;
+          &:first-child {
+            padding-left: 0;
+          }
           img {
             height: auto;
           }
@@ -738,8 +754,8 @@
       .advantage-wrap {
         padding: 30px 20px 9% 30px;
         .img-wrap {
-          width: 100%;
-          margin: 15% 0 5%;
+          // width: 100%;
+          // margin: 15% 0 5%;
         }
       }
       p.title {

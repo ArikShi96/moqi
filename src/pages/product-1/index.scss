@@ -188,6 +188,7 @@
         }
       }
     }
+    // transition: all 0.5s;
   }
   .video-section {
     padding: 0;
@@ -404,10 +405,14 @@
     h3.title {
       margin-bottom: 72px;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       strong {
+        margin-left: 4px;
         font-size: 28px;
-        position: relative;
-        top: 4px;
+        // position: relative;
+        // top: 4px;
       }
     }
     .scroll-wrap {
@@ -602,9 +607,9 @@
         left: 40px;
       }
       img {
+        transition: all 500ms;
         &:hover {
           transform: scale(1.1);
-          transition: all 500ms;
         }
       }
     }
@@ -640,6 +645,7 @@
         height: 2px;
         border-radius: 1px;
         background-color: #ffffff;
+        transition: left 0.5s;
         &.full {
           width: 0;
           z-index: 1;
@@ -898,6 +904,9 @@
       }
     }
     .protect-section {
+      .row {
+        overflow-x: auto;
+      }
       .image-wrap {
         p {
           font-size: 0.75rem;

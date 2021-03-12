@@ -98,8 +98,9 @@
         position: absolute;
         width: 24px;
         height: auto;
-        left: calc(5% + 240px);
+        // left: calc(5% + 240px);
         top: 34px;
+        right: 370px;
         cursor: pointer;
       }
       input {
@@ -266,6 +267,7 @@
     .job-section .search-form {
       .search-icon {
         top: 14px;
+        right: 220px;
       }
       input {
         font-size: 16px;
@@ -326,7 +328,9 @@
       .search-form {
         .search-icon {
           top: 14px;
-          left: calc(5% + 172px);
+          // left: calc(5% + 172px);
+          right: 138px;
+          width: 18px;
         }
         input {
           font-size: 0.625rem;

@@ -1,5 +1,6 @@
 import "../../assets/Common";
 import "./index.scss";
+import "./index.css";
 import "./index.html";
 
 // 绑定事件
@@ -109,7 +110,13 @@ $(document).ready(() => {
       handleHoverEvent(event);
     });
     $(".class-section .class-wrap").mouseleave((event) => {
-      $(".class-section .class-wrap").css("background-image", "none");
+      let $el = $(event.target);
+      if (!$el.hasClass("class-wrap")) {
+        $el = $el.parent("class-wrap");
+      }
+      setTimeout(() => {
+        $el.css("background-image", "none");
+      }, 500);
     });
   } else {
     $(".class-section .class-wrap").on("touchend", (event) => {

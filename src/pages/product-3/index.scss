@@ -105,6 +105,12 @@
         padding-right: 0;
       }
     }
+    .img-wrap {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
   // 核心优势
   .advantage-section {
@@ -378,7 +384,8 @@
     .application-section {
       .row {
         flex-wrap: nowrap;
-        overflow-x: hidden;
+        overflow-x: auto;
+        // margin: 0;
       }
       h2.title {
         text-align: left;
@@ -386,6 +393,10 @@
       }
       .application-wrap {
         padding-bottom: 0;
+        // padding-left: 0;
+        // &:last-child {
+        //   padding-right: 0;
+        // }
         p {
           font-size: 1rem;
           margin-bottom: 1rem;

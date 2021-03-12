@@ -197,7 +197,7 @@
         padding-right: 8px;
       }
     }
-    v h2.title {
+    h2.title {
       @include h2-small;
       margin-bottom: 10px;
     }
@@ -208,6 +208,22 @@
     aside {
       p {
         font-size: 1rem;
+      }
+    }
+    .logo-img {
+      width: 60px;
+      height: auto;
+    }
+    .product-parameters {
+      .row {
+        p {
+          font-size: 0.75rem;
+          padding: 20px 0.25rem;
+        }
+        p.bold {
+          font-size: 1rem;
+          font-weight: bold;
+        }
       }
     }
   }

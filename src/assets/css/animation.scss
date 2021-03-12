@@ -94,10 +94,13 @@ $scaleKeyframe: (
 );
 
 .ai-section {
+  .animation-container {
+    transition: box-shadow 0.5s;
+    background-color: #f2f4f5;
+  }
   .animation-wrap-1 {
     width: 100%;
     position: relative;
-    background-color: #f2f4f5;
     overflow: hidden;
     .animation-0,
     .animation-1,
@@ -135,7 +138,6 @@ $scaleKeyframe: (
   .animation-wrap-2 {
     width: 100%;
     position: relative;
-    background-color: #f2f4f5;
     .animation {
       position: absolute;
     }
@@ -221,7 +223,6 @@ $scaleKeyframe: (
   .animation-wrap-3 {
     width: 100%;
     position: relative;
-    background-color: #f2f4f5;
     .animation-1,
     .animation-2 {
       position: absolute;
@@ -537,6 +538,7 @@ $scaleKeyframe: (
       height: auto;
       top: 41%;
       left: 50%;
+      transform: translateY(-15%);
     }
   }
   .animation-wrap-4 {

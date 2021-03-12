@@ -20,7 +20,7 @@ import VideoJs from "./js/libs/video.min";
 window.VideoJs = VideoJs;
 
 function setImageInitialHeight() {
-  Array.from($("img")).forEach((el) => {
+  Array.from($("img,.img-wrap")).forEach((el) => {
     if ($(el).data("percents")) {
       $(el).css("height", `${$(el).data("percents") * $(el).width()}px`);
     }
@@ -41,10 +41,14 @@ $(document).ready(() => {
     placeholder: null,
   });
   setImageInitialHeight();
-  setScrollNavWrapPosition();
   $(window).resize(() => {
     setImageInitialHeight();
     setScrollNavWrapPosition();
+  });
+  setScrollNavWrapPosition();
+  // 阻止所有input的回车事件
+  $(document).on("keypress", "form", function (event) {
+    return event.keyCode !== 13;
   });
   // 判断是否mobile
   if (window.innerWidth <= 500) {
@@ -105,9 +109,6 @@ $(document).ready(() => {
       $("header.header").attr("class", initClassName);
     }
   });
-  $("header.header .toggle-about").on("click", () => {
-    window.location.href = "./about.html";
-  });
   function calculateHeaderColor() {
     const breakSection = $("section[data-break='black']");
     let color = "white";
@@ -132,11 +133,15 @@ $(document).ready(() => {
     event.preventDefault();
     event.stopPropagation();
     $("header.header ul.product-list").slideToggle();
+    const iconElement = $(event.target).find(".dropdown-icon");
+    iconElement.text(iconElement.text() === "+" ? "-" : "+");
   });
   $("header.header .toggle-about-list").click((event) => {
     event.preventDefault();
     event.stopPropagation();
     $("header.header ul.about-list").slideToggle();
+    const iconElement = $(event.target).find(".dropdown-icon");
+    iconElement.text(iconElement.text() === "+" ? "-" : "+");
   });
   // 底部操作
   $(".tip-nav-wrap .tip-finger").click(() => {
