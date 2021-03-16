@@ -376,14 +376,8 @@
           &:last-child {
             border-right: none;
           }
-          // &.bg-visible {
-          //   // background-size: 120% !important;
-          //   transform: scale(1.05);
-          // }
           &:hover {
-            // background-size: 120%;
             transform: scale(1.1);
-            // border-right: none;
           }
           img {
             width: 28px;
@@ -649,6 +643,7 @@
         }
         .col-12 {
           overflow-x: auto;
+          overflow-y: hidden;
           padding: 0;
           margin: 0 15px 0 0;
           img.class-bg-img {
@@ -659,7 +654,7 @@
             padding: 0;
             width: 320%;
             .class-wrap {
-              padding: 2rem 1.5rem;
+              padding: 2rem 1.75rem;
               justify-content: space-between;
               align-items: flex-start;
               img {
@@ -667,7 +662,10 @@
                 margin-bottom: 8px;
               }
               &:hover {
-                background-image: none;
+                transform: none;
+              }
+              &.mobile-hover {
+                transform: scale(1.1);
               }
               p.title {
                 font-size: 1rem;

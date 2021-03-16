@@ -156,6 +156,8 @@
         .col-3 {
           padding: 20px 0;
           padding-left: 5%;
+          display: flex;
+          align-items: flex-start;
           p,
           a {
             font-size: 14px;
@@ -315,8 +317,10 @@
         .table-header {
           padding: 10px 0;
         }
-        .table-content .col-3 p {
-          font-size: 12px;
+        .table-content .col-3 {
+          a, p {
+            font-size: 0.75rem;
+          }
         }
         .table-pagination {
           font-size: 14px;

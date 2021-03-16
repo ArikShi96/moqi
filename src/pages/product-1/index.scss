@@ -461,6 +461,8 @@
           text-align: center;
           flex: 0 0 50%;
           margin-bottom: 0;
+          flex-wrap: wrap;
+          @include h3-mid;
         }
       }
     }
@@ -1010,6 +1012,15 @@
           p {
             font-size: 0.75rem;
           }
+        }
+      }
+    }
+    .collect-high-friendly,
+    .collect-high-area {
+      .scroll-wrap .name-wrap h3.title {
+        font-size: 0.75rem;
+        .r-text {
+          top: -4px;
         }
       }
     }

@@ -80,9 +80,13 @@ $(document).ready(() => {
   });
   window.setInterval(() => {
     if ($(".protect-section .row")[0].scrollLeft === 0) {
-      $(".protect-section .arrow-wrap .arrow-icon")[1].click();
+      if ($(".protect-section .arrow-wrap .arrow-icon").is(":visible")) {
+        $(".protect-section .arrow-wrap .arrow-icon")[1].click();
+      }
     } else {
-      $(".protect-section .arrow-wrap .arrow-icon")[2].click();
+      if ($(".protect-section .arrow-wrap .arrow-icon").is(":visible")) {
+        $(".protect-section .arrow-wrap .arrow-icon")[2].click();
+      }
     }
   }, 3000);
   // mobile 多重防护，增强您的体验分页
