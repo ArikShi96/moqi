@@ -127,9 +127,10 @@ $(document).ready(() => {
       if (!$el.hasClass("class-wrap")) {
         $el = $el.parent("class-wrap");
       }
-      setTimeout(() => {
-        $el.css("background-image", "none");
-      }, 500);
+      // setTimeout(() => {
+      //   $el.css("background-image", "none");
+      // }, 500);
+      $el.find(".hover-img").removeClass("visible");
     });
   } else {
     $(".class-section .description").text(descriptionMap[0].title);
@@ -137,9 +138,9 @@ $(document).ready(() => {
     $(".class-section .image-section .col-12").on(
       "scroll",
       debounce(() => {
-        $(".class-section .class-wrap")
-          .removeClass("mobile-hover")
-          .css("background-image", "none");
+        $(".class-section .class-wrap").removeClass("mobile-hover");
+        $(".class-section .class-wrap .hover-img").removeClass("visible");
+        // .css("background-image", "none");
         // 计算滚动距离
         const scrollWidth = $(".class-section .image-section .col-12")[0]
           .scrollWidth;
@@ -168,10 +169,11 @@ $(document).ready(() => {
     $(".class-section .description-tip").text(
       descriptionMap[$el.data("index")].desc
     );
-    $el.css(
-      "background-image",
-      `url('./image/home/home-class-bg-${$el.data("index") + 1}.png')`
-    );
+    // $el.css(
+    //   "background-image",
+    //   `url('./image/home/home-class-bg-${$el.data("index") + 1}.png')`
+    // );
+    $el.find(".hover-img").addClass("visible");
     if (isMobile) {
       $el.addClass("mobile-hover");
     }

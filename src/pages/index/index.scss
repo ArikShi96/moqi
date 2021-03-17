@@ -348,6 +348,9 @@
     }
     .col-12 {
       position: relative;
+      .class-bg-img {
+        height: auto;
+      }
       .class-wraps {
         z-index: 1;
         position: absolute;
@@ -373,6 +376,7 @@
           background-position: center;
           background-repeat: no-repeat;
           transition: all 0.5s;
+          position: relative;
           &:last-child {
             border-right: none;
           }
@@ -384,6 +388,20 @@
             height: auto;
             margin-bottom: 16px;
             pointer-events: none;
+          }
+          img.hover-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            margin-bottom: 0 !important;
+            height: 100%;
+            z-index: -1;
+            visibility: hidden;
+            transition: all 0.5s;
+            &.visible {
+              visibility: visible;
+            }
           }
         }
       }

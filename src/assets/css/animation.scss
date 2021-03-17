@@ -584,7 +584,7 @@ $scaleKeyframe: (
       }
     }
   }
-  .animation-wrap-1:hover {
+  .advantage-wrap-1:hover {
     .animation-2 {
       $an6-2: (
         transform: translate(-20%, -6.5%),
@@ -631,7 +631,7 @@ $scaleKeyframe: (
       @include animation(keyframe8 4s linear infinite);
     }
   }
-  .animation-wrap-2:hover {
+  .advantage-wrap-2:hover {
     .animation-2 {
       @include keyframes(scaleKeyframe, $scaleKeyframe);
       @include animation(scaleKeyframe 3s linear 1000ms infinite);
@@ -691,7 +691,7 @@ $scaleKeyframe: (
       @include animation(keyframe4 4s linear infinite);
     }
   }
-  .animation-wrap-3:hover {
+  .advantage-wrap-3:hover {
     .animation-2 {
       @include keyframes(scaleKeyframe, $scaleKeyframe);
       @include animation(scaleKeyframe 3s linear 1600ms infinite);
@@ -767,7 +767,7 @@ $scaleKeyframe: (
       @include animation(keyframe9 4s linear infinite);
     }
   }
-  .animation-wrap-4:hover {
+  .advantage-wrap-4:hover {
     .animation-2 {
       @include animation(keyframe6 4s linear infinite);
     }

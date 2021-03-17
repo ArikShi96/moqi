@@ -220,6 +220,12 @@
   strong {
     color: #003ce7;
   }
+  .text-bg {
+    &.visibility-hidden {
+      visibility: hidden;
+      height: 120px;
+    }
+  }
   // 非接触指纹采集仪
   .product-detail {
     h2.title {
@@ -554,6 +560,9 @@
     }
     .img-wrap {
       padding: 0 10%;
+      flex-direction: column;
+      justify-content: flex-end;
+      display: flex;
       img {
         height: auto;
       }
@@ -752,6 +761,11 @@
       line-height: 24px;
       margin-bottom: 20px;
     }
+    .text-bg {
+      &.visibility-hidden {
+        height: 60px;
+      }
+    }
     .advantage-section {
       .advantage-list {
         li p {
@@ -892,6 +906,11 @@
     aside {
       p {
         font-size: 0.9375rem;
+      }
+    }
+    .text-bg {
+      &.visibility-hidden {
+        height: 60px;
       }
     }
     .picture-high-quality,

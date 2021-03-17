@@ -63,7 +63,9 @@ li {
 }
 img {
   position: relative;
-  // background-color: #eef1f7;
+  &.gray-placeholder {
+    background-color: #eef1f7;
+  }
 }
 .mobile-view {
   display: none;
@@ -345,7 +347,7 @@ img {
         }
         .wechat-code {
           visibility: hidden;
-          transition: visibility 0.2s;
+          // transition: visibility 0.2s;
           position: absolute;
           width: 104px;
           height: auto;
@@ -353,7 +355,7 @@ img {
         }
         .wechat-service {
           visibility: hidden;
-          transition: visibility 0.2s;
+          // transition: visibility 0.2s;
           position: absolute;
           width: 104px;
           height: auto;

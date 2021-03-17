@@ -36,15 +36,13 @@ function setScrollNavWrapPosition() {
 // 绑定全局事件
 $(document).ready(() => {
   $("img").Lazy({
-    // skip_invisible: true,
     defaultImage: null,
-    placeholder: null,
   });
-  setImageInitialHeight();
   $(window).resize(() => {
     setImageInitialHeight();
     setScrollNavWrapPosition();
   });
+  setImageInitialHeight();
   setScrollNavWrapPosition();
   // 阻止所有input的回车事件
   $(document).on("keypress", "form", function (event) {
@@ -176,14 +174,6 @@ $(document).ready(() => {
     event.preventDefault();
     $(".popover-wrap").fadeIn();
   });
-  // $(document).on("click", ":not(.popover-wrap)", (event) => {
-  //   $(".popover-wrap").fadeOut();
-  //   return;
-  // });
-  // $(".popover-wrap").click((event) => {
-  //   event.stopPropagation();
-  //   event.preventDefault();
-  // });
   $(".popover-wrap .btn-primary").click((event) => {
     const data = $(".popover-wrap form")
       .serializeArray()

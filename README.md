@@ -14,8 +14,3 @@ npm run dev
 ```
 npm run build
 ```
-
-### SFTP
-```
-put -r /Users/i342354/Desktop/repository/wb/moqi/dist/* .
-```
