@@ -79,7 +79,7 @@ module.exports = {
           "image-webpack-loader",
           "url-loader?limit=4&name=[name]" +
             (isProd ? ".[hash:8]" : "") +
-            ".[ext]&outputPath=img/",
+            ".[ext]&outputPath=image/",
         ],
       },
       {
@@ -107,11 +107,11 @@ module.exports = {
         use: [
           isProd
             ? {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                publicPath: "../",
-              },
-            }
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                  publicPath: "../",
+                },
+              }
             : "style-loader",
           "css-loader",
         ],
@@ -121,11 +121,11 @@ module.exports = {
         use: [
           isProd
             ? {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                publicPath: "../",
-              },
-            }
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                  publicPath: "../",
+                },
+              }
             : "style-loader",
           "css-loader",
           {

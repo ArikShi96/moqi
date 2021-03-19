@@ -1,6 +1,5 @@
 import "../../assets/Common";
 import "./index.scss";
-import "./index.css";
 import "./index.html";
 
 // 绑定事件

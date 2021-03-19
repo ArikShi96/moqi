@@ -1,9 +1,6 @@
 /**
-    这里放一些自定义的全局css
+  这里放一些自定义的全局css
  */
-.rem-16 {
-  font-size: calc(100vw * 16 / 375);
-}
 html,
 body {
   height: 100%;
@@ -15,26 +12,8 @@ body {
   }
   font-family: PingFangSC-Regular, sans-serif, Noto Sans SC, SimSun;
 }
-#global-video {
-  position: fixed;
-  top: 160px;
-  left: 25vw;
-  height: 30vw;
-  width: 50vw;
-  z-index: 99999;
-  opacity: 1 !important;
-  video {
-    opacity: 1 !important;
-  }
-}
-.video-js button.vjs-play-control {
-  outline: none;
-  & > * {
-    outline: none;
-  }
-}
-.video-js .vjs-control.vjs-close-button {
-  z-index: 100000 !important;
+.rem-16 {
+  font-size: calc(100vw * 16 / 375);
 }
 h1,
 h2,
@@ -61,10 +40,14 @@ li {
   padding: 0;
   margin: 0;
 }
-img {
-  position: relative;
-  &.gray-placeholder {
-    background-color: #eef1f7;
+.img-placeholder-wrap {
+  background-color: #eef1f7;
+  &.transparent {
+    background-color: transparent;
+  }
+  img {
+    height: 100% !important;
+    width: 100% !important;
   }
 }
 .mobile-view {
@@ -83,6 +66,27 @@ img {
   .alert {
     margin-bottom: 0;
   }
+}
+#global-video {
+  position: fixed;
+  top: 160px;
+  left: 25vw;
+  height: 30vw;
+  width: 50vw;
+  z-index: 99999;
+  opacity: 1 !important;
+  video {
+    opacity: 1 !important;
+  }
+}
+.video-js button.vjs-play-control {
+  outline: none;
+  & > * {
+    outline: none;
+  }
+}
+.video-js .vjs-control.vjs-close-button {
+  z-index: 100000 !important;
 }
 
 .header {
