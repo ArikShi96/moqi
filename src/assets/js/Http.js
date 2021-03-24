@@ -44,11 +44,11 @@ JqueryAjax.prototype = {
       headers: this.headers,
       crossDomain: !document.all,
       beforeSend: function (xhr) {
-        that.showLoading();
+        // that.showLoading();
         that.beforeSend && that.beforeSend(xhr);
       },
       complete: function (xhr, status) {
-        that.hideLoading();
+        // that.hideLoading();
         that.complete && that.complete(xhr, status);
       },
       error: function (xhr, status, error) {
