@@ -13,7 +13,7 @@ $(document).ready(() => {
   $(".navbar-wrap li a").eq(3).addClass("active");
   // 播放视频
   window.openVideo({
-    url: "http://moqi.ysdftech.com/file/墨奇&绿城.mp4",
+    url: "./file/墨奇&绿城.mp4",
     hideControl: true,
     poster: "./image/home/poster.png",
     muted: true,

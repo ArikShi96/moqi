@@ -226,6 +226,7 @@ $(document).ready(() => {
       })
       .post();
   });
+  $("[data-toggle='tooltip']").tooltip();
   // 界面滚动初始化
   const sections = $("section.section");
   if (sections.length) {
